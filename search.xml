@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Note</title>
+    <url>/posts/7872/</url>
+    <content><![CDATA[<h1 id="note-标签-style-simple"><a class="markdownIt-Anchor" href="#note-标签-style-simple"></a> Note 标签 style: simple</h1>
+<div class="note default"><p>default 提示塊標籤</p>
+</div>
+<div class="note primary no-icon"><p>primary 提示塊標籤</p>
+</div>
+<div class="note success"><p>success 提示塊標籤</p>
+</div>
+<div class="note info"><p>info 提示塊標籤</p>
+</div>
+<div class="note warning"><p>warning 提示塊標籤</p>
+</div>
+<div class="note danger"><p>danger 提示塊標籤</p>
+</div>
+<h1 id="gallery-相冊圖庫"><a class="markdownIt-Anchor" href="#gallery-相冊圖庫"></a> Gallery 相冊圖庫</h1>
+<!-- <div class="gallery-group-main">
+
+  <figure class="gallery-group">
+  <img class="gallery-group-img" src='/img-url'>
+  <figcaption>
+  <div class="gallery-group-name">name</div>
+  <p>description</p>
+  <a href='/link'></a>
+  </figcaption>
+  </figure>
+  
+
+  <figure class="gallery-group">
+  <img class="gallery-group-img" src='/img-url'>
+  <figcaption>
+  <div class="gallery-group-name">name</div>
+  <p>description</p>
+  <a href='/link'></a>
+  </figcaption>
+  </figure>
+  
+
+  <figure class="gallery-group">
+  <img class="gallery-group-img" src='/img-url'>
+  <figcaption>
+  <div class="gallery-group-name">name</div>
+  <p>description</p>
+  <a href='/link'></a>
+  </figcaption>
+  </figure>
+  
+</div> -->
+<!-- name：圖庫名字
+description：圖庫描述
+link：連接到對應相冊的地址
+img-url：圖庫封面的地址 -->
+<div class="gallery-group-main">
+
+  <figure class="gallery-group">
+  <img class="gallery-group-img" src='https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png'>
+  <figcaption>
+  <div class="gallery-group-name">壁紙</div>
+  <p>收藏的一些壁紙</p>
+  <a href='/Gallery/wallpaper'></a>
+  </figcaption>
+  </figure>
+  
+
+  <figure class="gallery-group">
+  <img class="gallery-group-img" src='https://i.loli.net/2019/12/25/8t97aVlp4hgyBGu.jpg'>
+  <figcaption>
+  <div class="gallery-group-name">漫威</div>
+  <p>關於漫威的圖片</p>
+  <a href='/Gallery/marvel'></a>
+  </figcaption>
+  </figure>
+  
+
+  <figure class="gallery-group">
+  <img class="gallery-group-img" src='https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg'>
+  <figcaption>
+  <div class="gallery-group-name">OH MY GIRL</div>
+  <p>關於OH MY GIRL的圖片</p>
+  <a href='/Gallery/ohmygirl'></a>
+  </figcaption>
+  </figure>
+  
+</div>
+<h1 id="gallery-相冊"><a class="markdownIt-Anchor" href="#gallery-相冊"></a> Gallery 相冊</h1>
+ <!-- ## 區別於舊版的 Gallery 相冊，新的 Gallery 相冊會自動根據圖片長度進行排版，書寫也更加方便，與 markdown 格式一樣。可根據需要插入到相應的 md。 -->
+<!-- <div class="justified-gallery"><p>markdown 圖片格式</p>
+          </div> -->
+<div class="justified-gallery"><p><img src="https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg" alt="" /><br /><img src="https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg" alt="" /><br /><img src="https://i.loli.net/2019/12/25/gEy5Zc1Ai6VuO4N.jpg" alt="" /><br /><img src="https://i.loli.net/2019/12/25/d6QHbytlSYO4FBG.jpg" alt="" /><br /><img src="https://i.loli.net/2019/12/25/6nepIJ1xTgufatZ.jpg" alt="" /><br /><img src="https://i.loli.net/2019/12/25/E7Jvr4eIPwUNmzq.jpg" alt="" /><br /><img src="https://i.loli.net/2019/12/25/mh19anwBSWIkGlH.jpg" alt="" /><br /><img src="https://i.loli.net/2019/12/25/2tu9JC8ewpBFagv.jpg" alt="" /></p>
+          </div>
+<h1 id="mermaid"><a class="markdownIt-Anchor" href="#mermaid"></a> mermaid</h1>
+<!-- <div class="mermaid">內容</div> -->
+<div class="mermaid">pie
+    title Key elements in Product X
+    "Calcium" : 42.96
+    "Potassium" : 50.05
+    "Magnesium" : 10.01
+    "Iron" :  5</div>
+<h1 id="tabs"><a class="markdownIt-Anchor" href="#tabs"></a> Tabs</h1>
+<h2 id="默认"><a class="markdownIt-Anchor" href="#默认"></a> 默认</h2>
+<div class="tabs" id="test1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#test1-1">test1 1</button></li><li class="tab"><button type="button" data-href="#test1-2">test1 2</button></li><li class="tab"><button type="button" data-href="#test1-3">test1 3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="test1-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test1-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test1-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="默认显示第三个"><a class="markdownIt-Anchor" href="#默认显示第三个"></a> 默认显示第三个</h2>
+<div class="tabs" id="test2"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test2-1">test2 1</button></li><li class="tab"><button type="button" data-href="#test2-2">test2 2</button></li><li class="tab active"><button type="button" data-href="#test2-3">test2 3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test2-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test2-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="test2-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="没有预设值"><a class="markdownIt-Anchor" href="#没有预设值"></a> 没有预设值</h2>
+<div class="tabs" id="test3"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test3-1">test3 1</button></li><li class="tab"><button type="button" data-href="#test3-2">test3 2</button></li><li class="tab"><button type="button" data-href="#test3-3">test3 3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test3-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test3-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test3-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="图标显示"><a class="markdownIt-Anchor" href="#图标显示"></a> 图标显示</h2>
+<div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#test4-1">第一個Tab</button></li><li class="tab"><button type="button" data-href="#test4-2"><i class="fab fa-apple-pay" style="text-align: center;"></i></button></li><li class="tab"><button type="button" data-href="#test4-3"><i class="fas fa-bomb"></i>炸彈</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="test4-1"><p><strong>tab名字為第一個Tab</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><strong>只有圖標 沒有Tab名字</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-3"><p><strong>名字+icon</strong></p><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h1 id="button"><a class="markdownIt-Anchor" href="#button"></a> Button</h1>
+<h2 id="默认-2"><a class="markdownIt-Anchor" href="#默认-2"></a> 默认</h2>
+<p>This is my website, click the button <a class="btn-beautify button--animated " href="http://www.jerryc.me" 
+  title="JerryC"><span>JerryC</span></a><br />
+This is my website, click the button <a class="btn-beautify button--animated " href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a><br />
+This is my website, click the button <a class="btn-beautify button--animated outline" href="http://www.jerryc.me" 
+  title="JerryC"><span>JerryC</span></a><br />
+This is my website, click the button <a class="btn-beautify button--animated outline" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a><br />
+This is my website, click the button <a class="btn-beautify button--animated larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a></p>
+<h2 id="位置"><a class="markdownIt-Anchor" href="#位置"></a> 位置</h2>
+<a class="btn-beautify button--animated block" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated block center larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated block right outline larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<h2 id="颜色button"><a class="markdownIt-Anchor" href="#颜色button"></a> 颜色Button</h2>
+<a class="btn-beautify button--animated larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated blue larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated pink larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated red larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated purple larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated orange larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated green larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<h2 id="空颜色"><a class="markdownIt-Anchor" href="#空颜色"></a> 空颜色</h2>
+<div class="btn-center">
+<a class="btn-beautify button--animated outline larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated outline blue larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated outline pink larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated outline red larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated outline purple larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated outline orange larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+<a class="btn-beautify button--animated outline green larger" href="http://www.jerryc.me" 
+  title="JerryC"><i class="far fa-hand-point-right fa-fw"></i><span>JerryC</span></a>
+</div>
+]]></content>
+      <tags>
+        <tag>“标签外挂”，&quot;Note&quot;,&quot;Gallery相册图库&quot;，“Gallery相册”，“Tag-hide”，“mermaid”，“Tabs”，“Button”</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
