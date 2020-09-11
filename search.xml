@@ -195,4 +195,45 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>rotation</title>
+    <url>/posts/297c98f1/</url>
+    <content><![CDATA[<div class="demo"></div>
+<script>
+    function tt(){
+        $('.demo').slider({
+    imgList: [
+        {
+            img: 'https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/13/2a877ea5da1292c817cbc2a254c01c31.png',
+            a: '跳转url地址',
+        },
+        {
+            img: 'https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/13/5005109d1aa2ffd28984c2b02b8cbfbe.png',
+            a: '跳转url地址',
+        },
+        {
+            img: 'https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/13/163a2ade4361d1ed705ed523091af67e.png',
+            a: '跳转url地址',
+        }
+    ], //图片的列表，a属性里面存放的是网络地址，img存放的是图片地址
+    width: "100%", //图片的宽
+    height: 500, //图片的高
+    isAuto: false, //是否自动轮播
+    moveTime: 3000, //运动时间
+    direction: 'right', //轮播的方向
+    btnWidth: 30, //按钮的宽
+    btnHeight: 30, //按钮的高
+    spanWidth: 10, //span按钮的宽
+    spanHeight: 10, //span按钮的高
+    spanColor: '#fff', //span按钮的颜色
+    activeSpanColor: 'red', //选中的span颜色
+    btnBackgroundColor: 'rgba(0, 0, 0, 0.3)', //两侧按钮的颜色
+    spanRadius: '50%', //span按钮的圆角程度
+    spanMargin: 3, //span之间的距离
+})
+    }
+    window.addEventListener('DOMContentLoaded',tt)
+</script>
+]]></content>
+  </entry>
 </search>
