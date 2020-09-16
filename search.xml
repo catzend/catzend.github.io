@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Html基础知识总结</title>
-    <url>/posts/d15db6a3/</url>
+    <url>/posts/d15db6a3.html</url>
     <content><![CDATA[<h2 id="列表"><a class="markdownIt-Anchor" href="#列表"></a> 列表</h2>
 <h3 id="无序列表"><a class="markdownIt-Anchor" href="#无序列表"></a> 无序列表</h3>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">type</span>=<span class="string">&quot;square|cicle|disc&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>苹果<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>香蕉<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>菠萝<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>西瓜<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>芒果<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">注:ul有type属性:①disc:默认值,实心圆②cicle:空心圆③square:实心方块</span><br></pre></td></tr></table></figure>
@@ -492,7 +492,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/posts/16107/</url>
+    <url>/posts/16107.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
 <h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
@@ -511,7 +511,7 @@
   </entry>
   <entry>
     <title>标签外挂</title>
-    <url>/posts/7872/</url>
+    <url>/posts/7872.html</url>
     <content><![CDATA[<h1 id="note-标签-style-simple"><a class="markdownIt-Anchor" href="#note-标签-style-simple"></a> Note 标签 style: simple</h1>
 <div class="note default"><p>default 提示塊標籤</p>
 </div>
@@ -675,7 +675,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
   </entry>
   <entry>
     <title>Rotation轮播图</title>
-    <url>/posts/297c98f1/</url>
+    <url>/posts/297c98f1.html</url>
     <content><![CDATA[<div class="demo"></div>
 <script>
     function tt(){
