@@ -1,7 +1,516 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Note</title>
+    <title>Html基础知识总结</title>
+    <url>/posts/d15db6a3/</url>
+    <content><![CDATA[<h2 id="列表"><a class="markdownIt-Anchor" href="#列表"></a> 列表</h2>
+<h3 id="无序列表"><a class="markdownIt-Anchor" href="#无序列表"></a> 无序列表</h3>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">type</span>=<span class="string">&quot;square|cicle|disc&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>苹果<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>香蕉<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>菠萝<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>西瓜<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>芒果<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">注:ul有type属性:①disc:默认值,实心圆②cicle:空心圆③square:实心方块</span><br></pre></td></tr></table></figure>
+<h3 id="有序列表"><a class="markdownIt-Anchor" href="#有序列表"></a> 有序列表</h3>
+<h4 id="有序列表demo"><a class="markdownIt-Anchor" href="#有序列表demo"></a> 有序列表Demo</h4>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">reversed</span> <span class="attr">start</span>=<span class="string">&quot;5&quot;</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>苹果<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>香蕉<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">value</span>=<span class="string">&quot;10&quot;</span>&gt;</span>菠萝<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>西瓜<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>芒果<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">注:</span><br><span class="line">①:eversed-- 倒序</span><br><span class="line">②:tart=&quot;5-- 更改起始序号 </span><br><span class="line">③:li value=&quot;10&quot;&gt;菠萝<span class="tag">&lt;/<span class="name">li</span>&gt;</span>-- 设置列表项序号</span><br></pre></td></tr></table></figure>
+<h3 id="自定义列表"><a class="markdownIt-Anchor" href="#自定义列表"></a> 自定义列表</h3>
+<h3 id="自定义列表-2"><a class="markdownIt-Anchor" href="#自定义列表-2"></a> 自定义列表</h3>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 自定义列表 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>wybing<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>- 一个热爱编程的程序猿<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>程序猿<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>- 写出更多的代码<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line">注:</span><br><span class="line">①:<span class="tag">&lt;<span class="name">dl</span>&gt;</span>标签表示列表的整体</span><br><span class="line">②:<span class="tag">&lt;<span class="name">dt</span>&gt;</span>标签定义术语的题目</span><br><span class="line">③:<span class="tag">&lt;<span class="name">dd</span>&gt;</span>标签是术语的解释</span><br><span class="line">④:一个<span class="tag">&lt;<span class="name">dl</span>&gt;</span>中可以有多个题目和解释</span><br></pre></td></tr></table></figure>
+<h2 id="链接"><a class="markdownIt-Anchor" href="#链接"></a> 链接</h2>
+<h3 id="a标签可以在网页上定义一个链接地址"><a class="markdownIt-Anchor" href="#a标签可以在网页上定义一个链接地址"></a> <a>标签可以在网页上定义一个链接地址</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">①:&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;www.itcast.cn&#x2F;&quot; title&#x3D;&quot;跳转的传智播客网站&quot; target&#x3D;&quot;_blank&quot;&gt;传智播客&lt;&#x2F;a&gt;</span><br><span class="line">②:href属性:定义跳转的地址</span><br><span class="line">③:title属性:定义鼠标悬停时弹出的提示文字框</span><br><span class="line">④:target属性:target&#x3D;&quot;_blank&quot; 新页面会在新开的一个浏览器窗口打开;target&#x3D;&quot;_self&quot; 缺省值，新页面替换原来的页面，在原来位置打开</span><br><span class="line">⑤:name属性:链接命名</span><br></pre></td></tr></table></figure>
+<h3 id="name属性锚点设置"><a class="markdownIt-Anchor" href="#name属性锚点设置"></a> name属性锚点设置</h3>
+<h4 id="页面内的跳转"><a class="markdownIt-Anchor" href="#页面内的跳转"></a> 页面内的跳转</h4>
+<h5 id="方法一"><a class="markdownIt-Anchor" href="#方法一"></a> 方法一</h5>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">①:设置一个锚点链接去找喵星人；（注意：href属性的属性值最前面要加#）</span><br><span class="line">②:在页面中需要的位置设置锚点&lt;a name&#x3D;&quot;miao&quot;&gt;&lt;&#x2F;a&gt;；（注意：a标签中要写一个name属性，属性值要与①中的href的属性值一样，不加#）标签中按需填写必要的文字，一般不写内容</span><br></pre></td></tr></table></figure>
+<h5 id="方法二"><a class="markdownIt-Anchor" href="#方法二"></a> 方法二</h5>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">①:设置一个锚点链接去找喵星人；（注意：href属性的属性值最前面要加#）</span><br><span class="line">②:设置锚点的位置 &lt;h3 id&#x3D;&quot;miao&quot;&gt;喵星人基地&lt;&#x2F;h3&gt;；在要跳转到的位置的标签中添加一个id属性，属性值与①中href的属性值一样，不加#</span><br><span class="line">③:方法二不用单独添加一个a标签来专门设置锚点 ，只在需要的位置的标签中添加一个id即可。</span><br></pre></td></tr></table></figure>
+<h4 id="跨页面跳转"><a class="markdownIt-Anchor" href="#跨页面跳转"></a> 跨页面跳转</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">①:设置锚点链接，在href中的路径后面追加：#+锚点名，即可</span><br><span class="line">②:如：&lt;a href&#x3D;&quot;萌宠集结号.html#miao&quot;&gt;跳转到萌宠集结号页面&lt;&#x2F;a&gt;</span><br><span class="line">③:要跳转到的页面中要设置锚点，方法见一种的步骤②，两个方法任选其一。</span><br></pre></td></tr></table></figure>
+<h2 id="表格"><a class="markdownIt-Anchor" href="#表格"></a> 表格</h2>
+<h3 id="标题caption-表头单元格th-头部thread-主体tbody-行tr-单元格td-底部tfoot"><a class="markdownIt-Anchor" href="#标题caption-表头单元格th-头部thread-主体tbody-行tr-单元格td-底部tfoot"></a> 标题（caption）、表头单元格（th）、头部（thread）、主体（tbody）、行（tr）、单元格（td）、底部（tfoot）</h3>
+<h3 id="table属性"><a class="markdownIt-Anchor" href="#table属性"></a> table属性</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+<th>解释信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>border</td>
+<td>表格边框 cellspacing：单元格间的间距</td>
+<td></td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>单元格的内容与其边框的内边距</td>
+<td></td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>cellspacing 属性规定单元格之间的空间。</td>
+<td></td>
+</tr>
+<tr>
+<td>bgcolor</td>
+<td>表格的背景颜色 background：表格的背景图片<br />注意：background的优先级比bgcolor高，因此，背景图片会把背景颜色覆盖掉。</td>
+<td></td>
+</tr>
+<tr>
+<td>width/height</td>
+<td>表格宽度 /表格高度</td>
+<td></td>
+</tr>
+<tr>
+<td>border-collaspe</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>frame属性</td>
+<td>void</td>
+<td>不显示外侧边框</td>
+</tr>
+<tr>
+<td></td>
+<td>above</td>
+<td>显示上部的外侧边框</td>
+</tr>
+<tr>
+<td></td>
+<td>below</td>
+<td>显示下部的外侧边框</td>
+</tr>
+<tr>
+<td></td>
+<td>hsides</td>
+<td>显示上部和下部的外侧边框</td>
+</tr>
+<tr>
+<td></td>
+<td>vsides</td>
+<td>显示左边和右边的外侧边框</td>
+</tr>
+<tr>
+<td></td>
+<td>lhs</td>
+<td>显示左边的外侧边框</td>
+</tr>
+<tr>
+<td></td>
+<td>rhs</td>
+<td>显示右边的外侧边框</td>
+</tr>
+<tr>
+<td></td>
+<td>box</td>
+<td>在所有的四个边上显示外侧边框</td>
+</tr>
+<tr>
+<td></td>
+<td>border</td>
+<td>在所有的四个边上显示外侧边框</td>
+</tr>
+<tr>
+<td>rules属性</td>
+<td>none</td>
+<td>没有线条</td>
+</tr>
+<tr>
+<td></td>
+<td>groups</td>
+<td>位于行组和列祖之间的线条</td>
+</tr>
+<tr>
+<td></td>
+<td>rows</td>
+<td>位于行之间的线条</td>
+</tr>
+<tr>
+<td></td>
+<td>cols</td>
+<td>位于列之间的线条</td>
+</tr>
+<tr>
+<td></td>
+<td>all</td>
+<td>位于行和列之间的线条</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="thead和tbody-tfoot属性"><a class="markdownIt-Anchor" href="#thead和tbody-tfoot属性"></a> thead和tbody、tfoot属性</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+<th>解释信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>align</td>
+<td>left、center、right、justify、char</td>
+<td>thead、tbody和tfoot内容的水平对齐</td>
+</tr>
+<tr>
+<td>valign</td>
+<td>top、middle、bottom、baseline</td>
+<td>thead、tbody和tfoot内容的垂直对齐</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tr的属性"><a class="markdownIt-Anchor" href="#tr的属性"></a> tr的属性</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>align</td>
+<td>单元格内文本的对齐方式,通常是左，中，右 left，center，right</td>
+</tr>
+<tr>
+<td>valign</td>
+<td>单元格内文本的对齐方式,通常是上，中，下 top，middle，bottom</td>
+</tr>
+<tr>
+<td>Bgcolor</td>
+<td>行的背景颜色</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="td和th属性"><a class="markdownIt-Anchor" href="#td和th属性"></a> td和th属性</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width/height</td>
+<td>单元格宽度/高度</td>
+</tr>
+<tr>
+<td>nowrap</td>
+<td>在为设置单元格宽度时，当文本长度宽于单元格宽度，将要换行时，该标签会使其不换行</td>
+</tr>
+<tr>
+<td>align</td>
+<td>单元格内文本的对齐方式,通常是左，中，右 left，center，right</td>
+</tr>
+<tr>
+<td>valign</td>
+<td>单元格内文本的对齐方式,通常是上，中，下 top，middle，bottom，baseline</td>
+</tr>
+<tr>
+<td>colspan</td>
+<td>跨列标签，表示跨了多少列</td>
+</tr>
+<tr>
+<td>rowspan</td>
+<td>跨行标签，表示跨了多少行</td>
+</tr>
+<tr>
+<td>实例</td>
+<td>td width=“100px” bgcolor=&quot;#006400&quot; valign=“top”  nowrap网游&lt;/td</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="表单"><a class="markdownIt-Anchor" href="#表单"></a> 表单</h3>
+<h4 id="form表单元素"><a class="markdownIt-Anchor" href="#form表单元素"></a> form表单元素</h4>
+<h5 id="input表单输入标签"><a class="markdownIt-Anchor" href="#input表单输入标签"></a> input表单输入标签</h5>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+<th>解释信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>text</td>
+<td>文字域</td>
+</tr>
+<tr>
+<td></td>
+<td>password</td>
+<td>密码域</td>
+</tr>
+<tr>
+<td></td>
+<td>file</td>
+<td>文件域</td>
+</tr>
+<tr>
+<td></td>
+<td>checkbox</td>
+<td>复选域</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>nam值可以不同，最好是相同，<br />因为这样服务器会知道哪些是一组的属性checkd表示默认选中,<br />一组复选框的name的值<br />在做的时候用一样都有value值，<br />上传到服务器中的是valu值</td>
+</tr>
+<tr>
+<td></td>
+<td>radio</td>
+<td>单选域,都有value值，上传到服务器中的是valu值,属性checkd表示默认选中</td>
+</tr>
+<tr>
+<td></td>
+<td>button</td>
+<td>按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>submit</td>
+<td>提交按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>reset</td>
+<td>重置按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>hidden</td>
+<td>隐藏域</td>
+</tr>
+<tr>
+<td></td>
+<td>image</td>
+<td>图像域,input type=“image” name=“image_button” src=“图片位置” /&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>input type = “类型属性” name=“名称”   …</td>
+</tr>
+<tr>
+<td>单行文本域</td>
+<td>name</td>
+<td>文字域的名称</td>
+</tr>
+<tr>
+<td></td>
+<td>maxlength</td>
+<td>指用户输入最大字符长度</td>
+</tr>
+<tr>
+<td></td>
+<td>size</td>
+<td>指定文本框的宽度，以字符个数为单位：文本框的缺省宽度是20个字符</td>
+</tr>
+<tr>
+<td></td>
+<td>value</td>
+<td>指定文本框的默认值</td>
+</tr>
+<tr>
+<td></td>
+<td>placeholder</td>
+<td>规定用户输入字段的提示</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="select菜单和列表标签"><a class="markdownIt-Anchor" href="#select菜单和列表标签"></a> select菜单和列表标签</h5>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;select &gt;</span><br><span class="line">      &lt;option value&#x3D;&quot;&quot;&gt;选项&lt;&#x2F;option&gt;</span><br><span class="line">      &lt;option value&#x3D;&quot;&quot;&gt;选项2&lt;&#x2F;option&gt;</span><br><span class="line">&lt;&#x2F;select&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+<th>解释信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>select属性</td>
+<td>name</td>
+<td>设置下拉菜单和列表的名称</td>
+</tr>
+<tr>
+<td></td>
+<td>multipl</td>
+<td>设置课可选择多个选项</td>
+</tr>
+<tr>
+<td></td>
+<td>size</td>
+<td>设置列表可见选项的数目</td>
+</tr>
+<tr>
+<td>option属性</td>
+<td>selectd</td>
+<td>设置选项初始选中状态</td>
+</tr>
+<tr>
+<td></td>
+<td>value</td>
+<td>定义送往服务器的选项值</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="optgroup菜单和列表分组标签"><a class="markdownIt-Anchor" href="#optgroup菜单和列表分组标签"></a> optgroup菜单和列表分组标签</h5>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;select&gt;</span><br><span class="line">  &lt;optgroup label&#x3D;&quot;Swedish Cars&quot;&gt;</span><br><span class="line">    &lt;option value &#x3D;&quot;volvo&quot;&gt;Volvo&lt;&#x2F;option&gt;</span><br><span class="line">    &lt;option value &#x3D;&quot;saab&quot;&gt;Saab&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;&#x2F;optgroup&gt;</span><br><span class="line"></span><br><span class="line">  &lt;optgroup label&#x3D;&quot;German Cars&quot;&gt;</span><br><span class="line">    &lt;option value &#x3D;&quot;mercedes&quot;&gt;Mercedes&lt;&#x2F;option&gt;</span><br><span class="line">    &lt;option value &#x3D;&quot;audi&quot;&gt;Audi&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;&#x2F;optgroup&gt;</span><br><span class="line">&lt;&#x2F;select&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="textarea文字域标签"><a class="markdownIt-Anchor" href="#textarea文字域标签"></a> textarea文字域标签</h5>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;textarea rows&#x3D;&quot;3&quot; cols&#x3D;&quot;20&quot;&gt;</span><br><span class="line">在w3school，你可以找到你所需要的所有的网站建设教程。</span><br><span class="line">&lt;&#x2F;textarea&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>设置文本区的名称</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>设置描述文本区域预期值得简短提示</td>
+</tr>
+<tr>
+<td>rows</td>
+<td>设置文本区内的可见行数</td>
+</tr>
+<tr>
+<td>cols</td>
+<td>设置文本区内的可见宽度</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="传输方式"><a class="markdownIt-Anchor" href="#传输方式"></a> 传输方式</h5>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form action&#x3D;&quot;form_action.asp&quot; method&#x3D;&quot;get&quot;&gt;</span><br><span class="line">  &lt;p&gt;First name: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;fname&quot; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;p&gt;Last name: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;lname&quot; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+<th>解释信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td>url</td>
+<td>后端传递接口</td>
+</tr>
+<tr>
+<td>method</td>
+<td>get</td>
+<td>①保密性差②信息会暴露在url后面③使用URL传递参数<br />④对发送信息的数量是有限制的⑤一般用于信息的查询或者获取</td>
+</tr>
+<tr>
+<td></td>
+<td>post</td>
+<td>①表单数据作为HTTP请求体的一部分<br/>②对所发送信息的数量是无限制的<br/>③一般用于修改服务器上的资源</td>
+</tr>
+<tr>
+<td></td>
+<td>设置表单以何种方式发送到指定页面</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>form_name</td>
+<td>表单的名称</td>
+</tr>
+<tr>
+<td>target</td>
+<td>在何处打开action URL</td>
+<td>_blank/_self/_parent/_top</td>
+</tr>
+<tr>
+<td>enctype</td>
+<td>在发送表单数据之前如何对其进行编码</td>
+<td>application</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>x-www-form-urlencoded multipart</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>form-data text</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>plain</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>标签外挂</title>
     <url>/posts/7872/</url>
     <content><![CDATA[<h1 id="note-标签-style-simple"><a class="markdownIt-Anchor" href="#note-标签-style-simple"></a> Note 标签 style: simple</h1>
 <div class="note default"><p>default 提示塊標籤</p>
@@ -165,38 +674,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
       </tags>
   </entry>
   <entry>
-    <title>charts</title>
-    <url>/posts/22705/</url>
-    <content><![CDATA[<h1 id="文章发布统计图"><a class="markdownIt-Anchor" href="#文章发布统计图"></a> 文章发布统计图</h1>
-<div id="posts-chart"></div>
-<h1 id="标签统计图"><a class="markdownIt-Anchor" href="#标签统计图"></a> 标签统计图</h1>
-<!-- "data-length"为显示标签个数(从多到少)，默认为10 -->
-<div id="tags-chart" data-length="10"></div>
-<h1 id="文章分类统计图"><a class="markdownIt-Anchor" href="#文章分类统计图"></a> 文章分类统计图</h1>
-<div id="categories-chart"></div>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>rotation</title>
+    <title>Rotation轮播图</title>
     <url>/posts/297c98f1/</url>
     <content><![CDATA[<div class="demo"></div>
 <script>
