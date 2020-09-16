@@ -1,6 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HTML5新属性</title>
+    <url>/posts/fe758c0a.html</url>
+    <content><![CDATA[<h1 id="html-全局属性"><a class="markdownIt-Anchor" href="#html-全局属性"></a> HTML 全局属性</h1>
+<h3 id="html5-新属性"><a class="markdownIt-Anchor" href="#html5-新属性"></a> HTML5 新属性</h3>
+<table>
+<thead>
+<tr>
+<th><a href="https://www.runoob.com/tags/att-global-accesskey.html">accesskey</a></th>
+<th>设置访问元素的键盘快捷键。</th>
+<th>a href=&quot;//www.runoob.com/html/html-tutorial.html&quot; accesskey=“h”&gt;HTML 教程</a><br/> a href=&quot;//www.runoob.com/css/css-tutorial.html&quot; accesskey=“c”&gt;CSS 教程</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>IE浏览器</strong></td>
+<td>按住Alt键，点击accesskey定义的快捷键(焦点将移动到链接)，再按回车.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>FireFox浏览器</strong></td>
+<td>按住Alt+Shift键，点击accesskey定义的快捷键.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Chrome浏览器</strong></td>
+<td>按住Alt键，点击accesskey定义的快捷键.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Opera浏览器</strong></td>
+<td>按住Shift键，点击esc，出现本页定义的accesskey快捷键列表可供选择.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Safari浏览器</strong></td>
+<td>按住Alt键，点击accesskey定义的快捷键.</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-class.html">class</a></td>
+<td>规定元素的类名（classname）</td>
+<td>按住Alt键，点击accesskey定义的快捷键.contenteditable=&quot;true</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-contenteditable.html">contenteditable</a><strong>New</strong></td>
+<td>规定是否可编辑元素的内容。</td>
+<td>p contenteditable=“true”&gt;这是一个可编辑段落。</p></td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-contextmenu.html">contextmenu</a><strong>New</strong></td>
+<td>指定一个元素的上下文菜单。当用户右击该元素，出现上下文菜单目前只有 Firefox 浏览器支持 contextmenu 属性。</td>
+<td>div contextmenu=“mymenu”&gt;<br/><br/>menu type=“context” id=“mymenu”&gt;<br/>  menuitem label=“Refresh”&gt;</menuitem><br/>  menuitem label=“Twitter”&gt;</menuitem><br/>/menu&gt;<br/><br/>/div&gt;</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-data.html">data-*</a><strong>New</strong></td>
+<td>用于存储页面的自定义数据</td>
+<td>ul&gt;<br/>li data-animal-type=“bird”&gt;Owl</li><br/>li data-animal-type=“fish”&gt;Salmon</li><br/>li data-animal-type=“spider”&gt;Tarantula</li><br/>/ul&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td>data-* 属性用于存储私有页面后应用的自定义数据。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>data-* 属性可以在所有的 HTML 元素中嵌入数据。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>自定义的数据可以让页面拥有更好的交互体验（不需要使用 Ajax 或去服务端查询数据）。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>data-* 属性由以下两部分组成：</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>① 属性名不要包含大写字母，在 data- 后必须至少有一个字符。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>②  该属性可以是任何字符串</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>注意：</strong> 自定义属性前缀 “data-” 会被客户端忽略。</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-dir.html">dir</a></td>
+<td>设置元素中内容的文本方向。ltr/rtl/auto</td>
+<td>bdo dir=“rtl”&gt;文本方向从右到左!</bdo></td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-draggable.html">draggable</a><strong>New</strong></td>
+<td>指定某个元素是否可以拖动draggable=&quot;true|false|auto</td>
+<td>false</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-dropzone.html">dropzone</a><strong>New</strong></td>
+<td>指定是否将数据复制，移动，或链接，或删除</td>
+<td>&lt;<em>element</em> dropzone=&quot;copy</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-hidden.html">hidden</a><strong>New</strong></td>
+<td>hidden 属性规定对元素进行隐藏。</td>
+<td>&lt;<em>element</em> hidden&gt;</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-id.html">id</a></td>
+<td>规定元素的唯一 id</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-lang.html">lang</a></td>
+<td>设置元素中内容的语言代码。</td>
+<td>&lt;<em>element</em> lang=“<em>language_code</em>”&gt;</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-spellcheck.html">spellcheck</a><strong>New</strong></td>
+<td>检测元素是否拼写错误</td>
+<td>&lt;<em>element</em> spellcheck=&quot;true</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-style.html">style</a></td>
+<td>规定元素的行内样式（inline style）style=“color:blue;text-align:center”</td>
+<td>&lt;<em>element</em> style=“<em>style_definitions</em>”&gt;</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-tabindex.html">tabindex</a></td>
+<td>设置元素的 Tab 键控制次序。&lt;<em>element</em> tabindex=“<em>number</em>”&gt;</td>
+<td>a href=&quot;//www.runoob.com//&quot; tabindex=“2”&gt; runoob.com 菜鸟教程</a><br />a href=&quot;//www.google.com/&quot; tabindex=“1”&gt;Google</a><br />a href=&quot;//www.microsoft.com/&quot; tabindex=“3”&gt;Microsoft</a></td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-title.html">title</a></td>
+<td>规定元素的额外信息（可在工具提示中显示）</td>
+<td>&lt;<em>element</em> title=“<em>text</em>”&gt;</td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-global-translate.html">translate</a><strong>New</strong></td>
+<td>指定是否一个元素的值在页面载入时是否需要翻译;目前没有主流浏览器支持 translate 属性。</td>
+<td>&lt;<em>element</em> translate=&quot;yes</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <tags>
+        <tag>HTML5</tag>
+        <tag>HTML新属性</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Html基础知识总结</title>
     <url>/posts/d15db6a3.html</url>
     <content><![CDATA[<h2 id="列表"><a class="markdownIt-Anchor" href="#列表"></a> 列表</h2>
@@ -801,7 +958,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <tr>
 <td>audio</td>
 <td>audio&gt; 标签定义声音，比如音乐或其他音频流。</td>
-<td><audio controls><br/>  <source src="horse.ogg" type="audio/ogg"><br/>  <source src="horse.mp3" type="audio/mpeg"><br/>  您的浏览器不支持 audio 元素。<br/></audio></td>
+<td>audio controls&gt;<br/>  source src=“horse.ogg” type=“audio/ogg”&gt;<br/>  source src=“horse.mp3” type=“audio/mpeg”&gt;<br/>  您的浏览器不支持 audio 元素。<br/>/audio&gt;</td>
 </tr>
 <tr>
 <td></td>
@@ -836,7 +993,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <tr>
 <td>video</td>
 <td><video> 标签定义视频，比如电影片段或其他视频流。<video> 元素支持三种视频格式：MP4、WebM、Ogg。</td>
-<td><video width="320" height="240" controls>     <br /><source src="movie.mp4" type="video/mp4">   <br />  <source src="movie.ogg" type="video/ogg">   <br />  您的浏览器不支持 video 标签。 </video></td>
+<td>video width=“320” height=“240” controls&gt;     <br />source src=“movie.mp4” type=“video/mp4”&gt;   <br />  source src=“movie.ogg” type=“video/ogg”&gt;   <br />  您的浏览器不支持 video 标签。 </video></td>
 </tr>
 <tr>
 <td></td>
@@ -950,12 +1107,12 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <tr>
 <td>meter“</td>
 <td>状态标签（实时装填显示：气压，气温）</td>
-<td><meter value="200" min= "20" max="380" low="200" high="240" optimum="220" ></meter></td>
+<td>meter value=“200” min= “20” max=“380” low=“200” high=“240” optimum=“220” &gt;/meter&gt;</td>
 </tr>
 <tr>
 <td>progress</td>
 <td>状态标签（任务过程：安装，加载）</td>
-<td><progress value="200" min= "20" max="380" /></td>
+<td>progress value=“200” min= “20” max=“380” /&gt;</td>
 </tr>
 </tbody>
 </table>
@@ -972,12 +1129,12 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <tr>
 <td>datalist</td>
 <td>为input标记定义一个下拉列表，配合option</td>
-<td><input list="browsers"> <datalist id="browsers">  <option value="Internet Explorer">  <option value="Firefox">  <option value="Chrome">  <option value="Opera">  <option value="Safari"> </datalist></td>
+<td>input list=“browsers”&gt; <datalist id="browsers">  <br />option value=“Internet Explorer”&gt;  <br /><option value="Firefox">  <br />option value=“Chrome”&gt;  <br />option value=“Opera”&gt;  <br />option value=“Safari”&gt; /datalist&gt;</td>
 </tr>
 <tr>
 <td>keygen</td>
 <td><keygen> 标签规定用于表单的密钥对生成器字段。</td>
-<td><form action="demo_keygen.asp" method="get"><br/> 用户名: <input type="text" name="usr_name"><br/> 加密: <keygen name="security"><br/> <input type="submit"><br/></form></td>
+<td>form action=“demo_keygen.asp” method=“get”&gt;<br/> 用户名: input type=“text” name=“usr_name”&gt;<br/> 加密: keygen name=“security”&gt;<br/> input type=“submit”&gt;<br/>/form&gt;</td>
 </tr>
 <tr>
 <td>output</td>
@@ -1070,17 +1227,17 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <tr>
 <td>Range Input类型</td>
 <td>把一段分成多少度段然后进行选择</td>
-<td><input type="range" name="points" min="1" max="10"></td>
+<td>input type=“range” name=“points” min=“1” max=“10”&gt;</td>
 </tr>
 <tr>
 <td>search</td>
 <td>定义搜索字段（比如站内搜索或谷歌搜索等）：</td>
-<td>Search Google: <input type="search" name="googlesearch"></td>
+<td>Search Google: input type=“search” name=“googlesearch”&gt;</td>
 </tr>
 <tr>
 <td>color</td>
 <td>从拾色器中选取颜色：</td>
-<td>选择你喜欢的颜色: <input type="color" name="favcolor"><br/></td>
+<td>选择你喜欢的颜色: input type=“color” name=“favcolor”&gt;<br/></td>
 </tr>
 <tr>
 <td></td>
@@ -1112,7 +1269,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <tr>
 <td>form</td>
 <td>form 属性规定 <input> 元素所属的一个或多个表单。</td>
-<td><form action="demo-form.php" id="form1"><br/>First name: <input type="text" name="fname"><br/><br/><input type="submit" value="提交"><br/></form></td>
+<td>form action=“demo-form.php” id=“form1”&gt;<br/>First name: input type=“text” name=“fname”&gt;<br/><br/>input type=“submit” value=“提交”&gt;<br/>/form&gt;</td>
 </tr>
 <tr>
 <td>formaction</td>
@@ -1142,7 +1299,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <tr>
 <td>list</td>
 <td>属性引用 <datalist> 元素，其中包含 <input> 元素的预定义选项。</td>
-<td><input list="browsers"><br /><br /><datalist id="browsers"><br/> <option value="Internet Explorer"><br/> <option value="Firefox"><br/> <option value="Google Chrome"><br/> <option value="Opera"><br/> <option value="Safari"><br/></datalist></td>
+<td>input list=“browsers”&gt;<br /><br />datalist id=“browsers”&gt;<br/> option value=“Internet Explorer”&gt;<br/> option value=“Firefox”&gt;<br/> option value=“Google Chrome”&gt;<br/> option value=“Opera”&gt;<br/> option value=“Safari”&gt;<br/>/datalist&gt;</td>
 </tr>
 <tr>
 <td>max</td>
