@@ -1,6 +1,342 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS基础知识学习笔记(一)</title>
+    <url>/posts/cb25713c.html</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，用来描述 HTML 或 XML（包括如</span><br><span class="line">  SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="什么是-css"><a class="markdownIt-Anchor" href="#什么是-css"></a> 什么是 CSS?</h2>
+<ol>
+<li>CSS 指层叠样式表 (<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets)</li>
+<li>样式定义<strong>如何显示</strong> HTML 元素</li>
+<li>样式通常存储在<strong>样式表</strong>中</li>
+<li>把样式添加到 HTML 4.0 中，是为了<strong>解决内容与表现分离的问题</strong></li>
+<li><strong>外部样式表</strong>可以极大提高工作效率</li>
+<li>外部样式表通常存储在 <strong>CSS 文件</strong>中</li>
+<li>多个样式定义可<strong>层叠</strong>为一个</li>
+</ol>
+<h1 id="css-语法"><a class="markdownIt-Anchor" href="#css-语法"></a> CSS 语法</h1>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C010.jpg" alt="" /></p>
+<h2 id="css-创建"><a class="markdownIt-Anchor" href="#css-创建"></a> CSS 创建</h2>
+<h3 id="如何插入样式表"><a class="markdownIt-Anchor" href="#如何插入样式表"></a> 如何插入样式表</h3>
+<ol>
+<li>
+<p>外部样式表(External style sheet)</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>内部样式表(Internal style sheet)</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 &lt;<span class="selector-tag">style</span>&gt; 标签在文档头部定义内部样式表，就像这样:</span><br><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-tag">hr</span> &#123;<span class="attribute">color</span>:sienna;&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">margin-left</span>:<span class="number">20px</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">background-image</span>:<span class="built_in">url</span>(<span class="string">&quot;images/back40.gif&quot;</span>);&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>内联样式(Inline style</p>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">由于要将表现和内容混杂在一起，内联样式会损失掉样式表的许多优势。</span><br><span class="line">&lt;p style=&quot;color:sienna;margin-left:20px&quot;&gt;这是一个段落。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>CSS基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS基础知识学习笔记(二)</title>
+    <url>/posts/6414ea5e.html</url>
+    <content><![CDATA[<h2 id="css-背景"><a class="markdownIt-Anchor" href="#css-背景"></a> CSS 背景</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://www.runoob.com/cssref/css3-pr-background.html">background</a></td>
+<td style="text-align:left">简写属性，作用是将背景属性设置在一个声明中。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.runoob.com/cssref/pr-background-attachment.html">background-attachment</a></td>
+<td style="text-align:left">背景图像是否固定或者随着页面的其余部分滚动。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.runoob.com/cssref/pr-background-color.html">background-color</a></td>
+<td style="text-align:left">设置元素的背景颜色。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.runoob.com/cssref/pr-background-image.html">background-image</a></td>
+<td style="text-align:left">把图像设置为背景。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.runoob.com/cssref/pr-background-position.html">background-position</a></td>
+<td style="text-align:left">设置背景图像的起始位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.runoob.com/cssref/pr-background-repeat.html">background-repeat</a></td>
+<td style="text-align:left">设置背景图像是否及如何重复。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="背景颜色color"><a class="markdownIt-Anchor" href="#背景颜色color"></a> 背景颜色（color）</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法：</span><br><span class="line">background-color:颜色值;    默认的值是  transparent  透明色</span><br><span class="line">注:</span><br><span class="line">①transparent是全透明黑色(black)的速记法,类似rgba(0,0,0,0)这样的值</span><br><span class="line">②颜色值(颜色名|RGB|十六进制)</span><br><span class="line">③背景区包括内容,内边距和边框,不包含外边距</span><br></pre></td></tr></table></figure>
+<h3 id="背景图片image"><a class="markdownIt-Anchor" href="#背景图片image"></a> 背景图片（image）</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法：</span><br><span class="line">background-image:  none  |  url  (url)</span><br><span class="line">注:元素的背景占据了元素的全部尺寸,包括内边距和边框,但是不包括外边距</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>无背景图（默认的）</td>
+</tr>
+<tr>
+<td>url</td>
+<td>使用绝对或相对地址指定背景图像</td>
+</tr>
+</tbody>
+</table>
+<h3 id="背景平铺repeat"><a class="markdownIt-Anchor" href="#背景平铺repeat"></a> 背景平铺（repeat）</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法：</span><br><span class="line">background-repeat  :  repeat |  no-repeat |  repeat-x | repeat-y</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>repeat</td>
+<td>背景图像在纵向和横向上平铺（默认的）</td>
+</tr>
+<tr>
+<td>no-repeat</td>
+<td>背景图像不平铺</td>
+</tr>
+<tr>
+<td>repeat-x</td>
+<td>背景图像在横向上平铺</td>
+</tr>
+<tr>
+<td>repeat-y</td>
+<td>背景图像在纵向平铺</td>
+</tr>
+</tbody>
+</table>
+<h3 id="背景位置position重点"><a class="markdownIt-Anchor" href="#背景位置position重点"></a> 背景位置（position）重点</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">background-position  :  length  ||  length</span><br><span class="line">background-position  :  position  ||  position</span><br><span class="line"></span><br><span class="line">必须先指定background-image属性</span><br><span class="line">2）position后面是x坐标和y坐标。可以使用方位名词或者精确单位</span><br><span class="line">3） 如果指定两个值，两个值都是方为名字，则两个值前后顺序无关，比如left top 和 top left效果一样</span><br><span class="line">4）如果只指定了一个方位名词，另一个值默认居中对齐。</span><br><span class="line">5）如果position后面是精确坐标，那么第一个，肯定是x第二的一定是y</span><br><span class="line">6）如果只指定一个数值，那该数值一定是x坐标，另一个默认垂直居中</span><br><span class="line">7）如果指定的两个值是精确单位和方位名字混合使用，则第一个值是x坐标，第二个值是y坐标</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>length</td>
+<td>百分数 /由浮点数字和单位标识符组成的长度值</td>
+</tr>
+<tr>
+<td>position</td>
+<td>top / center / bottom / left / center / right方位名词</td>
+</tr>
+</tbody>
+</table>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C011.jpg" alt="" /></p>
+<h3 id="背景是滚动attachment"><a class="markdownIt-Anchor" href="#背景是滚动attachment"></a> 背景是滚动（attachment）</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">背景附着就是解释背景是滚动的还是固定的</span><br><span class="line">语法：</span><br><span class="line">background-attachment  :  scroll  |  fixed</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scroll</td>
+<td>背景图像是随对象内容滚动</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>背景图像固定</td>
+</tr>
+</tbody>
+</table>
+<h3 id="背景图像的大小size"><a class="markdownIt-Anchor" href="#背景图像的大小size"></a> 背景图像的大小（size）</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">background-size: length|percentage|cover|contain;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">length</td>
+<td style="text-align:left">设置背景图片高度和宽度。第一个值设置宽度，第二个值设置的高度。如果只给出一个值，第二个是设置为 <strong>auto</strong>(自动)</td>
+</tr>
+<tr>
+<td style="text-align:left">percentage</td>
+<td style="text-align:left">将计算相对于背景定位区域的百分比。第一个值设置宽度，第二个值设置的高度。如果只给出一个值，第二个是设置为&quot;auto(自动)&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">cover</td>
+<td style="text-align:left">此时会保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小大小。</td>
+</tr>
+<tr>
+<td style="text-align:left">contain</td>
+<td style="text-align:left">此时会保持图像的纵横比并将图像缩放成将适合背景定位区域的最大大小。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="相对定位的背景图片origin"><a class="markdownIt-Anchor" href="#相对定位的背景图片origin"></a> 相对定位的背景图片（origin）</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">background-origin: padding-box|border-box|content-box;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">padding-box</td>
+<td style="text-align:left">背景图像填充框的相对位置</td>
+</tr>
+<tr>
+<td style="text-align:left">border-box</td>
+<td style="text-align:left">背景图像边界框的相对位置</td>
+</tr>
+<tr>
+<td style="text-align:left">content-box</td>
+<td style="text-align:left">背景图像的相对位置的内容框</td>
+</tr>
+</tbody>
+</table>
+<h3 id="绘图区的背景"><a class="markdownIt-Anchor" href="#绘图区的背景"></a> 绘图区的背景</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">background-clip: border-box|padding-box|content-box;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">border-box</td>
+<td style="text-align:left">默认值。背景绘制在边框方框内（剪切成边框方框）。</td>
+</tr>
+<tr>
+<td style="text-align:left">padding-box</td>
+<td style="text-align:left">背景绘制在衬距方框内（剪切成衬距方框）。</td>
+</tr>
+<tr>
+<td style="text-align:left">content-box</td>
+<td style="text-align:left">背景绘制在内容方框内（剪切成内容方框）。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="背景-简写属性"><a class="markdownIt-Anchor" href="#背景-简写属性"></a> 背景- 简写属性</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">background:bg-color bg-image position&#x2F;bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;</span><br></pre></td></tr></table></figure>
+<h2 id="css-文本格式"><a class="markdownIt-Anchor" href="#css-文本格式"></a> CSS 文本格式</h2>
+<h3 id="文本颜色color"><a class="markdownIt-Anchor" href="#文本颜色color"></a> 文本颜色(color)</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法:</span><br><span class="line"> color:颜色名称|十六进制|RGB|RGBA</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th>使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">JavaScript 语法:</td>
+<td><em>object</em>.style.color=&quot;#FF0000&quot;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="方向属性direction"><a class="markdownIt-Anchor" href="#方向属性direction"></a> 方向属性(direction )</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法:</span><br><span class="line"> direction:ltr|rtl|inherit</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ltr</td>
+<td style="text-align:left">默认。文本方向从左到右。</td>
+</tr>
+<tr>
+<td style="text-align:left">rtl</td>
+<td style="text-align:left">文本方向从右到左。</td>
+</tr>
+<tr>
+<td style="text-align:left">inherit</td>
+<td style="text-align:left">规定应该从父元素继承 direction 属性的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">JavaScript 语法</td>
+<td style="text-align:left"><em>object</em>.style.direction=“rtl”</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文本对齐text-align"><a class="markdownIt-Anchor" href="#文本对齐text-align"></a> 文本对齐(text-align)</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法:</span><br><span class="line">	text-align：center|left|right</span><br><span class="line">如果 direction 属性是 ltr，则默认值为 left；如果 direction 属性是 rtl，则默认值为 right。</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">left</td>
+<td style="text-align:left">把文本排列到左边。默认值：由浏览器决定。</td>
+</tr>
+<tr>
+<td style="text-align:left">right</td>
+<td style="text-align:left">把文本排列到右边。</td>
+</tr>
+<tr>
+<td style="text-align:left">center</td>
+<td style="text-align:left">把文本排列到中间。</td>
+</tr>
+<tr>
+<td style="text-align:left">justify</td>
+<td style="text-align:left">实现两端对齐文本效果。</td>
+</tr>
+<tr>
+<td style="text-align:left">inherit</td>
+<td style="text-align:left">规定应该从父元素继承 text-align 属性的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">JavaScript 语法：</td>
+<td style="text-align:left"><em>object</em>.style.textAlign=“right”</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <tags>
+        <tag>Background</tag>
+        <tag>Text</tag>
+        <tag>Fonts</tag>
+        <tag>链接(links)</tag>
+        <tag>列表样式</tag>
+        <tag>表格样式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML5新属性</title>
     <url>/posts/fe758c0a.html</url>
     <content><![CDATA[<h1 id="html-全局属性"><a class="markdownIt-Anchor" href="#html-全局属性"></a> HTML 全局属性</h1>
@@ -872,7 +1208,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 ]]></content>
   </entry>
   <entry>
-    <title>Html5基础知识总结</title>
+    <title>HTML5基础知识总结</title>
     <url>/posts/de8ffd2e.html</url>
     <content><![CDATA[<h2 id="标签新变化"><a class="markdownIt-Anchor" href="#标签新变化"></a> 标签新变化</h2>
 <h3 id="htmldoctype标签"><a class="markdownIt-Anchor" href="#htmldoctype标签"></a> HTML&lt;!DOCTYPE&gt;标签</h3>
