@@ -219,6 +219,14 @@ sticky</p>
       </tags>
   </entry>
   <entry>
+    <title>CSS基础知识学习笔记(九)</title>
+    <url>/posts/358b7717.html</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS基础知识学习笔记(三)</title>
     <url>/posts/1ae7ca75.html</url>
     <content><![CDATA[<h2 id="css盒子模型与怪异盒模型"><a class="markdownIt-Anchor" href="#css盒子模型与怪异盒模型"></a> CSS盒子模型与怪异盒模型</h2>
@@ -510,14 +518,6 @@ sticky</p>
         <tag>padding</tag>
         <tag>margin</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>CSS基础知识学习笔记(九)</title>
-    <url>/posts/358b7717.html</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
   </entry>
   <entry>
     <title>CSS基础知识学习笔记(五)</title>
@@ -1050,9 +1050,67 @@ sticky</p>
 </tbody>
 </table>
 ]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
       <tags>
         <tag>background</tag>
         <tag>CSS背景</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS渐变总结</title>
+    <url>/posts/3fbb8f8a.html</url>
+    <content><![CDATA[<h2 id="css3-渐变gradients"><a class="markdownIt-Anchor" href="#css3-渐变gradients"></a> CSS3 渐变（Gradients）</h2>
+<p>CSS3 渐变（gradients）可以让你在两个或多个指定的颜色之间显示平稳的过渡。</p>
+<h3 id="渐变种类gradients"><a class="markdownIt-Anchor" href="#渐变种类gradients"></a> 渐变种类(gradients）：</h3>
+<ul>
+<li><strong>线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向</strong></li>
+<li><strong>径向渐变（Radial Gradients）- 由它们的中心定义</strong></li>
+</ul>
+<h3 id="css3-线性渐变"><a class="markdownIt-Anchor" href="#css3-线性渐变"></a> CSS3 线性渐变</h3>
+<h4 id="方向语法"><a class="markdownIt-Anchor" href="#方向语法"></a> 方向语法</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-image: linear-gradient(direction, color-stop1, color-stop2, ...);</span><br><span class="line">direction:</span><br><span class="line">	1.默认从上到下</span><br><span class="line">	2.从左到右: to right,</span><br><span class="line">	3.对角: to bottom right,</span><br></pre></td></tr></table></figure>
+<h4 id="角度语法"><a class="markdownIt-Anchor" href="#角度语法"></a> 角度语法</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-image: linear-gradient(angle, color-stop1, color-stop2);</span><br><span class="line">1.角度是指水平线和渐变线之间的角度，逆时针方向计算。换句话说，0deg 将创建一个从下到上的渐变，90deg 将创建一个从左到右的渐变。</span><br><span class="line">2.请注意很多浏览器（Chrome、Safari、firefox等）的使用了旧的标准，即 0deg 将创建一个从左到右的渐变，90deg 将创建一个从下到上的渐变。换算公式 90 - x &#x3D; y 其中 x 为标准角度，y为非标准角度。</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C023.jpg" alt="" /></p>
+<h4 id="透明度使用transparent"><a class="markdownIt-Anchor" href="#透明度使用transparent"></a> 透明度使用(transparent)</h4>
+<p>CSS3 渐变也支持透明度（transparent），可用于创建减弱变淡的效果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="重复的线性渐变"><a class="markdownIt-Anchor" href="#重复的线性渐变"></a> 重复的线性渐变</h4>
+<p>repeating-linear-gradient() 函数用于重复线性渐变：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  &#x2F;* 标准的语法 *&#x2F;</span><br><span class="line">  background-image: repeating-linear-gradient(red, yellow 10%, green 20%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="css3-径向渐变"><a class="markdownIt-Anchor" href="#css3-径向渐变"></a> CSS3 径向渐变</h3>
+<p>径向渐变由它的中心定义。</p>
+<h4 id="语法"><a class="markdownIt-Anchor" href="#语法"></a> 语法</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-image: radial-gradient(shape size at position, start-color, ..., last-color);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="径向渐变-颜色节点均匀分布默认情况下"><a class="markdownIt-Anchor" href="#径向渐变-颜色节点均匀分布默认情况下"></a> <strong>径向渐变 - 颜色节点均匀分布（默认情况下）</strong></h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: radial-gradient(red, yellow, green);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="径向渐变-颜色节点不均匀分布"><a class="markdownIt-Anchor" href="#径向渐变-颜色节点不均匀分布"></a> <strong>径向渐变 - 颜色节点不均匀分布</strong></h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: radial-gradient(red 5%, yellow 15%, green 60%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="设置形状"><a class="markdownIt-Anchor" href="#设置形状"></a> 设置形状</h4>
+<p>shape 参数定义了形状。它可以是值 circle 或 ellipse。其中，circle 表示圆形，ellipse 表示椭圆形。默认值是 ellipse。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: radial-gradient(circle, red, yellow, green);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="不同尺寸大小关键字的使用"><a class="markdownIt-Anchor" href="#不同尺寸大小关键字的使用"></a> 不同尺寸大小关键字的使用</h4>
+<p>size 参数定义了渐变的大小。它可以是以下四个值：</p>
+<ul>
+<li><strong>closest-side</strong></li>
+<li><strong>farthest-side</strong></li>
+<li><strong>closest-corner</strong></li>
+<li><strong>farthest-corner</strong></li>
+</ul>
+<h4 id="重复的径向渐变"><a class="markdownIt-Anchor" href="#重复的径向渐变"></a> 重复的径向渐变</h4>
+<p>repeating-radial-gradient() 函数用于重复径向渐变：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: repeating-radial-gradient(red, yellow 10%, green 15%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>Gradients</tag>
+        <tag>Linear Gradients</tag>
+        <tag>Radial Gradients</tag>
       </tags>
   </entry>
   <entry>
@@ -1703,66 +1761,6 @@ sticky</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Rotation轮播图</title>
-    <url>/posts/297c98f1.html</url>
-    <content><![CDATA[<div class="demo"></div>
-<script>
-    function tt(){
-        $('.demo').slider({
-    imgList: [
-        {
-            img: 'https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/13/2a877ea5da1292c817cbc2a254c01c31.png',
-            a: '跳转url地址',
-        },
-        {
-            img: 'https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/13/5005109d1aa2ffd28984c2b02b8cbfbe.png',
-            a: '跳转url地址',
-        },
-        {
-            img: 'https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/13/163a2ade4361d1ed705ed523091af67e.png',
-            a: '跳转url地址',
-        }
-    ], //图片的列表，a属性里面存放的是网络地址，img存放的是图片地址
-    width: "100%", //图片的宽
-    height: 500, //图片的高
-    isAuto: false, //是否自动轮播
-    moveTime: 3000, //运动时间
-    direction: 'right', //轮播的方向
-    btnWidth: 30, //按钮的宽
-    btnHeight: 30, //按钮的高
-    spanWidth: 10, //span按钮的宽
-    spanHeight: 10, //span按钮的高
-    spanColor: '#fff', //span按钮的颜色
-    activeSpanColor: 'red', //选中的span颜色
-    btnBackgroundColor: 'rgba(0, 0, 0, 0.3)', //两侧按钮的颜色
-    spanRadius: '50%', //span按钮的圆角程度
-    spanMargin: 3, //span之间的距离
-})
-    }
-    window.addEventListener('DOMContentLoaded',tt)
-</script>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/16107.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>标签外挂</title>
     <url>/posts/7872.html</url>
     <content><![CDATA[<h1 id="note-标签-style-simple"><a class="markdownIt-Anchor" href="#note-标签-style-simple"></a> Note 标签 style: simple</h1>
@@ -1925,6 +1923,47 @@ This is my website, click the button <a class="btn-beautify button--animated lar
       <tags>
         <tag>“标签外挂”，&quot;Note&quot;,&quot;Gallery相册图库&quot;，“Gallery相册”，“Tag-hide”，“mermaid”，“Tabs”，“Button”</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Rotation轮播图</title>
+    <url>/posts/297c98f1.html</url>
+    <content><![CDATA[<div class="demo"></div>
+<script>
+    function tt(){
+        $('.demo').slider({
+    imgList: [
+        {
+            img: 'https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/13/2a877ea5da1292c817cbc2a254c01c31.png',
+            a: '跳转url地址',
+        },
+        {
+            img: 'https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/13/5005109d1aa2ffd28984c2b02b8cbfbe.png',
+            a: '跳转url地址',
+        },
+        {
+            img: 'https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/13/163a2ade4361d1ed705ed523091af67e.png',
+            a: '跳转url地址',
+        }
+    ], //图片的列表，a属性里面存放的是网络地址，img存放的是图片地址
+    width: "100%", //图片的宽
+    height: 500, //图片的高
+    isAuto: false, //是否自动轮播
+    moveTime: 3000, //运动时间
+    direction: 'right', //轮播的方向
+    btnWidth: 30, //按钮的宽
+    btnHeight: 30, //按钮的高
+    spanWidth: 10, //span按钮的宽
+    spanHeight: 10, //span按钮的高
+    spanColor: '#fff', //span按钮的颜色
+    activeSpanColor: 'red', //选中的span颜色
+    btnBackgroundColor: 'rgba(0, 0, 0, 0.3)', //两侧按钮的颜色
+    spanRadius: '50%', //span按钮的圆角程度
+    spanMargin: 3, //span之间的距离
+})
+    }
+    window.addEventListener('DOMContentLoaded',tt)
+</script>
+]]></content>
   </entry>
   <entry>
     <title>CSS基础知识学习笔记(二)</title>
@@ -3357,505 +3396,6 @@ This is my website, click the button <a class="btn-beautify button--animated lar
       </tags>
   </entry>
   <entry>
-    <title>HTML5基础知识总结</title>
-    <url>/posts/de8ffd2e.html</url>
-    <content><![CDATA[<h2 id="标签新变化"><a class="markdownIt-Anchor" href="#标签新变化"></a> 标签新变化</h2>
-<h3 id="htmldoctype标签"><a class="markdownIt-Anchor" href="#htmldoctype标签"></a> HTML&lt;!DOCTYPE&gt;标签</h3>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">声明必须是HTML文档的第一行，位于&lt;html&gt;标签之前</span><br><span class="line">不是HTML标签：指示web浏览器关于页面使用哪个HTML版本进行编写的指令</span><br></pre></td></tr></table></figure>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C001.jpg" alt="" /></p>
-<h3 id="文档类型定义dtd"><a class="markdownIt-Anchor" href="#文档类型定义dtd"></a> 文档类型定义（DTD）</h3>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">①DTD:可以定义合法的XML文档构建模块，它使用一些列合法的元素来定义文档的结构</span><br><span class="line">②在HTML中：DTD规定了标记语言的规则，这样浏览器才能正确的呈现内容</span><br><span class="line">③在HTML中基于xml记性规则标签的意义</span><br><span class="line">④HTML5不基于SGML，所以不需要引用DTD</span><br><span class="line">⑤</span><br></pre></td></tr></table></figure>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C002.jpg" alt="" /></p>
-<h3 id="新增标签"><a class="markdownIt-Anchor" href="#新增标签"></a> 新增标签</h3>
-<h4 id="结构标签-有意义的div"><a class="markdownIt-Anchor" href="#结构标签-有意义的div"></a> 结构标签--------有意义的div</h4>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>article</td>
-<td>标记定义一篇文章</td>
-</tr>
-<tr>
-<td>header</td>
-<td>标记定义一个页面或者一个区域的头部</td>
-</tr>
-<tr>
-<td>nav</td>
-<td>标记定义导航链接</td>
-</tr>
-<tr>
-<td>section</td>
-<td>标记定义一个区域</td>
-</tr>
-<tr>
-<td>aside</td>
-<td>标记定义页面内容部分的侧边栏</td>
-</tr>
-<tr>
-<td>hgroup</td>
-<td>标记定义文件中一个区块的相关信息</td>
-</tr>
-<tr>
-<td>figure</td>
-<td>标记定义一组媒体内容以及他们的标题</td>
-</tr>
-<tr>
-<td>figcaption</td>
-<td>标签定义figure元素的标题:<figcaption> 标签为figure元素定义标题。<figcaption> 元素应该被置于 <figure> 元素的第一个或最后一个子元素的位置。</td>
-</tr>
-<tr>
-<td>footer</td>
-<td>标记定义一个页面或者一个区域的底部</td>
-</tr>
-<tr>
-<td>dialog</td>
-<td>标记定义一个对话框（会话框）类似微信.规定 dialog 元素是有效的，用户可以与它进行交互。 open</td>
-</tr>
-<tr>
-<td></td>
-<td>第一点：header/section/aside/article/footer,尽量不要嵌套</td>
-</tr>
-<tr>
-<td></td>
-<td>第二点：header/section/footer&gt;aside/article/figuire/nav</td>
-</tr>
-</tbody>
-</table>
-<h5 id="figure标签"><a class="markdownIt-Anchor" href="#figure标签"></a> figure标签</h5>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;figure&gt;</span><br><span class="line">  &lt;img loading&#x3D;&quot;lazy&quot; src&#x3D;&quot;img_pulpit.jpg&quot; alt&#x3D;&quot;The Pulpit Rock&quot; width&#x3D;&quot;304&quot; height&#x3D;&quot;228&quot;&gt;</span><br><span class="line">&lt;&#x2F;figure&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="dialog-元素dialog-标签定义一个对话框-确认框或窗口"><a class="markdownIt-Anchor" href="#dialog-元素dialog-标签定义一个对话框-确认框或窗口"></a> dialog 元素：dialog 标签定义一个对话框、确认框或窗口。</h5>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;table border&#x3D;&quot;1&quot;&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">  &lt;th&gt;January &lt;dialog open&gt;This is an open dialog window&lt;&#x2F;dialog&gt;&lt;&#x2F;th&gt;</span><br><span class="line">  &lt;th&gt;February&lt;&#x2F;th&gt;</span><br><span class="line">  &lt;th&gt;March&lt;&#x2F;th&gt;</span><br><span class="line">&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">  &lt;td&gt;31&lt;&#x2F;td&gt;</span><br><span class="line">  &lt;td&gt;28&lt;&#x2F;td&gt;</span><br><span class="line">  &lt;td&gt;31&lt;&#x2F;td&gt;</span><br><span class="line">&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;&#x2F;table&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="多媒体标签"><a class="markdownIt-Anchor" href="#多媒体标签"></a> 多媒体标签</h4>
-<table>
-<thead>
-<tr>
-<th>标签</th>
-<th>解释</th>
-<th>demo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>audio</td>
-<td>audio&gt; 标签定义声音，比如音乐或其他音频流。</td>
-<td>audio controls&gt;<br/>  source src=“horse.ogg” type=“audio/ogg”&gt;<br/>  source src=“horse.mp3” type=“audio/mpeg”&gt;<br/>  您的浏览器不支持 audio 元素。<br/>/audio&gt;</td>
-</tr>
-<tr>
-<td></td>
-<td>autoplay</td>
-<td>如果出现该属性，则音频在就绪后马上播放。</td>
-</tr>
-<tr>
-<td></td>
-<td>controls</td>
-<td>如果出现该属性，则向用户显示音频控件（比如播放/暂停按钮）。</td>
-</tr>
-<tr>
-<td></td>
-<td>loop</td>
-<td>如果出现该属性，则每当音频结束时重新开始播放。</td>
-</tr>
-<tr>
-<td></td>
-<td>muted</td>
-<td>如果出现该属性，则音频输出为静音。</td>
-</tr>
-<tr>
-<td></td>
-<td>preload:auto/metadata/none</td>
-<td>规定当网页加载时，音频是否默认被加载以及如何被加载。</td>
-</tr>
-<tr>
-<td></td>
-<td>src</td>
-<td>规定音频文件的 URL。</td>
-</tr>
-<tr>
-<td>video</td>
-<td><video> 标签定义视频，比如电影片段或其他视频流。<video> 元素支持三种视频格式：MP4、WebM、Ogg。</td>
-<td>video width=“320” height=“240” controls&gt;     <br />source src=“movie.mp4” type=“video/mp4”&gt;   <br />  source src=“movie.ogg” type=“video/ogg”&gt;   <br />  您的浏览器不支持 video 标签。 </video></td>
-</tr>
-<tr>
-<td></td>
-<td>autoplay</td>
-<td>如果出现该属性，则视频在就绪后马上播放。</td>
-</tr>
-<tr>
-<td></td>
-<td>controls</td>
-<td>如果出现该属性，则向用户显示控件，比如播放按钮。</td>
-</tr>
-<tr>
-<td></td>
-<td>height/width</td>
-<td>设置视频播放器的高度/宽度</td>
-</tr>
-<tr>
-<td></td>
-<td>loop</td>
-<td>如果出现该属性，则当媒介文件完成播放后再次开始播放。</td>
-</tr>
-<tr>
-<td></td>
-<td>muted</td>
-<td>如果出现该属性，视频的音频输出为静音。</td>
-</tr>
-<tr>
-<td></td>
-<td>poster</td>
-<td>规定视频正在下载时显示的图像，直到用户点击播放按钮。</td>
-</tr>
-<tr>
-<td></td>
-<td>preload:auto/metadata/none</td>
-<td>如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性。</td>
-</tr>
-<tr>
-<td></td>
-<td>src</td>
-<td>要播放的视频的 URL。</td>
-</tr>
-<tr>
-<td>source</td>
-<td>定义多媒体资源 <video> 和 <audio></td>
-<td></td>
-</tr>
-<tr>
-<td>embed</td>
-<td>embed&gt; 标签定义了一个容器，用来嵌入外部应用或者互动程序（插件）。</td>
-<td><strong>注意</strong>：现在已经不建议使用 <embed> 标签了，可以使用 <img>、<iframe>、<video>、<audio> 等标签代替。</td>
-</tr>
-<tr>
-<td></td>
-<td>height/width</td>
-<td>规定嵌入内容的高度/规定嵌入内容的宽度</td>
-</tr>
-<tr>
-<td></td>
-<td>src</td>
-<td>规定被嵌入内容的 URL。</td>
-</tr>
-<tr>
-<td></td>
-<td>type:</td>
-<td>规定嵌入内容的 MIME 类型。<br/>注：MIME = Multipurpose Internet Mail Extensions。</td>
-</tr>
-<tr>
-<td>track</td>
-<td><track> 标签为媒体元素（比如 <audio> and <video>）规定外部文本轨道。</td>
-<td>这个元素用于规定字幕文件或其他包含文本的文件，当媒体播放时，这些文件是可见的。</td>
-</tr>
-<tr>
-<td></td>
-<td>default</td>
-<td>规定该轨道是默认的。如果用户没有选择任何轨道，则使用默认轨道。</td>
-</tr>
-<tr>
-<td></td>
-<td>kind:captions/chapters/descriptions/metadata/subtitles</td>
-<td>规定文本轨道的文本类型。</td>
-</tr>
-<tr>
-<td></td>
-<td>label</td>
-<td>规定文本轨道的标签和标题。</td>
-</tr>
-<tr>
-<td></td>
-<td>srclang</td>
-<td>规定轨道文本数据的语言。如果 kind 属性值是 “subtitles”，则该属性是必需的。</td>
-</tr>
-<tr>
-<td></td>
-<td>src</td>
-<td>必需的。规定轨道文件的 URL。</td>
-</tr>
-</tbody>
-</table>
-<h5 id="音频视频代码demo"><a class="markdownIt-Anchor" href="#音频视频代码demo"></a> 音频视频代码Demo</h5>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;video width&#x3D;&quot;320&quot; height&#x3D;&quot;240&quot; controls&gt;</span><br><span class="line">  &lt;source src&#x3D;&quot;forrest_gump.mp4&quot; type&#x3D;&quot;video&#x2F;mp4&quot;&gt;</span><br><span class="line">  &lt;source src&#x3D;&quot;forrest_gump.ogg&quot; type&#x3D;&quot;video&#x2F;ogg&quot;&gt;</span><br><span class="line">  &lt;track src&#x3D;&quot;subtitles_en.vtt&quot; kind&#x3D;&quot;subtitles&quot; srclang&#x3D;&quot;en&quot;</span><br><span class="line">  label&#x3D;&quot;English&quot;&gt;</span><br><span class="line">  &lt;track src&#x3D;&quot;subtitles_no.vtt&quot; kind&#x3D;&quot;subtitles&quot; srclang&#x3D;&quot;no&quot;</span><br><span class="line">  label&#x3D;&quot;Norwegian&quot;&gt;</span><br><span class="line">&lt;&#x2F;video&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="web应用的状态标签"><a class="markdownIt-Anchor" href="#web应用的状态标签"></a> web应用的状态标签</h4>
-<table>
-<thead>
-<tr>
-<th>标签</th>
-<th>属性</th>
-<th>解释Demo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>meter“</td>
-<td>状态标签（实时装填显示：气压，气温）</td>
-<td>meter value=“200” min= “20” max=“380” low=“200” high=“240” optimum=“220” &gt;/meter&gt;</td>
-</tr>
-<tr>
-<td>progress</td>
-<td>状态标签（任务过程：安装，加载）</td>
-<td>progress value=“200” min= “20” max=“380” /&gt;</td>
-</tr>
-</tbody>
-</table>
-<h4 id="列表标签"><a class="markdownIt-Anchor" href="#列表标签"></a> 列表标签</h4>
-<table>
-<thead>
-<tr>
-<th>标签</th>
-<th>属性</th>
-<th>解释Demo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>datalist</td>
-<td>为input标记定义一个下拉列表，配合option</td>
-<td>input list=“browsers”&gt; <datalist id="browsers">  <br />option value=“Internet Explorer”&gt;  <br /><option value="Firefox">  <br />option value=“Chrome”&gt;  <br />option value=“Opera”&gt;  <br />option value=“Safari”&gt; /datalist&gt;</td>
-</tr>
-<tr>
-<td>keygen</td>
-<td><keygen> 标签规定用于表单的密钥对生成器字段。</td>
-<td>form action=“demo_keygen.asp” method=“get”&gt;<br/> 用户名: input type=“text” name=“usr_name”&gt;<br/> 加密: keygen name=“security”&gt;<br/> input type=“submit”&gt;<br/>/form&gt;</td>
-</tr>
-<tr>
-<td>output</td>
-<td><output> 标签作为计算结果输出显示(比如执行脚本的输出)。</td>
-<td><form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0<br/><input type="range" id="a" value="50">100<br/>+<input type="number" id="b" value="50"><br/>=<output name="x" for="a b"></output><br/></form></td>
-</tr>
-<tr>
-<td></td>
-<td>for</td>
-<td>描述计算中使用的元素与计算结果之间的关系。</td>
-</tr>
-<tr>
-<td></td>
-<td>form</td>
-<td>定义输入字段所属的一个或多个表单。</td>
-</tr>
-<tr>
-<td></td>
-<td>name</td>
-<td>定义对象的唯一名称（表单提交时使用）。</td>
-</tr>
-</tbody>
-</table>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C003.jpg" alt="" /></p>
-<h4 id="input标签的新增类型"><a class="markdownIt-Anchor" href="#input标签的新增类型"></a> input标签的新增类型</h4>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>解释</th>
-<th>解释信息</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>电子邮件：type=“email”</td>
-<td>在移动端的地方显示字母以及显示@<br/>特殊键盘</td>
-<td></td>
-</tr>
-<tr>
-<td>统一资源定位符：type=“url”</td>
-<td>针对手机端会出现特殊键盘</td>
-<td></td>
-</tr>
-<tr>
-<td>电话号码：type=“tel”</td>
-<td>针对移动端直接显示数字键盘</td>
-<td></td>
-</tr>
-<tr>
-<td>数字类型：type=“number”</td>
-<td>针对移动端显示数字键盘/不能显示字母，数字加减小数点以及e</td>
-<td></td>
-</tr>
-<tr>
-<td>日期选择</td>
-<td>iPhone不支持week</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Date:选取日月年</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Month:选取月年</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Week:选取周和年</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Time:选取时间(小时和分钟)</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Datetime:选取时间,日月年(UTC时间)</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Datetime-local:选取时间,日月年(本地时间)</td>
-<td></td>
-</tr>
-<tr>
-<td>Range Input类型</td>
-<td>把一段分成多少度段然后进行选择</td>
-<td>input type=“range” name=“points” min=“1” max=“10”&gt;</td>
-</tr>
-<tr>
-<td>search</td>
-<td>定义搜索字段（比如站内搜索或谷歌搜索等）：</td>
-<td>Search Google: input type=“search” name=“googlesearch”&gt;</td>
-</tr>
-<tr>
-<td>color</td>
-<td>从拾色器中选取颜色：</td>
-<td>选择你喜欢的颜色: input type=“color” name=“favcolor”&gt;<br/></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h4 id="input标签的新增属性"><a class="markdownIt-Anchor" href="#input标签的新增属性"></a> input标签的新增属性</h4>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>解释</th>
-<th>解释信息</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>autocomplete</td>
-<td>autocomplete 属性规定 <input> 元素输入字段是否应该启用自动完成功能。</td>
-<td>on off</td>
-</tr>
-<tr>
-<td>autofocus</td>
-<td>属性规定当页面加载时 <input> 元素应该自动获得焦点。</td>
-<td></td>
-</tr>
-<tr>
-<td>form</td>
-<td>form 属性规定 <input> 元素所属的一个或多个表单。</td>
-<td>form action=“demo-form.php” id=“form1”&gt;<br/>First name: input type=“text” name=“fname”&gt;<br/><br/>input type=“submit” value=“提交”&gt;<br/>/form&gt;</td>
-</tr>
-<tr>
-<td>formaction</td>
-<td>属性规定当表单提交时处理输入控件的文件的 URL。(只针对 type=“submit” 和 type=“image”)</td>
-<td></td>
-</tr>
-<tr>
-<td>formenctype</td>
-<td>属性规定当表单数据提交到服务器时如何编码(只适合 type=“submit” 和 type=“image”)。</td>
-<td></td>
-</tr>
-<tr>
-<td>formmethod</td>
-<td>定义发送表单数据到 action URL 的 HTTP 方法。 (只适合 type=“submit” 和 type=“image”)</td>
-<td></td>
-</tr>
-<tr>
-<td>formnovalidate</td>
-<td>formnovalidate 属性覆盖 <form> 元素的 novalidate 属性。</td>
-<td></td>
-</tr>
-<tr>
-<td>formtarget</td>
-<td>规定表示提交表单后在哪里显示接收到响应的名称或关键词。(只适合 type=“submit” 和 type=“image”)</td>
-<td></td>
-</tr>
-<tr>
-<td>list</td>
-<td>属性引用 <datalist> 元素，其中包含 <input> 元素的预定义选项。</td>
-<td>input list=“browsers”&gt;<br /><br />datalist id=“browsers”&gt;<br/> option value=“Internet Explorer”&gt;<br/> option value=“Firefox”&gt;<br/> option value=“Google Chrome”&gt;<br/> option value=“Opera”&gt;<br/> option value=“Safari”&gt;<br/>/datalist&gt;</td>
-</tr>
-<tr>
-<td>max</td>
-<td>属性规定 <input> 元素的最大值。</td>
-<td></td>
-</tr>
-<tr>
-<td>maxlength</td>
-<td>属性规定 <input> 元素中允许的最大字符数。</td>
-<td></td>
-</tr>
-<tr>
-<td>min</td>
-<td>属性规定 <input>元素的最小值。</td>
-<td></td>
-</tr>
-<tr>
-<td>multiple</td>
-<td>属性规定允许用户输入到 <input> 元素的多个值。</td>
-<td></td>
-</tr>
-<tr>
-<td>pattern</td>
-<td>pattern 属性规定用于验证 <input> 元素的值的正则表达式。</td>
-<td></td>
-</tr>
-<tr>
-<td>required</td>
-<td>属性规定必需在提交表单之前填写输入字段。</td>
-<td></td>
-</tr>
-<tr>
-<td>step</td>
-<td>step 属性规定 <input> 元素的合法数字间隔。</td>
-<td></td>
-</tr>
-<tr>
-<td>readonly</td>
-<td>readonly 属性规定输入字段是只读的。</td>
-<td></td>
-</tr>
-<tr>
-<td>type</td>
-<td>button<br/>checkbox<br/>color<br/>date<br/>datetime<br/>datetime-local<br/>email<br/>file<br/>hidden<br/>image<br/>month<br/>number<br/>password<br/>radio<br/>range<br/>reset<br/>search<br/>submit<br/>tel<br/>text<br/>time<br/>url<br/>week</td>
-<td>type 属性规定要显示的 <input> 元素的类型。</td>
-</tr>
-<tr>
-<td>value</td>
-<td>指定 <input> 元素 value 的值。</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://www.runoob.com/tags/att-input-placeholder.html">placeholder</a></td>
-<td>placeholder 属性规定可描述输入 <input> 字段预期值的简短的提示信息 。</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h4 id="链接属性"><a class="markdownIt-Anchor" href="#链接属性"></a> 链接属性</h4>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C004.jpg" alt="" /></p>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C005.jpg" alt="" /></p>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C006.jpg" alt="" /></p>
-<h4 id="其他属性"><a class="markdownIt-Anchor" href="#其他属性"></a> 其他属性</h4>
-<h5 id="script"><a class="markdownIt-Anchor" href="#script"></a> script</h5>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C007.jpg" alt="" /></p>
-<h5 id="html"><a class="markdownIt-Anchor" href="#html"></a> html</h5>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C008.jpg" alt="" /></p>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C009.jpg" alt="" /></p>
-]]></content>
-  </entry>
-  <entry>
     <title>CSS文本及字体总结</title>
     <url>/posts/2aa54dbf.html</url>
     <content><![CDATA[<h2 id="css文本属性"><a class="markdownIt-Anchor" href="#css文本属性"></a> CSS文本属性</h2>
@@ -4386,5 +3926,504 @@ This is my website, click the button <a class="btn-beautify button--animated lar
         <tag>Text</tag>
         <tag>Font</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>HTML5基础知识总结</title>
+    <url>/posts/de8ffd2e.html</url>
+    <content><![CDATA[<h2 id="标签新变化"><a class="markdownIt-Anchor" href="#标签新变化"></a> 标签新变化</h2>
+<h3 id="htmldoctype标签"><a class="markdownIt-Anchor" href="#htmldoctype标签"></a> HTML&lt;!DOCTYPE&gt;标签</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">声明必须是HTML文档的第一行，位于&lt;html&gt;标签之前</span><br><span class="line">不是HTML标签：指示web浏览器关于页面使用哪个HTML版本进行编写的指令</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C001.jpg" alt="" /></p>
+<h3 id="文档类型定义dtd"><a class="markdownIt-Anchor" href="#文档类型定义dtd"></a> 文档类型定义（DTD）</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">①DTD:可以定义合法的XML文档构建模块，它使用一些列合法的元素来定义文档的结构</span><br><span class="line">②在HTML中：DTD规定了标记语言的规则，这样浏览器才能正确的呈现内容</span><br><span class="line">③在HTML中基于xml记性规则标签的意义</span><br><span class="line">④HTML5不基于SGML，所以不需要引用DTD</span><br><span class="line">⑤</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C002.jpg" alt="" /></p>
+<h3 id="新增标签"><a class="markdownIt-Anchor" href="#新增标签"></a> 新增标签</h3>
+<h4 id="结构标签-有意义的div"><a class="markdownIt-Anchor" href="#结构标签-有意义的div"></a> 结构标签--------有意义的div</h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>article</td>
+<td>标记定义一篇文章</td>
+</tr>
+<tr>
+<td>header</td>
+<td>标记定义一个页面或者一个区域的头部</td>
+</tr>
+<tr>
+<td>nav</td>
+<td>标记定义导航链接</td>
+</tr>
+<tr>
+<td>section</td>
+<td>标记定义一个区域</td>
+</tr>
+<tr>
+<td>aside</td>
+<td>标记定义页面内容部分的侧边栏</td>
+</tr>
+<tr>
+<td>hgroup</td>
+<td>标记定义文件中一个区块的相关信息</td>
+</tr>
+<tr>
+<td>figure</td>
+<td>标记定义一组媒体内容以及他们的标题</td>
+</tr>
+<tr>
+<td>figcaption</td>
+<td>标签定义figure元素的标题:<figcaption> 标签为figure元素定义标题。<figcaption> 元素应该被置于 <figure> 元素的第一个或最后一个子元素的位置。</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>标记定义一个页面或者一个区域的底部</td>
+</tr>
+<tr>
+<td>dialog</td>
+<td>标记定义一个对话框（会话框）类似微信.规定 dialog 元素是有效的，用户可以与它进行交互。 open</td>
+</tr>
+<tr>
+<td></td>
+<td>第一点：header/section/aside/article/footer,尽量不要嵌套</td>
+</tr>
+<tr>
+<td></td>
+<td>第二点：header/section/footer&gt;aside/article/figuire/nav</td>
+</tr>
+</tbody>
+</table>
+<h5 id="figure标签"><a class="markdownIt-Anchor" href="#figure标签"></a> figure标签</h5>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;figure&gt;</span><br><span class="line">  &lt;img loading&#x3D;&quot;lazy&quot; src&#x3D;&quot;img_pulpit.jpg&quot; alt&#x3D;&quot;The Pulpit Rock&quot; width&#x3D;&quot;304&quot; height&#x3D;&quot;228&quot;&gt;</span><br><span class="line">&lt;&#x2F;figure&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="dialog-元素dialog-标签定义一个对话框-确认框或窗口"><a class="markdownIt-Anchor" href="#dialog-元素dialog-标签定义一个对话框-确认框或窗口"></a> dialog 元素：dialog 标签定义一个对话框、确认框或窗口。</h5>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;table border&#x3D;&quot;1&quot;&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">  &lt;th&gt;January &lt;dialog open&gt;This is an open dialog window&lt;&#x2F;dialog&gt;&lt;&#x2F;th&gt;</span><br><span class="line">  &lt;th&gt;February&lt;&#x2F;th&gt;</span><br><span class="line">  &lt;th&gt;March&lt;&#x2F;th&gt;</span><br><span class="line">&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">  &lt;td&gt;31&lt;&#x2F;td&gt;</span><br><span class="line">  &lt;td&gt;28&lt;&#x2F;td&gt;</span><br><span class="line">  &lt;td&gt;31&lt;&#x2F;td&gt;</span><br><span class="line">&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;&#x2F;table&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="多媒体标签"><a class="markdownIt-Anchor" href="#多媒体标签"></a> 多媒体标签</h4>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>解释</th>
+<th>demo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audio</td>
+<td>audio&gt; 标签定义声音，比如音乐或其他音频流。</td>
+<td>audio controls&gt;<br/>  source src=“horse.ogg” type=“audio/ogg”&gt;<br/>  source src=“horse.mp3” type=“audio/mpeg”&gt;<br/>  您的浏览器不支持 audio 元素。<br/>/audio&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td>autoplay</td>
+<td>如果出现该属性，则音频在就绪后马上播放。</td>
+</tr>
+<tr>
+<td></td>
+<td>controls</td>
+<td>如果出现该属性，则向用户显示音频控件（比如播放/暂停按钮）。</td>
+</tr>
+<tr>
+<td></td>
+<td>loop</td>
+<td>如果出现该属性，则每当音频结束时重新开始播放。</td>
+</tr>
+<tr>
+<td></td>
+<td>muted</td>
+<td>如果出现该属性，则音频输出为静音。</td>
+</tr>
+<tr>
+<td></td>
+<td>preload:auto/metadata/none</td>
+<td>规定当网页加载时，音频是否默认被加载以及如何被加载。</td>
+</tr>
+<tr>
+<td></td>
+<td>src</td>
+<td>规定音频文件的 URL。</td>
+</tr>
+<tr>
+<td>video</td>
+<td><video> 标签定义视频，比如电影片段或其他视频流。<video> 元素支持三种视频格式：MP4、WebM、Ogg。</td>
+<td>video width=“320” height=“240” controls&gt;     <br />source src=“movie.mp4” type=“video/mp4”&gt;   <br />  source src=“movie.ogg” type=“video/ogg”&gt;   <br />  您的浏览器不支持 video 标签。 </video></td>
+</tr>
+<tr>
+<td></td>
+<td>autoplay</td>
+<td>如果出现该属性，则视频在就绪后马上播放。</td>
+</tr>
+<tr>
+<td></td>
+<td>controls</td>
+<td>如果出现该属性，则向用户显示控件，比如播放按钮。</td>
+</tr>
+<tr>
+<td></td>
+<td>height/width</td>
+<td>设置视频播放器的高度/宽度</td>
+</tr>
+<tr>
+<td></td>
+<td>loop</td>
+<td>如果出现该属性，则当媒介文件完成播放后再次开始播放。</td>
+</tr>
+<tr>
+<td></td>
+<td>muted</td>
+<td>如果出现该属性，视频的音频输出为静音。</td>
+</tr>
+<tr>
+<td></td>
+<td>poster</td>
+<td>规定视频正在下载时显示的图像，直到用户点击播放按钮。</td>
+</tr>
+<tr>
+<td></td>
+<td>preload:auto/metadata/none</td>
+<td>如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性。</td>
+</tr>
+<tr>
+<td></td>
+<td>src</td>
+<td>要播放的视频的 URL。</td>
+</tr>
+<tr>
+<td>source</td>
+<td>定义多媒体资源 <video> 和 <audio></td>
+<td></td>
+</tr>
+<tr>
+<td>embed</td>
+<td>embed&gt; 标签定义了一个容器，用来嵌入外部应用或者互动程序（插件）。</td>
+<td><strong>注意</strong>：现在已经不建议使用 <embed> 标签了，可以使用 <img>、<iframe>、<video>、<audio> 等标签代替。</td>
+</tr>
+<tr>
+<td></td>
+<td>height/width</td>
+<td>规定嵌入内容的高度/规定嵌入内容的宽度</td>
+</tr>
+<tr>
+<td></td>
+<td>src</td>
+<td>规定被嵌入内容的 URL。</td>
+</tr>
+<tr>
+<td></td>
+<td>type:</td>
+<td>规定嵌入内容的 MIME 类型。<br/>注：MIME = Multipurpose Internet Mail Extensions。</td>
+</tr>
+<tr>
+<td>track</td>
+<td><track> 标签为媒体元素（比如 <audio> and <video>）规定外部文本轨道。</td>
+<td>这个元素用于规定字幕文件或其他包含文本的文件，当媒体播放时，这些文件是可见的。</td>
+</tr>
+<tr>
+<td></td>
+<td>default</td>
+<td>规定该轨道是默认的。如果用户没有选择任何轨道，则使用默认轨道。</td>
+</tr>
+<tr>
+<td></td>
+<td>kind:captions/chapters/descriptions/metadata/subtitles</td>
+<td>规定文本轨道的文本类型。</td>
+</tr>
+<tr>
+<td></td>
+<td>label</td>
+<td>规定文本轨道的标签和标题。</td>
+</tr>
+<tr>
+<td></td>
+<td>srclang</td>
+<td>规定轨道文本数据的语言。如果 kind 属性值是 “subtitles”，则该属性是必需的。</td>
+</tr>
+<tr>
+<td></td>
+<td>src</td>
+<td>必需的。规定轨道文件的 URL。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="音频视频代码demo"><a class="markdownIt-Anchor" href="#音频视频代码demo"></a> 音频视频代码Demo</h5>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;video width&#x3D;&quot;320&quot; height&#x3D;&quot;240&quot; controls&gt;</span><br><span class="line">  &lt;source src&#x3D;&quot;forrest_gump.mp4&quot; type&#x3D;&quot;video&#x2F;mp4&quot;&gt;</span><br><span class="line">  &lt;source src&#x3D;&quot;forrest_gump.ogg&quot; type&#x3D;&quot;video&#x2F;ogg&quot;&gt;</span><br><span class="line">  &lt;track src&#x3D;&quot;subtitles_en.vtt&quot; kind&#x3D;&quot;subtitles&quot; srclang&#x3D;&quot;en&quot;</span><br><span class="line">  label&#x3D;&quot;English&quot;&gt;</span><br><span class="line">  &lt;track src&#x3D;&quot;subtitles_no.vtt&quot; kind&#x3D;&quot;subtitles&quot; srclang&#x3D;&quot;no&quot;</span><br><span class="line">  label&#x3D;&quot;Norwegian&quot;&gt;</span><br><span class="line">&lt;&#x2F;video&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="web应用的状态标签"><a class="markdownIt-Anchor" href="#web应用的状态标签"></a> web应用的状态标签</h4>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>属性</th>
+<th>解释Demo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>meter“</td>
+<td>状态标签（实时装填显示：气压，气温）</td>
+<td>meter value=“200” min= “20” max=“380” low=“200” high=“240” optimum=“220” &gt;/meter&gt;</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>状态标签（任务过程：安装，加载）</td>
+<td>progress value=“200” min= “20” max=“380” /&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="列表标签"><a class="markdownIt-Anchor" href="#列表标签"></a> 列表标签</h4>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>属性</th>
+<th>解释Demo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datalist</td>
+<td>为input标记定义一个下拉列表，配合option</td>
+<td>input list=“browsers”&gt; <datalist id="browsers">  <br />option value=“Internet Explorer”&gt;  <br /><option value="Firefox">  <br />option value=“Chrome”&gt;  <br />option value=“Opera”&gt;  <br />option value=“Safari”&gt; /datalist&gt;</td>
+</tr>
+<tr>
+<td>keygen</td>
+<td><keygen> 标签规定用于表单的密钥对生成器字段。</td>
+<td>form action=“demo_keygen.asp” method=“get”&gt;<br/> 用户名: input type=“text” name=“usr_name”&gt;<br/> 加密: keygen name=“security”&gt;<br/> input type=“submit”&gt;<br/>/form&gt;</td>
+</tr>
+<tr>
+<td>output</td>
+<td><output> 标签作为计算结果输出显示(比如执行脚本的输出)。</td>
+<td><form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0<br/><input type="range" id="a" value="50">100<br/>+<input type="number" id="b" value="50"><br/>=<output name="x" for="a b"></output><br/></form></td>
+</tr>
+<tr>
+<td></td>
+<td>for</td>
+<td>描述计算中使用的元素与计算结果之间的关系。</td>
+</tr>
+<tr>
+<td></td>
+<td>form</td>
+<td>定义输入字段所属的一个或多个表单。</td>
+</tr>
+<tr>
+<td></td>
+<td>name</td>
+<td>定义对象的唯一名称（表单提交时使用）。</td>
+</tr>
+</tbody>
+</table>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C003.jpg" alt="" /></p>
+<h4 id="input标签的新增类型"><a class="markdownIt-Anchor" href="#input标签的新增类型"></a> input标签的新增类型</h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+<th>解释信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电子邮件：type=“email”</td>
+<td>在移动端的地方显示字母以及显示@<br/>特殊键盘</td>
+<td></td>
+</tr>
+<tr>
+<td>统一资源定位符：type=“url”</td>
+<td>针对手机端会出现特殊键盘</td>
+<td></td>
+</tr>
+<tr>
+<td>电话号码：type=“tel”</td>
+<td>针对移动端直接显示数字键盘</td>
+<td></td>
+</tr>
+<tr>
+<td>数字类型：type=“number”</td>
+<td>针对移动端显示数字键盘/不能显示字母，数字加减小数点以及e</td>
+<td></td>
+</tr>
+<tr>
+<td>日期选择</td>
+<td>iPhone不支持week</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Date:选取日月年</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Month:选取月年</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Week:选取周和年</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Time:选取时间(小时和分钟)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Datetime:选取时间,日月年(UTC时间)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Datetime-local:选取时间,日月年(本地时间)</td>
+<td></td>
+</tr>
+<tr>
+<td>Range Input类型</td>
+<td>把一段分成多少度段然后进行选择</td>
+<td>input type=“range” name=“points” min=“1” max=“10”&gt;</td>
+</tr>
+<tr>
+<td>search</td>
+<td>定义搜索字段（比如站内搜索或谷歌搜索等）：</td>
+<td>Search Google: input type=“search” name=“googlesearch”&gt;</td>
+</tr>
+<tr>
+<td>color</td>
+<td>从拾色器中选取颜色：</td>
+<td>选择你喜欢的颜色: input type=“color” name=“favcolor”&gt;<br/></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="input标签的新增属性"><a class="markdownIt-Anchor" href="#input标签的新增属性"></a> input标签的新增属性</h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+<th>解释信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autocomplete</td>
+<td>autocomplete 属性规定 <input> 元素输入字段是否应该启用自动完成功能。</td>
+<td>on off</td>
+</tr>
+<tr>
+<td>autofocus</td>
+<td>属性规定当页面加载时 <input> 元素应该自动获得焦点。</td>
+<td></td>
+</tr>
+<tr>
+<td>form</td>
+<td>form 属性规定 <input> 元素所属的一个或多个表单。</td>
+<td>form action=“demo-form.php” id=“form1”&gt;<br/>First name: input type=“text” name=“fname”&gt;<br/><br/>input type=“submit” value=“提交”&gt;<br/>/form&gt;</td>
+</tr>
+<tr>
+<td>formaction</td>
+<td>属性规定当表单提交时处理输入控件的文件的 URL。(只针对 type=“submit” 和 type=“image”)</td>
+<td></td>
+</tr>
+<tr>
+<td>formenctype</td>
+<td>属性规定当表单数据提交到服务器时如何编码(只适合 type=“submit” 和 type=“image”)。</td>
+<td></td>
+</tr>
+<tr>
+<td>formmethod</td>
+<td>定义发送表单数据到 action URL 的 HTTP 方法。 (只适合 type=“submit” 和 type=“image”)</td>
+<td></td>
+</tr>
+<tr>
+<td>formnovalidate</td>
+<td>formnovalidate 属性覆盖 <form> 元素的 novalidate 属性。</td>
+<td></td>
+</tr>
+<tr>
+<td>formtarget</td>
+<td>规定表示提交表单后在哪里显示接收到响应的名称或关键词。(只适合 type=“submit” 和 type=“image”)</td>
+<td></td>
+</tr>
+<tr>
+<td>list</td>
+<td>属性引用 <datalist> 元素，其中包含 <input> 元素的预定义选项。</td>
+<td>input list=“browsers”&gt;<br /><br />datalist id=“browsers”&gt;<br/> option value=“Internet Explorer”&gt;<br/> option value=“Firefox”&gt;<br/> option value=“Google Chrome”&gt;<br/> option value=“Opera”&gt;<br/> option value=“Safari”&gt;<br/>/datalist&gt;</td>
+</tr>
+<tr>
+<td>max</td>
+<td>属性规定 <input> 元素的最大值。</td>
+<td></td>
+</tr>
+<tr>
+<td>maxlength</td>
+<td>属性规定 <input> 元素中允许的最大字符数。</td>
+<td></td>
+</tr>
+<tr>
+<td>min</td>
+<td>属性规定 <input>元素的最小值。</td>
+<td></td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>属性规定允许用户输入到 <input> 元素的多个值。</td>
+<td></td>
+</tr>
+<tr>
+<td>pattern</td>
+<td>pattern 属性规定用于验证 <input> 元素的值的正则表达式。</td>
+<td></td>
+</tr>
+<tr>
+<td>required</td>
+<td>属性规定必需在提交表单之前填写输入字段。</td>
+<td></td>
+</tr>
+<tr>
+<td>step</td>
+<td>step 属性规定 <input> 元素的合法数字间隔。</td>
+<td></td>
+</tr>
+<tr>
+<td>readonly</td>
+<td>readonly 属性规定输入字段是只读的。</td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>button<br/>checkbox<br/>color<br/>date<br/>datetime<br/>datetime-local<br/>email<br/>file<br/>hidden<br/>image<br/>month<br/>number<br/>password<br/>radio<br/>range<br/>reset<br/>search<br/>submit<br/>tel<br/>text<br/>time<br/>url<br/>week</td>
+<td>type 属性规定要显示的 <input> 元素的类型。</td>
+</tr>
+<tr>
+<td>value</td>
+<td>指定 <input> 元素 value 的值。</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.runoob.com/tags/att-input-placeholder.html">placeholder</a></td>
+<td>placeholder 属性规定可描述输入 <input> 字段预期值的简短的提示信息 。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="链接属性"><a class="markdownIt-Anchor" href="#链接属性"></a> 链接属性</h4>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C004.jpg" alt="" /></p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C005.jpg" alt="" /></p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C006.jpg" alt="" /></p>
+<h4 id="其他属性"><a class="markdownIt-Anchor" href="#其他属性"></a> 其他属性</h4>
+<h5 id="script"><a class="markdownIt-Anchor" href="#script"></a> script</h5>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C007.jpg" alt="" /></p>
+<h5 id="html"><a class="markdownIt-Anchor" href="#html"></a> html</h5>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C008.jpg" alt="" /></p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C009.jpg" alt="" /></p>
+]]></content>
   </entry>
 </search>
