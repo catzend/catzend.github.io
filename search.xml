@@ -219,14 +219,6 @@ sticky</p>
       </tags>
   </entry>
   <entry>
-    <title>CSS基础知识学习笔记(九)</title>
-    <url>/posts/358b7717.html</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS基础知识学习笔记(三)</title>
     <url>/posts/1ae7ca75.html</url>
     <content><![CDATA[<h2 id="css盒子模型与怪异盒模型"><a class="markdownIt-Anchor" href="#css盒子模型与怪异盒模型"></a> CSS盒子模型与怪异盒模型</h2>
@@ -520,6 +512,14 @@ sticky</p>
       </tags>
   </entry>
   <entry>
+    <title>CSS基础知识学习笔记(九)</title>
+    <url>/posts/358b7717.html</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS基础知识学习笔记(五)</title>
     <url>/posts/e60f7207.html</url>
     <content><![CDATA[<h2 id="css-轮廓outline"><a class="markdownIt-Anchor" href="#css-轮廓outline"></a> CSS 轮廓（outline）</h2>
@@ -804,6 +804,863 @@ sticky</p>
       </tags>
   </entry>
   <entry>
+    <title>2D转换总结</title>
+    <url>/posts/a7e1f63d.html</url>
+    <content><![CDATA[<h2 id="css3-2d转换"><a class="markdownIt-Anchor" href="#css3-2d转换"></a> CSS3 2D转换</h2>
+<h3 id="css3-转换"><a class="markdownIt-Anchor" href="#css3-转换"></a> CSS3 转换</h3>
+<p>CSS3 转换可以对元素进行移动、缩放、转动、拉长或拉伸。</p>
+<h3 id="2d转换方法"><a class="markdownIt-Anchor" href="#2d转换方法"></a> 2D转换方法</h3>
+<ul>
+<li>translate()</li>
+<li>rotate()</li>
+<li>scale()</li>
+<li>skew()</li>
+<li>matrix()</li>
+</ul>
+<h3 id="新转换属性"><a class="markdownIt-Anchor" href="#新转换属性"></a> 新转换属性</h3>
+<h4 id="css3-transform属性"><a class="markdownIt-Anchor" href="#css3-transform属性"></a> CSS3 transform属性</h4>
+<p>适用于2D或3D转换的元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法:</span><br><span class="line">transform: none|transform-functions;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">none</td>
+<td style="text-align:left">定义不进行转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">matrix(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">定义 2D 转换，使用六个值的矩阵。</td>
+</tr>
+<tr>
+<td style="text-align:left">matrix3d(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">定义 3D 转换，使用 16 个值的 4x4 矩阵。</td>
+</tr>
+<tr>
+<td style="text-align:left">translate(<em>x</em>,<em>y</em>)</td>
+<td style="text-align:left">定义 2D 转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">translate3d(<em>x</em>,<em>y</em>,<em>z</em>)</td>
+<td style="text-align:left">定义 3D 转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateX(<em>x</em>)</td>
+<td style="text-align:left">定义转换，只是用 X 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateY(<em>y</em>)</td>
+<td style="text-align:left">定义转换，只是用 Y 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateZ(<em>z</em>)</td>
+<td style="text-align:left">定义 3D 转换，只是用 Z 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">scale(<em>x</em>[,<em>y</em>]?)</td>
+<td style="text-align:left">定义 2D 缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scale3d(<em>x</em>,<em>y</em>,<em>z</em>)</td>
+<td style="text-align:left">定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleX(<em>x</em>)</td>
+<td style="text-align:left">通过设置 X 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleY(<em>y</em>)</td>
+<td style="text-align:left">通过设置 Y 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleZ(<em>z</em>)</td>
+<td style="text-align:left">通过设置 Z 轴的值来定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotate(<em>angle</em>)</td>
+<td style="text-align:left">定义 2D 旋转，在参数中规定角度。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotate3d(<em>x</em>,<em>y</em>,<em>z</em>,<em>angle</em>)</td>
+<td style="text-align:left">定义 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateX(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 X 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateY(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 Y 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateZ(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 Z 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">skew(<em>x-angle</em>,<em>y-angle</em>)</td>
+<td style="text-align:left">定义沿着 X 和 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">skewX(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 X 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">skewY(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">perspective(<em>n</em>)</td>
+<td style="text-align:left">为 3D 转换元素定义透视视图。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="css3-transform-origin属性"><a class="markdownIt-Anchor" href="#css3-transform-origin属性"></a> CSS3 transform-origin属性</h4>
+<p>transform-Origin属性允许您更改转换元素的位置。</p>
+<p>2D转换元素可以改变元素的X和Y轴。3D转换元素，还可以更改元素的Z轴。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">transform-origin: x-axis y-axis z-axis;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x-axis</td>
+<td style="text-align:left">定义视图被置于 X 轴的何处。可能的值：<br />left<br />center<br />right<br /><em>length</em><br /><em>%</em></td>
+</tr>
+<tr>
+<td style="text-align:left">y-axis</td>
+<td style="text-align:left">定义视图被置于 Y 轴的何处。可能的值：<br />top<br />center<br />bottom<br /><em>length</em><br /><em>%</em></td>
+</tr>
+<tr>
+<td style="text-align:left">z-axis</td>
+<td style="text-align:left">定义视图被置于 Z 轴的何处。可能的值：<br /><em>length</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="2d-转换方法"><a class="markdownIt-Anchor" href="#2d-转换方法"></a> 2D 转换方法</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">matrix(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">定义 2D 转换，使用六个值的矩阵。</td>
+</tr>
+<tr>
+<td style="text-align:left">translate(<em>x</em>,<em>y</em>)</td>
+<td style="text-align:left">定义 2D 转换，沿着 X 和 Y 轴移动元素。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateX(<em>n</em>)</td>
+<td style="text-align:left">定义 2D 转换，沿着 X 轴移动元素。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateY(<em>n</em>)</td>
+<td style="text-align:left">定义 2D 转换，沿着 Y 轴移动元素。</td>
+</tr>
+<tr>
+<td style="text-align:left">scale(<em>x</em>,<em>y</em>)</td>
+<td style="text-align:left">定义 2D 缩放转换，改变元素的宽度和高度。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleX(<em>n</em>)</td>
+<td style="text-align:left">定义 2D 缩放转换，改变元素的宽度。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleY(<em>n</em>)</td>
+<td style="text-align:left">定义 2D 缩放转换，改变元素的高度。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotate(<em>angle</em>)</td>
+<td style="text-align:left">定义 2D 旋转，在参数中规定角度。</td>
+</tr>
+<tr>
+<td style="text-align:left">skew(<em>x-angle</em>,<em>y-angle</em>)</td>
+<td style="text-align:left">定义 2D 倾斜转换，沿着 X 和 Y 轴。</td>
+</tr>
+<tr>
+<td style="text-align:left">skewX(<em>angle</em>)</td>
+<td style="text-align:left">定义 2D 倾斜转换，沿着 X 轴。</td>
+</tr>
+<tr>
+<td style="text-align:left">skewY(<em>angle</em>)</td>
+<td style="text-align:left">定义 2D 倾斜转换，沿着 Y 轴。</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>2D转换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS的3D转换总结</title>
+    <url>/posts/9e0ca47f.html</url>
+    <content><![CDATA[<h2 id="css3-3d-转换"><a class="markdownIt-Anchor" href="#css3-3d-转换"></a> CSS3 3D 转换</h2>
+<hr />
+<p>CSS3 允许您使用 3D 转换来对元素进行格式化。</p>
+<h3 id="转换属性"><a class="markdownIt-Anchor" href="#转换属性"></a> 转换属性</h3>
+<h4 id="transform属性"><a class="markdownIt-Anchor" href="#transform属性"></a> transform属性</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法:</span><br><span class="line">transform: none|transform-functions;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">none</td>
+<td style="text-align:left">定义不进行转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">matrix(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">定义 2D 转换，使用六个值的矩阵。</td>
+</tr>
+<tr>
+<td style="text-align:left">matrix3d(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">定义 3D 转换，使用 16 个值的 4x4 矩阵。</td>
+</tr>
+<tr>
+<td style="text-align:left">translate(<em>x</em>,<em>y</em>)</td>
+<td style="text-align:left">定义 2D 转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">translate3d(<em>x</em>,<em>y</em>,<em>z</em>)</td>
+<td style="text-align:left">定义 3D 转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateX(<em>x</em>)</td>
+<td style="text-align:left">定义转换，只是用 X 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateY(<em>y</em>)</td>
+<td style="text-align:left">定义转换，只是用 Y 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateZ(<em>z</em>)</td>
+<td style="text-align:left">定义 3D 转换，只是用 Z 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">scale(<em>x</em>[,<em>y</em>]?)</td>
+<td style="text-align:left">定义 2D 缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scale3d(<em>x</em>,<em>y</em>,<em>z</em>)</td>
+<td style="text-align:left">定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleX(<em>x</em>)</td>
+<td style="text-align:left">通过设置 X 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleY(<em>y</em>)</td>
+<td style="text-align:left">通过设置 Y 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleZ(<em>z</em>)</td>
+<td style="text-align:left">通过设置 Z 轴的值来定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotate(<em>angle</em>)</td>
+<td style="text-align:left">定义 2D 旋转，在参数中规定角度。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotate3d(<em>x</em>,<em>y</em>,<em>z</em>,<em>angle</em>)</td>
+<td style="text-align:left">定义 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateX(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 X 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateY(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 Y 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateZ(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 Z 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">skew(<em>x-angle</em>,<em>y-angle</em>)</td>
+<td style="text-align:left">定义沿着 X 和 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">skewX(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 X 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">skewY(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">perspective(<em>n</em>)</td>
+<td style="text-align:left">为 3D 转换元素定义透视视图。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="transform-origin属性"><a class="markdownIt-Anchor" href="#transform-origin属性"></a> transform-origin属性</h4>
+<p>允许你改变被转换元素的位置。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">transform-origin: x-axis y-axis z-axis;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x-axis</td>
+<td style="text-align:left">定义视图被置于 X 轴的何处。可能的值：leftcenterright<em>length**%</em></td>
+</tr>
+<tr>
+<td style="text-align:left">y-axis</td>
+<td style="text-align:left">定义视图被置于 Y 轴的何处。可能的值：topcenterbottom<em>length**%</em></td>
+</tr>
+<tr>
+<td style="text-align:left">z-axis</td>
+<td style="text-align:left">定义视图被置于 Z 轴的何处。可能的值：<em>length</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="transform-style-属性"><a class="markdownIt-Anchor" href="#transform-style-属性"></a> transform-style 属性</h4>
+<p>transform–style属性指定嵌套元素是怎样在三维空间中呈现。</p>
+<p>注意： 使用此属性必须先使用 transform 属性.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">transform-style: flat|preserve-3d;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">flat</td>
+<td style="text-align:left">表示所有子元素在2D平面呈现。</td>
+</tr>
+<tr>
+<td style="text-align:left">preserve-3d</td>
+<td style="text-align:left">表示所有子元素在3D空间中呈现。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="perspective-属性"><a class="markdownIt-Anchor" href="#perspective-属性"></a> perspective 属性</h4>
+<p>多少像素的3D元素是从视图的perspective属性定义。这个属性允许你改变3D元素是怎样查看透视图。</p>
+<p>定义时的perspective属性，它是一个元素的子元素，透视图，而不是元素本身。</p>
+<p>**注意：**perspective 属性只影响 3D 转换元素。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">perspective: number|none;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>number</em></td>
+<td style="text-align:left">元素距离视图的距离，以像素计。</td>
+</tr>
+<tr>
+<td style="text-align:left">none</td>
+<td style="text-align:left">默认值。与 0 相同。不设置透视。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="perspective-origin-属性"><a class="markdownIt-Anchor" href="#perspective-origin-属性"></a> perspective-origin 属性</h4>
+<p>perspective-origin 属性定义 3D 元素所基于的 X 轴和 Y 轴。该属性允许您改变 3D 元素的底部位置。</p>
+<p>定义时的perspective -Origin属性，它是一个元素的子元素，透视图，而不是元素本身。</p>
+<p><strong>注意：</strong> 对于Chrome和Safari用户：为了更好地理解<a href="https://www.runoob.com/cssref/css3-pr-perspective.html">perspective</a>属性!</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">perspective-origin: x-axis y-axis;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>x-axis</em></td>
+<td style="text-align:left">定义该视图在 x 轴上的位置。默认值：50%。可能的值：leftcenterright<em>length**%</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><em>y-axis</em></td>
+<td style="text-align:left">定义该视图在 y 轴上的位置。默认值：50%。可能的值：topcenterbottom<em>length**%</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="backface-visibility-属性"><a class="markdownIt-Anchor" href="#backface-visibility-属性"></a> backface-visibility 属性</h4>
+<p>backface-visibility 属性定义当元素背面向屏幕时是否可见。</p>
+<p>如果在旋转元素不希望看到其背面时，该属性很有用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">backface-visibility: visible|hidden;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">visible</td>
+<td style="text-align:left">背面是可见的。</td>
+</tr>
+<tr>
+<td style="text-align:left">hidden</td>
+<td style="text-align:left">背面是不可见的。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3d-转换方法"><a class="markdownIt-Anchor" href="#3d-转换方法"></a> 3D 转换方法</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">matrix3d(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>, <em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">定义 3D 转换，使用 16 个值的 4x4 矩阵。</td>
+</tr>
+<tr>
+<td style="text-align:left">translate3d(<em>x</em>,<em>y</em>,<em>z</em>)</td>
+<td style="text-align:left">定义 3D 转化。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateX(<em>x</em>)</td>
+<td style="text-align:left">定义 3D 转化，仅使用用于 X 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateY(<em>y</em>)</td>
+<td style="text-align:left">定义 3D 转化，仅使用用于 Y 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateZ(<em>z</em>)</td>
+<td style="text-align:left">定义 3D 转化，仅使用用于 Z 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">scale3d(<em>x</em>,<em>y</em>,<em>z</em>)</td>
+<td style="text-align:left">定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleX(<em>x</em>)</td>
+<td style="text-align:left">定义 3D 缩放转换，通过给定一个 X 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleY(<em>y</em>)</td>
+<td style="text-align:left">定义 3D 缩放转换，通过给定一个 Y 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleZ(<em>z</em>)</td>
+<td style="text-align:left">定义 3D 缩放转换，通过给定一个 Z 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotate3d(<em>x</em>,<em>y</em>,<em>z</em>,<em>angle</em>)</td>
+<td style="text-align:left">定义 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateX(<em>angle</em>)</td>
+<td style="text-align:left">定义沿 X 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateY(<em>angle</em>)</td>
+<td style="text-align:left">定义沿 Y 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateZ(<em>angle</em>)</td>
+<td style="text-align:left">定义沿 Z 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">perspective(<em>n</em>)</td>
+<td style="text-align:left">定义 3D 转换元素的透视视图。</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>3D转换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS的动画</title>
+    <url>/posts/c32a5f2c.html</url>
+    <content><![CDATA[<h1 id="css3-动画"><a class="markdownIt-Anchor" href="#css3-动画"></a> CSS3 动画</h1>
+<h2 id="css3-keyframes-规则"><a class="markdownIt-Anchor" href="#css3-keyframes-规则"></a> CSS3 @keyframes 规则</h2>
+<p>要创建 CSS3 动画，你需要了解 @keyframes 规则。</p>
+<p>@keyframes 规则是创建动画。</p>
+<p>@keyframes 规则内指定一个 CSS 样式和动画将逐步从目前的样式更改为新的样式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@keyframes myfirst</span><br><span class="line">&#123;</span><br><span class="line">    from &#123;background: red;&#125;</span><br><span class="line">    to &#123;background: yellow;&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">@-webkit-keyframes myfirst &#x2F;* Safari 与 Chrome *&#x2F;</span><br><span class="line">&#123;</span><br><span class="line">    from &#123;background: red;&#125;</span><br><span class="line">    to &#123;background: yellow;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="css3-动画-2"><a class="markdownIt-Anchor" href="#css3-动画-2"></a> CSS3 动画</h2>
+<p>当在 <strong>@keyframes</strong> 创建动画，把它绑定到一个选择器，否则动画不会有任何效果。</p>
+<p>指定至少这两个CSS3的动画属性绑定向一个选择器：</p>
+<ul>
+<li>规定动画的名称</li>
+<li>规定动画的时长</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div</span><br><span class="line">&#123;</span><br><span class="line">    animation: myfirst 5s;</span><br><span class="line">    -webkit-animation: myfirst 5s; &#x2F;* Safari 与 Chrome *&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="css3的动画属性"><a class="markdownIt-Anchor" href="#css3的动画属性"></a> CSS3的动画属性</h2>
+<h3 id="keyframes-规则"><a class="markdownIt-Anchor" href="#keyframes-规则"></a> @keyframes 规则</h3>
+<p>使用@keyframes规则，你可以创建动画。</p>
+<p>创建动画是通过逐步改变从一个CSS样式设定到另一个。</p>
+<p>在动画过程中，您可以更改CSS样式的设定多次。</p>
+<p>指定的变化时发生时使用％，或关键字&quot;from&quot;和&quot;to&quot;，这是和0％到100％相同。</p>
+<p>0％是开头动画，100％是当动画完成。</p>
+<p>为了获得最佳的浏览器支持，您应该始终定义为0％和100％的选择器。</p>
+<p><strong>注意:</strong> 使用animation属性来控制动画的外观，还使用选择器绑定动画。.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">@keyframes animationname &#123;keyframes-selector &#123;css-styles;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>animationname</em></td>
+<td style="text-align:left">必需的。定义animation的名称。</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>keyframes-selector</em></td>
+<td style="text-align:left">必需的。动画持续时间的百分比。合法值：0-100% from (和0%相同) to (和100%相同)<strong>注意：</strong> 您可以用一个动画keyframes-selectors。</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>css-styles</em></td>
+<td style="text-align:left">必需的。一个或多个合法的CSS样式属性</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@keyframes mymove</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;top:0px;&#125;</span><br><span class="line">25%  &#123;top:200px;&#125;</span><br><span class="line">50%  &#123;top:100px;&#125;</span><br><span class="line">75%  &#123;top:200px;&#125;</span><br><span class="line">100% &#123;top:0px;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@-webkit-keyframes mymove &#x2F;* Safari and Chrome *&#x2F;</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;top:0px;&#125;</span><br><span class="line">25%  &#123;top:200px;&#125;</span><br><span class="line">50%  &#123;top:100px;&#125;</span><br><span class="line">75%  &#123;top:200px;&#125;</span><br><span class="line">100% &#123;top:0px;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="animation动画-属性"><a class="markdownIt-Anchor" href="#animation动画-属性"></a> animation（动画） 属性</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">animation: name duration timing-function delay iteration-count direction fill-mode play-state;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em><a href="https://www.runoob.com/cssref/css3-pr-animation-name.html">animation-name</a></em></td>
+<td style="text-align:left">指定要绑定到选择器的关键帧的名称</td>
+</tr>
+<tr>
+<td style="text-align:left"><em><a href="https://www.runoob.com/cssref/css3-pr-animation-duration.html">animation-duration</a></em></td>
+<td style="text-align:left">动画指定需要多少秒或毫秒完成</td>
+</tr>
+<tr>
+<td style="text-align:left"><em><a href="https://www.runoob.com/cssref/css3-pr-animation-timing-function.html">animation-timing-function</a></em></td>
+<td style="text-align:left">设置动画将如何完成一个周期</td>
+</tr>
+<tr>
+<td style="text-align:left"><em><a href="https://www.runoob.com/cssref/css3-pr-animation-delay.html">animation-delay</a></em></td>
+<td style="text-align:left">设置动画在启动前的延迟间隔。</td>
+</tr>
+<tr>
+<td style="text-align:left"><em><a href="https://www.runoob.com/cssref/css3-pr-animation-iteration-count.html">animation-iteration-count</a></em></td>
+<td style="text-align:left">定义动画的播放次数。</td>
+</tr>
+<tr>
+<td style="text-align:left"><em><a href="https://www.runoob.com/cssref/css3-pr-animation-direction.html">animation-direction</a></em></td>
+<td style="text-align:left">指定是否应该轮流反向播放动画。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.runoob.com/cssref/css3-pr-animation-fill-mode.html">animation-fill-mode</a></td>
+<td style="text-align:left">规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><em><a href="https://www.runoob.com/cssref/css3-pr-animation-play-state.html">animation-play-state</a></em></td>
+<td style="text-align:left">指定动画是否正在运行或已暂停。</td>
+</tr>
+<tr>
+<td style="text-align:left">initial</td>
+<td style="text-align:left">设置属性为其默认值。</td>
+</tr>
+<tr>
+<td style="text-align:left">inherit</td>
+<td style="text-align:left">从父元素继承属性。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="animation-name-属性"><a class="markdownIt-Anchor" href="#animation-name-属性"></a> animation-name 属性</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">animation-name: keyframename|none;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>keyframename</em></td>
+<td style="text-align:left">指定要绑定到选择器的关键帧的名称</td>
+</tr>
+<tr>
+<td style="text-align:left">none</td>
+<td style="text-align:left">指定有没有动画（可用于覆盖从级联的动画）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="animation-duration-属性"><a class="markdownIt-Anchor" href="#animation-duration-属性"></a> animation-duration 属性</h3>
+<p>animation-duration属性定义动画完成一个周期需要多少秒或毫秒。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">animation-duration: time;</span><br></pre></td></tr></table></figure>
+<h3 id="animation-timing-function-属性"><a class="markdownIt-Anchor" href="#animation-timing-function-属性"></a> animation-timing-function 属性</h3>
+<p>animation-timing-function指定动画将如何完成一个周期。</p>
+<p>速度曲线定义动画从一套 CSS 样式变为另一套所用的时间。</p>
+<p>速度曲线用于使变化更为平滑。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">animation-timing-function: value;</span><br></pre></td></tr></table></figure>
+<p>animation-timing-function使用的数学函数，称为三次贝塞尔曲线，速度曲线。使用此函数，您可以使用您自己的值，或使用预先定义的值之一：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">linear</td>
+<td style="text-align:left">动画从头到尾的速度是相同的。</td>
+</tr>
+<tr>
+<td style="text-align:left">ease</td>
+<td style="text-align:left">默认。动画以低速开始，然后加快，在结束前变慢。</td>
+</tr>
+<tr>
+<td style="text-align:left">ease-in</td>
+<td style="text-align:left">动画以低速开始。</td>
+</tr>
+<tr>
+<td style="text-align:left">ease-out</td>
+<td style="text-align:left">动画以低速结束。</td>
+</tr>
+<tr>
+<td style="text-align:left">ease-in-out</td>
+<td style="text-align:left">动画以低速开始和结束。</td>
+</tr>
+<tr>
+<td style="text-align:left">cubic-bezier(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="animation-fill-mode-属性"><a class="markdownIt-Anchor" href="#animation-fill-mode-属性"></a> animation-fill-mode 属性</h3>
+<p>animation-fill-mode 属性规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。</p>
+<p>默认情况下，CSS 动画在第一个关键帧播放完之前不会影响元素，在最后一个关键帧完成后停止影响元素。animation-fill-mode 属性可重写该行为。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CSS 语法</span><br><span class="line">animation-fill-mode: none|forwards|backwards|both|initial|inherit;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">none</td>
+<td style="text-align:left">默认值。动画在动画执行之前和之后不会应用任何样式到目标元素。</td>
+</tr>
+<tr>
+<td style="text-align:left">forwards</td>
+<td style="text-align:left">在动画结束后（由 animation-iteration-count 决定），动画将应用该属性值。</td>
+</tr>
+<tr>
+<td style="text-align:left">backwards</td>
+<td style="text-align:left">动画将应用在 animation-delay 定义期间启动动画的第一次迭代的关键帧中定义的属性值。这些都是 from 关键帧中的值（当 animation-direction 为 “normal” 或 “alternate” 时）或 to 关键帧中的值（当 animation-direction 为 “reverse” 或 “alternate-reverse” 时）。</td>
+</tr>
+<tr>
+<td style="text-align:left">both</td>
+<td style="text-align:left">动画遵循 forwards 和 backwards 的规则。也就是说，动画会在两个方向上扩展动画属性。</td>
+</tr>
+<tr>
+<td style="text-align:left">initial</td>
+<td style="text-align:left">设置该属性为它的默认值。</td>
+</tr>
+<tr>
+<td style="text-align:left">inherit</td>
+<td style="text-align:left">从父元素继承该属性</td>
+</tr>
+</tbody>
+</table>
+<h3 id="animation-delay-属性"><a class="markdownIt-Anchor" href="#animation-delay-属性"></a> animation-delay 属性</h3>
+<p>animation-delay 属性定义动画什么时候开始。</p>
+<p>animation-delay 值单位可以是秒（s）或毫秒（ms）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">animation-delay: time;</span><br></pre></td></tr></table></figure>
+<h3 id="animation-iteration-count-属性"><a class="markdownIt-Anchor" href="#animation-iteration-count-属性"></a> animation-iteration-count 属性</h3>
+<p>animation-iteration-count属性定义动画应该播放多少次。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">animation-iteration-count: value;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>n</em></td>
+<td style="text-align:left">一个数字，定义应该播放多少次动画</td>
+</tr>
+<tr>
+<td style="text-align:left">infinite</td>
+<td style="text-align:left">指定动画应该播放无限次（永远）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="animation-direction-属性"><a class="markdownIt-Anchor" href="#animation-direction-属性"></a> animation-direction 属性</h3>
+<p>animation-direction 属性定义是否循环交替反向播放动画。</p>
+<p>**注意：**如果动画被设置为只播放一次，该属性将不起作用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CSS 语法</span><br><span class="line">animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">normal</td>
+<td style="text-align:left">默认值。动画按正常播放。</td>
+</tr>
+<tr>
+<td style="text-align:left">reverse</td>
+<td style="text-align:left">动画反向播放。</td>
+</tr>
+<tr>
+<td style="text-align:left">alternate</td>
+<td style="text-align:left">动画在奇数次（1、3、5…）正向播放，在偶数次（2、4、6…）反向播放。</td>
+</tr>
+<tr>
+<td style="text-align:left">alternate-reverse</td>
+<td style="text-align:left">动画在奇数次（1、3、5…）反向播放，在偶数次（2、4、6…）正向播放。</td>
+</tr>
+<tr>
+<td style="text-align:left">initial</td>
+<td style="text-align:left">设置该属性为它的默认值。</td>
+</tr>
+<tr>
+<td style="text-align:left">inherit</td>
+<td style="text-align:left">从父元素继承该属性。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="animation-play-state-属性"><a class="markdownIt-Anchor" href="#animation-play-state-属性"></a> animation-play-state 属性</h3>
+<p>animation–play-state属性指定动画是否正在运行或已暂停。</p>
+<p>**注意：**在JavaScript中使用此属性在一个周期中暂停动画。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">animation-play-state: paused|running;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">paused</td>
+<td style="text-align:left">指定暂停动画</td>
+</tr>
+<tr>
+<td style="text-align:left">running</td>
+<td style="text-align:left">指定正在运行的动画</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>anmiation</tag>
+        <tag>keyframe</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS渐变总结</title>
+    <url>/posts/3fbb8f8a.html</url>
+    <content><![CDATA[<h2 id="css3-渐变gradients"><a class="markdownIt-Anchor" href="#css3-渐变gradients"></a> CSS3 渐变（Gradients）</h2>
+<p>CSS3 渐变（gradients）可以让你在两个或多个指定的颜色之间显示平稳的过渡。</p>
+<h3 id="渐变种类gradients"><a class="markdownIt-Anchor" href="#渐变种类gradients"></a> 渐变种类(gradients）：</h3>
+<ul>
+<li><strong>线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向</strong></li>
+<li><strong>径向渐变（Radial Gradients）- 由它们的中心定义</strong></li>
+</ul>
+<h3 id="css3-线性渐变"><a class="markdownIt-Anchor" href="#css3-线性渐变"></a> CSS3 线性渐变</h3>
+<h4 id="方向语法"><a class="markdownIt-Anchor" href="#方向语法"></a> 方向语法</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-image: linear-gradient(direction, color-stop1, color-stop2, ...);</span><br><span class="line">direction:</span><br><span class="line">	1.默认从上到下</span><br><span class="line">	2.从左到右: to right,</span><br><span class="line">	3.对角: to bottom right,</span><br></pre></td></tr></table></figure>
+<h4 id="角度语法"><a class="markdownIt-Anchor" href="#角度语法"></a> 角度语法</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-image: linear-gradient(angle, color-stop1, color-stop2);</span><br><span class="line">1.角度是指水平线和渐变线之间的角度，逆时针方向计算。换句话说，0deg 将创建一个从下到上的渐变，90deg 将创建一个从左到右的渐变。</span><br><span class="line">2.请注意很多浏览器（Chrome、Safari、firefox等）的使用了旧的标准，即 0deg 将创建一个从左到右的渐变，90deg 将创建一个从下到上的渐变。换算公式 90 - x &#x3D; y 其中 x 为标准角度，y为非标准角度。</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C023.jpg" alt="" /></p>
+<h4 id="透明度使用transparent"><a class="markdownIt-Anchor" href="#透明度使用transparent"></a> 透明度使用(transparent)</h4>
+<p>CSS3 渐变也支持透明度（transparent），可用于创建减弱变淡的效果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="重复的线性渐变"><a class="markdownIt-Anchor" href="#重复的线性渐变"></a> 重复的线性渐变</h4>
+<p>repeating-linear-gradient() 函数用于重复线性渐变：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  &#x2F;* 标准的语法 *&#x2F;</span><br><span class="line">  background-image: repeating-linear-gradient(red, yellow 10%, green 20%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="css3-径向渐变"><a class="markdownIt-Anchor" href="#css3-径向渐变"></a> CSS3 径向渐变</h3>
+<p>径向渐变由它的中心定义。</p>
+<h4 id="语法"><a class="markdownIt-Anchor" href="#语法"></a> 语法</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-image: radial-gradient(shape size at position, start-color, ..., last-color);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="径向渐变-颜色节点均匀分布默认情况下"><a class="markdownIt-Anchor" href="#径向渐变-颜色节点均匀分布默认情况下"></a> <strong>径向渐变 - 颜色节点均匀分布（默认情况下）</strong></h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: radial-gradient(red, yellow, green);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="径向渐变-颜色节点不均匀分布"><a class="markdownIt-Anchor" href="#径向渐变-颜色节点不均匀分布"></a> <strong>径向渐变 - 颜色节点不均匀分布</strong></h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: radial-gradient(red 5%, yellow 15%, green 60%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="设置形状"><a class="markdownIt-Anchor" href="#设置形状"></a> 设置形状</h4>
+<p>shape 参数定义了形状。它可以是值 circle 或 ellipse。其中，circle 表示圆形，ellipse 表示椭圆形。默认值是 ellipse。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: radial-gradient(circle, red, yellow, green);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="不同尺寸大小关键字的使用"><a class="markdownIt-Anchor" href="#不同尺寸大小关键字的使用"></a> 不同尺寸大小关键字的使用</h4>
+<p>size 参数定义了渐变的大小。它可以是以下四个值：</p>
+<ul>
+<li><strong>closest-side</strong></li>
+<li><strong>farthest-side</strong></li>
+<li><strong>closest-corner</strong></li>
+<li><strong>farthest-corner</strong></li>
+</ul>
+<h4 id="重复的径向渐变"><a class="markdownIt-Anchor" href="#重复的径向渐变"></a> 重复的径向渐变</h4>
+<p>repeating-radial-gradient() 函数用于重复径向渐变：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: repeating-radial-gradient(red, yellow 10%, green 15%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>Gradients</tag>
+        <tag>Linear Gradients</tag>
+        <tag>Radial Gradients</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS背景总结</title>
     <url>/posts/ece6e1f.html</url>
     <content><![CDATA[<h2 id="css-背景属性"><a class="markdownIt-Anchor" href="#css-背景属性"></a> CSS 背景属性</h2>
@@ -1059,58 +1916,133 @@ sticky</p>
       </tags>
   </entry>
   <entry>
-    <title>CSS渐变总结</title>
-    <url>/posts/3fbb8f8a.html</url>
-    <content><![CDATA[<h2 id="css3-渐变gradients"><a class="markdownIt-Anchor" href="#css3-渐变gradients"></a> CSS3 渐变（Gradients）</h2>
-<p>CSS3 渐变（gradients）可以让你在两个或多个指定的颜色之间显示平稳的过渡。</p>
-<h3 id="渐变种类gradients"><a class="markdownIt-Anchor" href="#渐变种类gradients"></a> 渐变种类(gradients）：</h3>
+    <title>CSS的过渡总结</title>
+    <url>/posts/5d53b7be.html</url>
+    <content><![CDATA[<h2 id="css3-过渡"><a class="markdownIt-Anchor" href="#css3-过渡"></a> CSS3 过渡</h2>
+<p>添加某种效果可以从一种样式转变到另一个的时候，无需使用Flash动画或JavaScript。</p>
 <ul>
-<li><strong>线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向</strong></li>
-<li><strong>径向渐变（Radial Gradients）- 由它们的中心定义</strong></li>
+<li>指定要添加效果的CSS属性</li>
+<li>指定效果的持续时间。</li>
 </ul>
-<h3 id="css3-线性渐变"><a class="markdownIt-Anchor" href="#css3-线性渐变"></a> CSS3 线性渐变</h3>
-<h4 id="方向语法"><a class="markdownIt-Anchor" href="#方向语法"></a> 方向语法</h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-image: linear-gradient(direction, color-stop1, color-stop2, ...);</span><br><span class="line">direction:</span><br><span class="line">	1.默认从上到下</span><br><span class="line">	2.从左到右: to right,</span><br><span class="line">	3.对角: to bottom right,</span><br></pre></td></tr></table></figure>
-<h4 id="角度语法"><a class="markdownIt-Anchor" href="#角度语法"></a> 角度语法</h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-image: linear-gradient(angle, color-stop1, color-stop2);</span><br><span class="line">1.角度是指水平线和渐变线之间的角度，逆时针方向计算。换句话说，0deg 将创建一个从下到上的渐变，90deg 将创建一个从左到右的渐变。</span><br><span class="line">2.请注意很多浏览器（Chrome、Safari、firefox等）的使用了旧的标准，即 0deg 将创建一个从左到右的渐变，90deg 将创建一个从下到上的渐变。换算公式 90 - x &#x3D; y 其中 x 为标准角度，y为非标准角度。</span><br></pre></td></tr></table></figure>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C023.jpg" alt="" /></p>
-<h4 id="透明度使用transparent"><a class="markdownIt-Anchor" href="#透明度使用transparent"></a> 透明度使用(transparent)</h4>
-<p>CSS3 渐变也支持透明度（transparent），可用于创建减弱变淡的效果。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="重复的线性渐变"><a class="markdownIt-Anchor" href="#重复的线性渐变"></a> 重复的线性渐变</h4>
-<p>repeating-linear-gradient() 函数用于重复线性渐变：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  &#x2F;* 标准的语法 *&#x2F;</span><br><span class="line">  background-image: repeating-linear-gradient(red, yellow 10%, green 20%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="css3-径向渐变"><a class="markdownIt-Anchor" href="#css3-径向渐变"></a> CSS3 径向渐变</h3>
-<p>径向渐变由它的中心定义。</p>
-<h4 id="语法"><a class="markdownIt-Anchor" href="#语法"></a> 语法</h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background-image: radial-gradient(shape size at position, start-color, ..., last-color);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="径向渐变-颜色节点均匀分布默认情况下"><a class="markdownIt-Anchor" href="#径向渐变-颜色节点均匀分布默认情况下"></a> <strong>径向渐变 - 颜色节点均匀分布（默认情况下）</strong></h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: radial-gradient(red, yellow, green);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="径向渐变-颜色节点不均匀分布"><a class="markdownIt-Anchor" href="#径向渐变-颜色节点不均匀分布"></a> <strong>径向渐变 - 颜色节点不均匀分布</strong></h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: radial-gradient(red 5%, yellow 15%, green 60%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="设置形状"><a class="markdownIt-Anchor" href="#设置形状"></a> 设置形状</h4>
-<p>shape 参数定义了形状。它可以是值 circle 或 ellipse。其中，circle 表示圆形，ellipse 表示椭圆形。默认值是 ellipse。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: radial-gradient(circle, red, yellow, green);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="不同尺寸大小关键字的使用"><a class="markdownIt-Anchor" href="#不同尺寸大小关键字的使用"></a> 不同尺寸大小关键字的使用</h4>
-<p>size 参数定义了渐变的大小。它可以是以下四个值：</p>
+<h3 id="过渡属性"><a class="markdownIt-Anchor" href="#过渡属性"></a> 过渡属性</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">transition: property duration timing-function delay;</span><br></pre></td></tr></table></figure>
+<p>transition 属性设置元素当过渡效果，四个简写属性为：</p>
 <ul>
-<li><strong>closest-side</strong></li>
-<li><strong>farthest-side</strong></li>
-<li><strong>closest-corner</strong></li>
-<li><strong>farthest-corner</strong></li>
+<li>transition-property</li>
+<li>transition-duration</li>
+<li>transition-timing-function</li>
+<li>transition-delay</li>
 </ul>
-<h4 id="重复的径向渐变"><a class="markdownIt-Anchor" href="#重复的径向渐变"></a> 重复的径向渐变</h4>
-<p>repeating-radial-gradient() 函数用于重复径向渐变：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#grad &#123;</span><br><span class="line">  background-image: repeating-radial-gradient(red, yellow 10%, green 15%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong> 始终指定transition-duration属性，否则持续时间为0，transition不会有任何效果。</p>
+<h4 id="transition-property属性"><a class="markdownIt-Anchor" href="#transition-property属性"></a> transition-property属性</h4>
+<p>transition-property属性指定CSS属性的nametransition效果（transition效果时将会启动指定的CSS属性的变化）。</p>
+<p>**提示:**一个转场效果，通常会出现在当用户将鼠标悬停在一个元素上时。</p>
+<p>**注意：**始终指定transition-duration属性，否则持续时间为0，transition不会有任何效果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">transition-property: none|all| property;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">none</td>
+<td style="text-align:left">没有属性会获得过渡效果。</td>
+</tr>
+<tr>
+<td style="text-align:left">all</td>
+<td style="text-align:left">所有属性都将获得过渡效果。</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>property</em></td>
+<td style="text-align:left">定义应用过渡效果的 CSS 属性名称列表，列表以逗号分隔。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="transition-duration-属性"><a class="markdownIt-Anchor" href="#transition-duration-属性"></a> transition-duration 属性</h4>
+<p>transition-duration 属性规定完成过渡效果需要花费的时间（以秒或毫秒计）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">transition-duration: time;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>time</em></td>
+<td style="text-align:left">规定完成过渡效果需要花费的时间（以秒或毫秒计）。 默认值是 0，意味着不会有效果。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="transition-timing-function-属性"><a class="markdownIt-Anchor" href="#transition-timing-function-属性"></a> transition-timing-function 属性</h4>
+<p>transition-timing-function属性指定切换效果的速度。</p>
+<p>此属性允许一个过渡效果，以改变其持续时间的速度。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n);</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">linear</td>
+<td style="text-align:left">规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。</td>
+</tr>
+<tr>
+<td style="text-align:left">ease</td>
+<td style="text-align:left">规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）。</td>
+</tr>
+<tr>
+<td style="text-align:left">ease-in</td>
+<td style="text-align:left">规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。</td>
+</tr>
+<tr>
+<td style="text-align:left">ease-out</td>
+<td style="text-align:left">规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。</td>
+</tr>
+<tr>
+<td style="text-align:left">ease-in-out</td>
+<td style="text-align:left">规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。</td>
+</tr>
+<tr>
+<td style="text-align:left">cubic-bezier(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="transition-delay-属性"><a class="markdownIt-Anchor" href="#transition-delay-属性"></a> transition-delay 属性</h4>
+<p>transition-delay 属性指定何时将开始切换效果。</p>
+<p>transition-delay值是指以秒为单位（S）或毫秒（ms）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">transition-delay: time;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>time</em></td>
+<td style="text-align:left">指定秒或毫秒数之前要等待切换效果开始</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">将鼠标悬停在一个 div 元素上，逐步改变表格的宽度从 100px 到 300px：</span><br><span class="line"></span><br><span class="line">div</span><br><span class="line">&#123;</span><br><span class="line">    width:100px;</span><br><span class="line">    transition: width 2s;</span><br><span class="line">    -webkit-transition: width 2s; &#x2F;* Safari *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">div:hover ​&#123;</span><br><span class="line">	width:300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>CSS</category>
       </categories>
       <tags>
         <tag>CSS</tag>
-        <tag>Gradients</tag>
-        <tag>Linear Gradients</tag>
-        <tag>Radial Gradients</tag>
+        <tag>过渡</tag>
+        <tag>transition</tag>
       </tags>
   </entry>
   <entry>
