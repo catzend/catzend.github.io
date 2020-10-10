@@ -664,6 +664,14 @@ sticky</p>
       </tags>
   </entry>
   <entry>
+    <title>CSS基础知识学习笔记(十)</title>
+    <url>/posts/48220063.html</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS基础知识学习笔记(六)</title>
     <url>/posts/7f003a75.html</url>
     <content><![CDATA[<h2 id="css-display-块和内联元素"><a class="markdownIt-Anchor" href="#css-display-块和内联元素"></a> CSS Display - 块和内联元素</h2>
@@ -724,289 +732,6 @@ sticky</p>
         <tag>显示</tag>
         <tag>Visibility</tag>
         <tag>可见性</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS基础知识学习笔记(十)</title>
-    <url>/posts/48220063.html</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CSS基础知识学习笔记(八)</title>
-    <url>/posts/295a9df3.html</url>
-    <content><![CDATA[<h2 id="什么是浮动float"><a class="markdownIt-Anchor" href="#什么是浮动float"></a> 什么是浮动(Float)</h2>
-<p>使得元素脱离文档流有两种方式。第一种是通过定位，第二种方法就是使用浮动。</p>
-<p>浮动(float)，是一个我们即爱又恨的属性。爱，因为通过浮动，我们能很方便地布局；恨，因为浮动之后遗留下来太多的问题需要解决，特别是 IE6-7（以下无特殊说明均指 windows 平台的 IE 浏览器）。如果不详细了解浮动，可能会觉得它很神秘也很复杂，很多网站的效果好看，但是自己就是做不出来。</p>
-<p>最简单的解释，浮动可以使得多个块级元素可以放置在同一行上。</p>
-<h2 id="浮动元素的特点"><a class="markdownIt-Anchor" href="#浮动元素的特点"></a> 浮动元素的特点</h2>
-<ul>
-<li>浮动元素会脱离正常的文档流，不占据文档流中的空间，所以后面的元素会占据原本元素的空间，就是说后面的元素会被遮挡。</li>
-<li>文字可以感知浮动元素，遇到浮动元素边框会避开。</li>
-<li>浮动后的元素会处于同一层，并且依次排列。</li>
-<li>如果有其他元素有清除浮动，同一层的浮动元素则会另起一行放置</li>
-</ul>
-<h2 id="浮动最常见的问题"><a class="markdownIt-Anchor" href="#浮动最常见的问题"></a> 浮动最常见的问题</h2>
-<ol>
-<li>浮动元素无法使得其他元素和其相对位置关系保持正常,也无法使得自己父容器正确计算自己的大小</li>
-</ol>
-<h3 id="清除浮动与闭合浮动"><a class="markdownIt-Anchor" href="#清除浮动与闭合浮动"></a> 清除浮动与闭合浮动</h3>
-<p>**清除浮动：**对被影响文档位置的块级元素添加属性clear：left | right | both | none;，使其下移，直到元素两边没有浮动元素。</p>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C021.png" alt="" /></p>
-<p>**闭合浮动：**更确切的含义是使浮动元素闭合，使父元素高度不再塌陷，高度被撑开了，使父元素能够包围浮动元素，从而减少浮动带来的影响。</p>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C022.png" alt="" /></p>
-<h4 id="闭合浮动的方法"><a class="markdownIt-Anchor" href="#闭合浮动的方法"></a> 闭合浮动的方法</h4>
-<p>1,添加额外标签</p>
-<p>通过在浮动元素末尾添加一个空的标签例如 <div style="clear:both"></div></p>
-<p>2,使用 br 标签和其自身的 html 属性</p>
-<p>​    br 有 clear=“all | left | right | none” 属性，通过在浮动元素末尾添加一个空的标签例如 <br clear="all"></p>
-<p>3,父元素设置 overflow：hidden</p>
-<p>4,父元素设置 overflow：auto</p>
-<p>5,父元素也设置浮动</p>
-<p>6,父元素设置 display:table</p>
-<p>7,使用:after 伪元素</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">.wrap:after&#123;</span><br><span class="line">  content:&#39;&#39;;</span><br><span class="line">  display:block;</span><br><span class="line">  clear:both;</span><br><span class="line">  height:0;</span><br><span class="line">  visibility:hidden; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>总结</strong>：</p>
-<p>通过对比，我们不难发现，其实以上列举的方法，无非有两类：<br />
-其一，通过在浮动元素的末尾添加一个空元素，设置 clear：both 属性，after 伪元素其实也是通过 content 在元素的后面生成了内容为一个点的块级元素；<br />
-其二，通过设置父元素 overflow 或者 display：table 属性来闭合浮动。</p>
-<h4 id="闭合浮动原理"><a class="markdownIt-Anchor" href="#闭合浮动原理"></a> 闭合浮动原理</h4>
-<p><strong>触发 BFC</strong>  Block formatting contexts（块级格式化上下文）</p>
-<p><strong>BFC 的特性：</strong></p>
-<ol>
-<li>块级格式化上下文会阻止外边距叠加</li>
-</ol>
-<p>当两个相邻的块框在同一个块级格式化上下文中时，它们之间垂直方向的外边距会发生叠加。换句话说，如果这两个相邻的块框不属于同一个块级格式化上下文，那么它们的外边距就不会叠加。</p>
-<ol start="2">
-<li>块级格式化上下文不会重叠浮动元素</li>
-</ol>
-<p>根据规定，一个块级格式化上下文的边框不能和它里面的元素的外边距重叠。这就意味着浏览器将会给块级格式化上下文创建隐式的外边距来阻止它和浮动元素的外边距叠加。由于这个原因，当给一个挨着浮动的块级格式化上下文添加负的外边距时将会不起作用。</p>
-<p>3)块级格式化上下文通常可以包含浮动</p>
-<p>通俗地来说：创建了 BFC 的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时 BFC 任然属于文档中的普通流。至此，你或许明白了为什么 overflow:hidden 或者 auto 可以闭合浮动了，这是因为父元素创建了新的 BFC。</p>
-<p><strong>那么如何触发 BFC 呢？（满足一下任一条件即可）</strong></p>
-<ul>
-<li>float 除了 none 以外的值</li>
-<li>overflow 除了 visible 以外的值（hidden，auto，scroll ）</li>
-<li>display (table-cell，table-caption，inline-block)</li>
-<li>position（absolute，fixed）</li>
-<li>fieldset 元素</li>
-</ul>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>float</tag>
-        <tag>float使用</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2D转换总结</title>
-    <url>/posts/a7e1f63d.html</url>
-    <content><![CDATA[<h2 id="css3-2d转换"><a class="markdownIt-Anchor" href="#css3-2d转换"></a> CSS3 2D转换</h2>
-<h3 id="css3-转换"><a class="markdownIt-Anchor" href="#css3-转换"></a> CSS3 转换</h3>
-<p>CSS3 转换可以对元素进行移动、缩放、转动、拉长或拉伸。</p>
-<h3 id="2d转换方法"><a class="markdownIt-Anchor" href="#2d转换方法"></a> 2D转换方法</h3>
-<ul>
-<li>translate()</li>
-<li>rotate()</li>
-<li>scale()</li>
-<li>skew()</li>
-<li>matrix()</li>
-</ul>
-<h3 id="新转换属性"><a class="markdownIt-Anchor" href="#新转换属性"></a> 新转换属性</h3>
-<h4 id="css3-transform属性"><a class="markdownIt-Anchor" href="#css3-transform属性"></a> CSS3 transform属性</h4>
-<p>适用于2D或3D转换的元素</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法:</span><br><span class="line">transform: none|transform-functions;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">值</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">none</td>
-<td style="text-align:left">定义不进行转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">matrix(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
-<td style="text-align:left">定义 2D 转换，使用六个值的矩阵。</td>
-</tr>
-<tr>
-<td style="text-align:left">matrix3d(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
-<td style="text-align:left">定义 3D 转换，使用 16 个值的 4x4 矩阵。</td>
-</tr>
-<tr>
-<td style="text-align:left">translate(<em>x</em>,<em>y</em>)</td>
-<td style="text-align:left">定义 2D 转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">translate3d(<em>x</em>,<em>y</em>,<em>z</em>)</td>
-<td style="text-align:left">定义 3D 转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">translateX(<em>x</em>)</td>
-<td style="text-align:left">定义转换，只是用 X 轴的值。</td>
-</tr>
-<tr>
-<td style="text-align:left">translateY(<em>y</em>)</td>
-<td style="text-align:left">定义转换，只是用 Y 轴的值。</td>
-</tr>
-<tr>
-<td style="text-align:left">translateZ(<em>z</em>)</td>
-<td style="text-align:left">定义 3D 转换，只是用 Z 轴的值。</td>
-</tr>
-<tr>
-<td style="text-align:left">scale(<em>x</em>[,<em>y</em>]?)</td>
-<td style="text-align:left">定义 2D 缩放转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">scale3d(<em>x</em>,<em>y</em>,<em>z</em>)</td>
-<td style="text-align:left">定义 3D 缩放转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">scaleX(<em>x</em>)</td>
-<td style="text-align:left">通过设置 X 轴的值来定义缩放转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">scaleY(<em>y</em>)</td>
-<td style="text-align:left">通过设置 Y 轴的值来定义缩放转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">scaleZ(<em>z</em>)</td>
-<td style="text-align:left">通过设置 Z 轴的值来定义 3D 缩放转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">rotate(<em>angle</em>)</td>
-<td style="text-align:left">定义 2D 旋转，在参数中规定角度。</td>
-</tr>
-<tr>
-<td style="text-align:left">rotate3d(<em>x</em>,<em>y</em>,<em>z</em>,<em>angle</em>)</td>
-<td style="text-align:left">定义 3D 旋转。</td>
-</tr>
-<tr>
-<td style="text-align:left">rotateX(<em>angle</em>)</td>
-<td style="text-align:left">定义沿着 X 轴的 3D 旋转。</td>
-</tr>
-<tr>
-<td style="text-align:left">rotateY(<em>angle</em>)</td>
-<td style="text-align:left">定义沿着 Y 轴的 3D 旋转。</td>
-</tr>
-<tr>
-<td style="text-align:left">rotateZ(<em>angle</em>)</td>
-<td style="text-align:left">定义沿着 Z 轴的 3D 旋转。</td>
-</tr>
-<tr>
-<td style="text-align:left">skew(<em>x-angle</em>,<em>y-angle</em>)</td>
-<td style="text-align:left">定义沿着 X 和 Y 轴的 2D 倾斜转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">skewX(<em>angle</em>)</td>
-<td style="text-align:left">定义沿着 X 轴的 2D 倾斜转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">skewY(<em>angle</em>)</td>
-<td style="text-align:left">定义沿着 Y 轴的 2D 倾斜转换。</td>
-</tr>
-<tr>
-<td style="text-align:left">perspective(<em>n</em>)</td>
-<td style="text-align:left">为 3D 转换元素定义透视视图。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="css3-transform-origin属性"><a class="markdownIt-Anchor" href="#css3-transform-origin属性"></a> CSS3 transform-origin属性</h4>
-<p>transform-Origin属性允许您更改转换元素的位置。</p>
-<p>2D转换元素可以改变元素的X和Y轴。3D转换元素，还可以更改元素的Z轴。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">transform-origin: x-axis y-axis z-axis;</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">值</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">x-axis</td>
-<td style="text-align:left">定义视图被置于 X 轴的何处。可能的值：<br />left<br />center<br />right<br /><em>length</em><br /><em>%</em></td>
-</tr>
-<tr>
-<td style="text-align:left">y-axis</td>
-<td style="text-align:left">定义视图被置于 Y 轴的何处。可能的值：<br />top<br />center<br />bottom<br /><em>length</em><br /><em>%</em></td>
-</tr>
-<tr>
-<td style="text-align:left">z-axis</td>
-<td style="text-align:left">定义视图被置于 Z 轴的何处。可能的值：<br /><em>length</em></td>
-</tr>
-</tbody>
-</table>
-<h4 id="2d-转换方法"><a class="markdownIt-Anchor" href="#2d-转换方法"></a> 2D 转换方法</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">函数</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">matrix(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
-<td style="text-align:left">定义 2D 转换，使用六个值的矩阵。</td>
-</tr>
-<tr>
-<td style="text-align:left">translate(<em>x</em>,<em>y</em>)</td>
-<td style="text-align:left">定义 2D 转换，沿着 X 和 Y 轴移动元素。</td>
-</tr>
-<tr>
-<td style="text-align:left">translateX(<em>n</em>)</td>
-<td style="text-align:left">定义 2D 转换，沿着 X 轴移动元素。</td>
-</tr>
-<tr>
-<td style="text-align:left">translateY(<em>n</em>)</td>
-<td style="text-align:left">定义 2D 转换，沿着 Y 轴移动元素。</td>
-</tr>
-<tr>
-<td style="text-align:left">scale(<em>x</em>,<em>y</em>)</td>
-<td style="text-align:left">定义 2D 缩放转换，改变元素的宽度和高度。</td>
-</tr>
-<tr>
-<td style="text-align:left">scaleX(<em>n</em>)</td>
-<td style="text-align:left">定义 2D 缩放转换，改变元素的宽度。</td>
-</tr>
-<tr>
-<td style="text-align:left">scaleY(<em>n</em>)</td>
-<td style="text-align:left">定义 2D 缩放转换，改变元素的高度。</td>
-</tr>
-<tr>
-<td style="text-align:left">rotate(<em>angle</em>)</td>
-<td style="text-align:left">定义 2D 旋转，在参数中规定角度。</td>
-</tr>
-<tr>
-<td style="text-align:left">skew(<em>x-angle</em>,<em>y-angle</em>)</td>
-<td style="text-align:left">定义 2D 倾斜转换，沿着 X 和 Y 轴。</td>
-</tr>
-<tr>
-<td style="text-align:left">skewX(<em>angle</em>)</td>
-<td style="text-align:left">定义 2D 倾斜转换，沿着 X 轴。</td>
-</tr>
-<tr>
-<td style="text-align:left">skewY(<em>angle</em>)</td>
-<td style="text-align:left">定义 2D 倾斜转换，沿着 Y 轴。</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>2D转换</tag>
       </tags>
   </entry>
   <entry>
@@ -1308,6 +1033,557 @@ sticky</p>
       </tags>
   </entry>
   <entry>
+    <title>2D转换总结</title>
+    <url>/posts/a7e1f63d.html</url>
+    <content><![CDATA[<h2 id="css3-2d转换"><a class="markdownIt-Anchor" href="#css3-2d转换"></a> CSS3 2D转换</h2>
+<h3 id="css3-转换"><a class="markdownIt-Anchor" href="#css3-转换"></a> CSS3 转换</h3>
+<p>CSS3 转换可以对元素进行移动、缩放、转动、拉长或拉伸。</p>
+<h3 id="2d转换方法"><a class="markdownIt-Anchor" href="#2d转换方法"></a> 2D转换方法</h3>
+<ul>
+<li>translate()</li>
+<li>rotate()</li>
+<li>scale()</li>
+<li>skew()</li>
+<li>matrix()</li>
+</ul>
+<h3 id="新转换属性"><a class="markdownIt-Anchor" href="#新转换属性"></a> 新转换属性</h3>
+<h4 id="css3-transform属性"><a class="markdownIt-Anchor" href="#css3-transform属性"></a> CSS3 transform属性</h4>
+<p>适用于2D或3D转换的元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法:</span><br><span class="line">transform: none|transform-functions;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">none</td>
+<td style="text-align:left">定义不进行转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">matrix(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">定义 2D 转换，使用六个值的矩阵。</td>
+</tr>
+<tr>
+<td style="text-align:left">matrix3d(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">定义 3D 转换，使用 16 个值的 4x4 矩阵。</td>
+</tr>
+<tr>
+<td style="text-align:left">translate(<em>x</em>,<em>y</em>)</td>
+<td style="text-align:left">定义 2D 转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">translate3d(<em>x</em>,<em>y</em>,<em>z</em>)</td>
+<td style="text-align:left">定义 3D 转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateX(<em>x</em>)</td>
+<td style="text-align:left">定义转换，只是用 X 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateY(<em>y</em>)</td>
+<td style="text-align:left">定义转换，只是用 Y 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateZ(<em>z</em>)</td>
+<td style="text-align:left">定义 3D 转换，只是用 Z 轴的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">scale(<em>x</em>[,<em>y</em>]?)</td>
+<td style="text-align:left">定义 2D 缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scale3d(<em>x</em>,<em>y</em>,<em>z</em>)</td>
+<td style="text-align:left">定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleX(<em>x</em>)</td>
+<td style="text-align:left">通过设置 X 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleY(<em>y</em>)</td>
+<td style="text-align:left">通过设置 Y 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleZ(<em>z</em>)</td>
+<td style="text-align:left">通过设置 Z 轴的值来定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotate(<em>angle</em>)</td>
+<td style="text-align:left">定义 2D 旋转，在参数中规定角度。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotate3d(<em>x</em>,<em>y</em>,<em>z</em>,<em>angle</em>)</td>
+<td style="text-align:left">定义 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateX(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 X 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateY(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 Y 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotateZ(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 Z 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td style="text-align:left">skew(<em>x-angle</em>,<em>y-angle</em>)</td>
+<td style="text-align:left">定义沿着 X 和 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">skewX(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 X 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">skewY(<em>angle</em>)</td>
+<td style="text-align:left">定义沿着 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td style="text-align:left">perspective(<em>n</em>)</td>
+<td style="text-align:left">为 3D 转换元素定义透视视图。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="css3-transform-origin属性"><a class="markdownIt-Anchor" href="#css3-transform-origin属性"></a> CSS3 transform-origin属性</h4>
+<p>transform-Origin属性允许您更改转换元素的位置。</p>
+<p>2D转换元素可以改变元素的X和Y轴。3D转换元素，还可以更改元素的Z轴。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">语法</span><br><span class="line">transform-origin: x-axis y-axis z-axis;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x-axis</td>
+<td style="text-align:left">定义视图被置于 X 轴的何处。可能的值：<br />left<br />center<br />right<br /><em>length</em><br /><em>%</em></td>
+</tr>
+<tr>
+<td style="text-align:left">y-axis</td>
+<td style="text-align:left">定义视图被置于 Y 轴的何处。可能的值：<br />top<br />center<br />bottom<br /><em>length</em><br /><em>%</em></td>
+</tr>
+<tr>
+<td style="text-align:left">z-axis</td>
+<td style="text-align:left">定义视图被置于 Z 轴的何处。可能的值：<br /><em>length</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="2d-转换方法"><a class="markdownIt-Anchor" href="#2d-转换方法"></a> 2D 转换方法</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">matrix(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</td>
+<td style="text-align:left">定义 2D 转换，使用六个值的矩阵。</td>
+</tr>
+<tr>
+<td style="text-align:left">translate(<em>x</em>,<em>y</em>)</td>
+<td style="text-align:left">定义 2D 转换，沿着 X 和 Y 轴移动元素。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateX(<em>n</em>)</td>
+<td style="text-align:left">定义 2D 转换，沿着 X 轴移动元素。</td>
+</tr>
+<tr>
+<td style="text-align:left">translateY(<em>n</em>)</td>
+<td style="text-align:left">定义 2D 转换，沿着 Y 轴移动元素。</td>
+</tr>
+<tr>
+<td style="text-align:left">scale(<em>x</em>,<em>y</em>)</td>
+<td style="text-align:left">定义 2D 缩放转换，改变元素的宽度和高度。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleX(<em>n</em>)</td>
+<td style="text-align:left">定义 2D 缩放转换，改变元素的宽度。</td>
+</tr>
+<tr>
+<td style="text-align:left">scaleY(<em>n</em>)</td>
+<td style="text-align:left">定义 2D 缩放转换，改变元素的高度。</td>
+</tr>
+<tr>
+<td style="text-align:left">rotate(<em>angle</em>)</td>
+<td style="text-align:left">定义 2D 旋转，在参数中规定角度。</td>
+</tr>
+<tr>
+<td style="text-align:left">skew(<em>x-angle</em>,<em>y-angle</em>)</td>
+<td style="text-align:left">定义 2D 倾斜转换，沿着 X 和 Y 轴。</td>
+</tr>
+<tr>
+<td style="text-align:left">skewX(<em>angle</em>)</td>
+<td style="text-align:left">定义 2D 倾斜转换，沿着 X 轴。</td>
+</tr>
+<tr>
+<td style="text-align:left">skewY(<em>angle</em>)</td>
+<td style="text-align:left">定义 2D 倾斜转换，沿着 Y 轴。</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>2D转换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS基础知识学习笔记(八)</title>
+    <url>/posts/295a9df3.html</url>
+    <content><![CDATA[<h2 id="什么是浮动float"><a class="markdownIt-Anchor" href="#什么是浮动float"></a> 什么是浮动(Float)</h2>
+<p>使得元素脱离文档流有两种方式。第一种是通过定位，第二种方法就是使用浮动。</p>
+<p>浮动(float)，是一个我们即爱又恨的属性。爱，因为通过浮动，我们能很方便地布局；恨，因为浮动之后遗留下来太多的问题需要解决，特别是 IE6-7（以下无特殊说明均指 windows 平台的 IE 浏览器）。如果不详细了解浮动，可能会觉得它很神秘也很复杂，很多网站的效果好看，但是自己就是做不出来。</p>
+<p>最简单的解释，浮动可以使得多个块级元素可以放置在同一行上。</p>
+<h2 id="浮动元素的特点"><a class="markdownIt-Anchor" href="#浮动元素的特点"></a> 浮动元素的特点</h2>
+<ul>
+<li>浮动元素会脱离正常的文档流，不占据文档流中的空间，所以后面的元素会占据原本元素的空间，就是说后面的元素会被遮挡。</li>
+<li>文字可以感知浮动元素，遇到浮动元素边框会避开。</li>
+<li>浮动后的元素会处于同一层，并且依次排列。</li>
+<li>如果有其他元素有清除浮动，同一层的浮动元素则会另起一行放置</li>
+</ul>
+<h2 id="浮动最常见的问题"><a class="markdownIt-Anchor" href="#浮动最常见的问题"></a> 浮动最常见的问题</h2>
+<ol>
+<li>浮动元素无法使得其他元素和其相对位置关系保持正常,也无法使得自己父容器正确计算自己的大小</li>
+</ol>
+<h3 id="清除浮动与闭合浮动"><a class="markdownIt-Anchor" href="#清除浮动与闭合浮动"></a> 清除浮动与闭合浮动</h3>
+<p>**清除浮动：**对被影响文档位置的块级元素添加属性clear：left | right | both | none;，使其下移，直到元素两边没有浮动元素。</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C021.png" alt="" /></p>
+<p>**闭合浮动：**更确切的含义是使浮动元素闭合，使父元素高度不再塌陷，高度被撑开了，使父元素能够包围浮动元素，从而减少浮动带来的影响。</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C022.png" alt="" /></p>
+<h4 id="闭合浮动的方法"><a class="markdownIt-Anchor" href="#闭合浮动的方法"></a> 闭合浮动的方法</h4>
+<p>1,添加额外标签</p>
+<p>通过在浮动元素末尾添加一个空的标签例如 <div style="clear:both"></div></p>
+<p>2,使用 br 标签和其自身的 html 属性</p>
+<p>​    br 有 clear=“all | left | right | none” 属性，通过在浮动元素末尾添加一个空的标签例如 <br clear="all"></p>
+<p>3,父元素设置 overflow：hidden</p>
+<p>4,父元素设置 overflow：auto</p>
+<p>5,父元素也设置浮动</p>
+<p>6,父元素设置 display:table</p>
+<p>7,使用:after 伪元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">.wrap:after&#123;</span><br><span class="line">  content:&#39;&#39;;</span><br><span class="line">  display:block;</span><br><span class="line">  clear:both;</span><br><span class="line">  height:0;</span><br><span class="line">  visibility:hidden; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>总结</strong>：</p>
+<p>通过对比，我们不难发现，其实以上列举的方法，无非有两类：<br />
+其一，通过在浮动元素的末尾添加一个空元素，设置 clear：both 属性，after 伪元素其实也是通过 content 在元素的后面生成了内容为一个点的块级元素；<br />
+其二，通过设置父元素 overflow 或者 display：table 属性来闭合浮动。</p>
+<h4 id="闭合浮动原理"><a class="markdownIt-Anchor" href="#闭合浮动原理"></a> 闭合浮动原理</h4>
+<p><strong>触发 BFC</strong>  Block formatting contexts（块级格式化上下文）</p>
+<p><strong>BFC 的特性：</strong></p>
+<ol>
+<li>块级格式化上下文会阻止外边距叠加</li>
+</ol>
+<p>当两个相邻的块框在同一个块级格式化上下文中时，它们之间垂直方向的外边距会发生叠加。换句话说，如果这两个相邻的块框不属于同一个块级格式化上下文，那么它们的外边距就不会叠加。</p>
+<ol start="2">
+<li>块级格式化上下文不会重叠浮动元素</li>
+</ol>
+<p>根据规定，一个块级格式化上下文的边框不能和它里面的元素的外边距重叠。这就意味着浏览器将会给块级格式化上下文创建隐式的外边距来阻止它和浮动元素的外边距叠加。由于这个原因，当给一个挨着浮动的块级格式化上下文添加负的外边距时将会不起作用。</p>
+<p>3)块级格式化上下文通常可以包含浮动</p>
+<p>通俗地来说：创建了 BFC 的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，反之亦然，同时 BFC 任然属于文档中的普通流。至此，你或许明白了为什么 overflow:hidden 或者 auto 可以闭合浮动了，这是因为父元素创建了新的 BFC。</p>
+<p><strong>那么如何触发 BFC 呢？（满足一下任一条件即可）</strong></p>
+<ul>
+<li>float 除了 none 以外的值</li>
+<li>overflow 除了 visible 以外的值（hidden，auto，scroll ）</li>
+<li>display (table-cell，table-caption，inline-block)</li>
+<li>position（absolute，fixed）</li>
+<li>fieldset 元素</li>
+</ul>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>float</tag>
+        <tag>float使用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS的Flex常用实例</title>
+    <url>/posts/c414b4a2.html</url>
+    <content><![CDATA[<h1 id="flex常用实例"><a class="markdownIt-Anchor" href="#flex常用实例"></a> Flex常用实例</h1>
+<p><strong>1、垂直居中，学习flex布局以后，实现起来很方便；</strong></p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">    .demo&#123;</span><br><span class="line">        display: flex;</span><br><span class="line">        width: 300px;</span><br><span class="line">        height: 300px;</span><br><span class="line">        border: 1px solid blue;</span><br><span class="line">        justify-content: center;</span><br><span class="line">        align-items: center;</span><br><span class="line">    &#125;</span><br><span class="line">    .inner&#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        border: 1px solid red;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br><span class="line"> &lt;div class&#x3D;&quot;demo&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;inner&quot;&gt;垂直居中&lt;&#x2F;div&gt;</span><br><span class="line"> &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>效果如下：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1608426/201903/1608426-20190327163053046-2125359346.png" alt="img" /></p>
+<p><strong>2、用flex制作列表，流式布局，每行数目固定，会自动分行。如商品列表这种，固定一排四个，平均宽度显示；</strong></p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.demo&#123;</span><br><span class="line">    width:500px;</span><br><span class="line">    padding-top: 10px;</span><br><span class="line">    display: flex;</span><br><span class="line">    &#x2F;* flex-direction: row;</span><br><span class="line">    flex-wrap: wrap; *&#x2F;</span><br><span class="line">    flex-flow: row wrap;</span><br><span class="line">    color: #fff;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">&#125;</span><br><span class="line">.demo .item&#123;</span><br><span class="line">    width: calc((100% - 80px) &#x2F; 4);</span><br><span class="line">    margin: 0 10px 10px;</span><br><span class="line">    background: #dddddd;</span><br><span class="line">    line-height: 50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;demo&quot;&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item&quot;&gt;1&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item&quot;&gt;2&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item&quot;&gt;3&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item&quot;&gt;4&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item&quot;&gt;5&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item&quot;&gt;6&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item&quot;&gt;7&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>注：flex-flow:是flex-direction 和flex-wrap的简写形式，默认是 row  nowrap；</p>
+<p>效果如下：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1608426/201903/1608426-20190328104528521-58206420.png" alt="img" /></p>
+<p>flex-flow: row wrap-reverse;第二行在第一行上方；</p>
+<p><img src="https://img2018.cnblogs.com/blog/1608426/201903/1608426-20190328105014066-73078465.png" alt="img" /></p>
+<p><strong>3、flex制作图文混排</strong></p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.demo&#123;</span><br><span class="line">    width:300px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-flow: row nowrap;</span><br><span class="line">    align-items: flex-start;</span><br><span class="line">    color: #fff;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">&#125;</span><br><span class="line">.demo .img&#123;</span><br><span class="line">    margin-right: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.demo .item&#123;</span><br><span class="line">    width: 190px;</span><br><span class="line">    background: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;demo&quot;&gt;</span><br><span class="line">   &lt;img class&#x3D;&quot;img&quot; width&#x3D;&quot;100&quot; height&#x3D;&quot;80&quot; src&#x3D;&quot;img&#x2F;7.jpg&quot; &#x2F;&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item&quot;&gt;</span><br><span class="line">       文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字...</span><br><span class="line">       &lt;a href&#x3D;&quot;#&quot;&gt;详细&lt;&#x2F;a&gt;</span><br><span class="line">   &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>效果如下：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1608426/201903/1608426-20190328112017269-568039266.png" alt="img" /></p>
+<p><strong>4、flex制作圣杯布局</strong></p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.demo&#123;</span><br><span class="line">    width:500px;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    color: #fff;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">&#125;</span><br><span class="line">.header,.footer&#123;</span><br><span class="line">    background: gray;</span><br><span class="line">    height: 30px;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.body&#123;</span><br><span class="line">    height: 300px;</span><br><span class="line">    display: flex;  </span><br><span class="line">&#125; </span><br><span class="line">.body div&#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.left&#123;</span><br><span class="line">    background:red;</span><br><span class="line">&#125;</span><br><span class="line">.right&#123;</span><br><span class="line">    background:blue;</span><br><span class="line">&#125;</span><br><span class="line">.left,.right&#123;</span><br><span class="line">    flex: 0 0 20%!important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;demo&quot;&gt;</span><br><span class="line">   &lt;header class&#x3D;&quot;header&quot;&gt;头部&lt;&#x2F;header&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;body&quot;&gt;</span><br><span class="line">       &lt;div class&#x3D;&quot;left&quot;&gt;左边&lt;&#x2F;div&gt;</span><br><span class="line">       &lt;div class&#x3D;&quot;center&quot;&gt;中间&lt;&#x2F;div&gt;</span><br><span class="line">       &lt;div class&#x3D;&quot;right&quot;&gt;右边&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;&#x2F;div&gt;</span><br><span class="line">   &lt;footer class&#x3D;&quot;footer&quot;&gt;底部&lt;&#x2F;footer&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p><img src="https://img2018.cnblogs.com/blog/1608426/201903/1608426-20190328141105299-917605268.png" alt="img" /></p>
+<p><strong>5、固定的底栏</strong></p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.demo &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    min-height: 100vh;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    color: #ffffff;</span><br><span class="line">&#125;</span><br><span class="line">.Site-content &#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">    background: orange;</span><br><span class="line">&#125;</span><br><span class="line">.header,.footer&#123;</span><br><span class="line">    background: gray;</span><br><span class="line">    height: 50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;demo&quot;&gt;</span><br><span class="line">    &lt;header class&#x3D;&quot;header&quot;&gt;头部&lt;&#x2F;header&gt;</span><br><span class="line">    &lt;main class&#x3D;&quot;Site-content&quot;&gt;中间&lt;&#x2F;main&gt;</span><br><span class="line">    &lt;footer class&#x3D;&quot;footer&quot;&gt;底部&lt;&#x2F;footer&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1608426/201903/1608426-20190328142128063-171515252.png" alt="img" /></p>
+<p><strong>6、网格布局—基本网格布局</strong></p>
+<p>最简单的网格，就是平均分布。在容器里平均分配空间，但是需要设置项目的自动缩放。</p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.Grid &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    color: #ffffff;</span><br><span class="line">&#125;</span><br><span class="line">.Grid-cell &#123;</span><br><span class="line">    background: #dddddd;</span><br><span class="line">    flex: 1;</span><br><span class="line">    margin:0 10px;</span><br><span class="line">    line-height: 40px;</span><br><span class="line">    border-radius: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;Grid&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;1&#x2F;2&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;1&#x2F;2&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;br&#x2F;&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;Grid&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;1&#x2F;3&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;1&#x2F;3&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;1&#x2F;3&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;br&#x2F;&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;Grid&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;1&#x2F;4&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;1&#x2F;4&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;1&#x2F;4&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;1&#x2F;4&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>效果如下：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1608426/201903/1608426-20190328143726576-1603241624.png" alt="img" /></p>
+<p><strong>6、网格布局—百分比布局</strong></p>
+<p>某个网格的宽度为固定百分比，其余的网格平均分配剩余的空间。</p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.Grid &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    color: #ffffff;</span><br><span class="line">&#125;</span><br><span class="line">.Grid-cell &#123;</span><br><span class="line">    background: #dddddd;</span><br><span class="line">    flex: 1;</span><br><span class="line">    margin:0 10px;</span><br><span class="line">    line-height: 40px;</span><br><span class="line">    border-radius: 3px;</span><br><span class="line">&#125;</span><br><span class="line">.type_one&#123;</span><br><span class="line">    flex: 0 0 50%;</span><br><span class="line">&#125;</span><br><span class="line">.type_two&#123;</span><br><span class="line">    flex: 0 0 25%;</span><br><span class="line">&#125;</span><br><span class="line">.type_three&#123;</span><br><span class="line">    flex: 0 0 33.33%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;Grid&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;100%&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;br&#x2F;&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;Grid&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell type_one&quot;&gt;1&#x2F;2&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;auto&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;auto&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;br&#x2F;&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;Grid&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell type_three&quot;&gt;1&#x2F;3&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;auto&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;br&#x2F;&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;Grid&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell type_two&quot;&gt;1&#x2F;4&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;auto&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Grid-cell&quot;&gt;auto&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>效果如下：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1608426/201903/1608426-20190328145902214-306047199.png" alt="img" /></p>
+<p><strong>7、两行内容在一个盒子垂直居中显示</strong></p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.table-left &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-flow: column nowrap;</span><br><span class="line">    align-items: center;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    width: 200px;</span><br><span class="line">    background: #F4F5F7;</span><br><span class="line">    height: 150px;</span><br><span class="line">    font-size: 13px;</span><br><span class="line">    text-align: center;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;table-left&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;time&quot;&gt;2019年&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div&gt;11月29日&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="https://img2018.cnblogs.com/common/1608426/201912/1608426-20191202172346451-2128043011.png" alt="img" /></p>
+<p><strong>8、等分布局</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;demo&quot;&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item item1&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item item2&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item item3&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;item item4&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">.demo&#123;</span><br><span class="line">  display: flex;             </span><br><span class="line">&#125;</span><br><span class="line">.item&#123;</span><br><span class="line">  flex: 1;</span><br></pre></td></tr></table></figure>
+<p><img src="https://images2015.cnblogs.com/blog/816691/201701/816691-20170113110101853-529525568.png" alt="img" /></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">某一个固定.demo&#123;</span><br><span class="line">  display: flex;    </span><br><span class="line">&#125;</span><br><span class="line">.item&#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.item2&#123;</span><br><span class="line">  flex: 0 0 50%;</span><br><span class="line">某两个固定</span><br><span class="line">.demo&#123;</span><br><span class="line">  display: flex;    </span><br><span class="line">&#125;</span><br><span class="line">.item&#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.item2&#123;</span><br><span class="line">  flex: 0 0 50%;</span><br><span class="line">&#125;</span><br><span class="line">.item4&#123;</span><br><span class="line">  flex: 0 0 20%;</span><br><span class="line">&#125;</span><br><span class="line">某三个固定</span><br><span class="line">.demo&#123;</span><br><span class="line">  display: flex;           </span><br><span class="line">&#125;</span><br><span class="line">.item&#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.item1&#123;</span><br><span class="line">  flex: 0 0 10%;</span><br><span class="line">&#125;</span><br><span class="line">.item2&#123;</span><br><span class="line">  flex: 0 0 50%;</span><br><span class="line">&#125;</span><br><span class="line">.item4&#123;</span><br><span class="line">  flex: 0 0 20%;</span><br><span class="line">&#125;</span><br><span class="line">圣杯布局</span><br><span class="line">&lt;div class&#x3D;&quot;demo&quot;&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;header&quot;&gt;头部&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;body&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;left&quot;&gt;left&lt;&#x2F;div&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;center&quot;&gt;center&lt;&#x2F;div&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;right&quot;&gt;right&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;footer&quot;&gt;底部&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">.demo&#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: column;            </span><br><span class="line">&#125;</span><br><span class="line">.demo div&#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.body&#123;</span><br><span class="line">  display: flex;  </span><br><span class="line">&#125; </span><br><span class="line">.header,.footer,.left,.right&#123;</span><br><span class="line">  flex: 0 0 20%!important;</span><br><span class="line">&#125;输入框布局，有时需要在输入框的前部添加提示，或者后部添加按钮，如图所示：</span><br></pre></td></tr></table></figure>
+<p><img src="https://images2015.cnblogs.com/blog/816691/201701/816691-20170113154009275-1589994909.png" alt="img" /></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;demo&quot;&gt;</span><br><span class="line">   &lt;span class&#x3D;&quot;tip&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">   &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;&quot; &#x2F;&gt;</span><br><span class="line">   &lt;button&gt;search&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">.demo&#123;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br><span class="line">input&#123;</span><br><span class="line">  flex:1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>9、多列展示</strong></p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;demo&quot;&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;left&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;center&quot;&gt;</span><br><span class="line">      &lt;p&gt;description&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;p&gt;description&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;p&gt;description&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;span&gt;description&lt;&#x2F;span&gt;</span><br><span class="line">   &lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;btn&quot;&gt;确认&lt;&#x2F;div&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;btn&quot;&gt;取消&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<p>CSS代<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" /></p>
+<p><img src="https://images2015.cnblogs.com/blog/816691/201701/816691-20170113092902822-1000241514.png" alt="img" /></p>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.demo&#123;</span><br><span class="line">  width: 600px;</span><br><span class="line">  height: 150px;</span><br><span class="line">  border: 1px solid #b7b2b7;</span><br><span class="line">  margin: 30px auto;</span><br><span class="line">  padding-top: 17px;</span><br><span class="line">  display: flex;                &#x2F;*设置为flex布局*&#x2F;</span><br><span class="line">  justify-content: space-around;</span><br><span class="line">&#125;</span><br><span class="line">.demo &gt; div&#123;</span><br><span class="line">  flex: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" />](javascript:void(0)😉</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS的Flex解析</title>
+    <url>/posts/6aa7da5.html</url>
+    <content><![CDATA[<h2 id="一-flex-布局是什么"><a class="markdownIt-Anchor" href="#一-flex-布局是什么"></a> 一、Flex 布局是什么？</h2>
+<p>Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性。</p>
+<p>任何一个容器都可以指定为 Flex 布局。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>行内元素也可以使用 Flex 布局。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Webkit 内核的浏览器，必须加上<code>-webkit</code>前缀。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意，设为 Flex 布局以后，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失</p>
+<h2 id="二-基本概念"><a class="markdownIt-Anchor" href="#二-基本概念"></a> 二、基本概念</h2>
+<p>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称&quot;容器&quot;。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称&quot;项目&quot;。</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C038.png" alt="" /></p>
+<p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做<code>main start</code>，结束位置叫做<code>main end</code>；交叉轴的开始位置叫做<code>cross start</code>，结束位置叫做<code>cross end</code>。</p>
+<p>项目默认沿主轴排列。单个项目占据的主轴空间叫做<code>main size</code>，占据的交叉轴空间叫做<code>cross size</code>。</p>
+<h2 id="三-容器的属性"><a class="markdownIt-Anchor" href="#三-容器的属性"></a> 三、容器的属性</h2>
+<p>以下6个属性设置在容器上。</p>
+<blockquote>
+<ul>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
+</ul>
+</blockquote>
+<h3 id="31-flex-direction属性"><a class="markdownIt-Anchor" href="#31-flex-direction属性"></a> 3.1 flex-direction属性</h3>
+<p><code>flex-direction</code>属性决定主轴的方向（即项目的排列方向）。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C039.png" alt="" /></p>
+<p>它可能有4个值。</p>
+<blockquote>
+<ul>
+<li><code>row</code>（默认值）：主轴为水平方向，起点在左端。</li>
+<li><code>row-reverse</code>：主轴为水平方向，起点在右端。</li>
+<li><code>column</code>：主轴为垂直方向，起点在上沿。</li>
+<li><code>column-reverse</code>：主轴为垂直方向，起点在下沿。</li>
+</ul>
+</blockquote>
+<h3 id="32-flex-wrap属性"><a class="markdownIt-Anchor" href="#32-flex-wrap属性"></a> 3.2 flex-wrap属性</h3>
+<p>默认情况下，项目都排在一条线（又称&quot;轴线&quot;）上。<code>flex-wrap</code>属性定义，如果一条轴线排不下，如何换行。</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C040.png" alt="" /></p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>它可能取三个值。</p>
+<p>（1）<code>nowrap</code>（默认）：不换行。</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C041.png" alt="" /></p>
+<p>（2）<code>wrap</code>：换行，第一行在上方。</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C042.jpg" alt="" /></p>
+<p>（3）<code>wrap-reverse</code>：换行，第一行在下方。</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C043.jpg" alt="" /></p>
+<h3 id="33-flex-flow"><a class="markdownIt-Anchor" href="#33-flex-flow"></a> 3.3 flex-flow</h3>
+<p><code>flex-flow</code>属性是<code>flex-direction</code>属性和<code>flex-wrap</code>属性的简写形式，默认值为<code>row nowrap</code>。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="34-justify-content属性"><a class="markdownIt-Anchor" href="#34-justify-content属性"></a> 3.4 justify-content属性</h3>
+<p><code>justify-content</code>属性定义了项目在主轴上的对齐方式。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C044.png" alt="" /></p>
+<p>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。</p>
+<blockquote>
+<ul>
+<li><code>flex-start</code>（默认值）：左对齐</li>
+<li><code>flex-end</code>：右对齐</li>
+<li><code>center</code>： 居中</li>
+<li><code>space-between</code>：两端对齐，项目之间的间隔都相等。</li>
+<li><code>space-around</code>：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
+</ul>
+</blockquote>
+<h3 id="35-align-items属性"><a class="markdownIt-Anchor" href="#35-align-items属性"></a> 3.5 align-items属性</h3>
+<p><code>align-items</code>属性定义项目在交叉轴上如何对齐。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C044.png" alt="" /></p>
+<p>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。</p>
+<blockquote>
+<ul>
+<li><code>flex-start</code>：交叉轴的起点对齐。</li>
+<li><code>flex-end</code>：交叉轴的终点对齐。</li>
+<li><code>center</code>：交叉轴的中点对齐。</li>
+<li><code>baseline</code>: 项目的第一行文字的基线对齐。</li>
+<li><code>stretch</code>（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+</ul>
+</blockquote>
+<h3 id="36-align-content属性"><a class="markdownIt-Anchor" href="#36-align-content属性"></a> 3.6 align-content属性</h3>
+<p><code>align-content</code>属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C045.png" alt="" /></p>
+<p>该属性可能取6个值。</p>
+<blockquote>
+<ul>
+<li><code>flex-start</code>：与交叉轴的起点对齐。</li>
+<li><code>flex-end</code>：与交叉轴的终点对齐。</li>
+<li><code>center</code>：与交叉轴的中点对齐。</li>
+<li><code>space-between</code>：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li><code>space-around</code>：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li><code>stretch</code>（默认值）：轴线占满整个交叉轴。</li>
+</ul>
+</blockquote>
+<h3 id="四-项目的属性"><a class="markdownIt-Anchor" href="#四-项目的属性"></a> 四、项目的属性</h3>
+<p>以下6个属性设置在项目上。</p>
+<blockquote>
+<ul>
+<li><code>order</code></li>
+<li><code>flex-grow</code></li>
+<li><code>flex-shrink</code></li>
+<li><code>flex-basis</code></li>
+<li><code>flex</code></li>
+<li><code>align-self</code></li>
+</ul>
+</blockquote>
+<h3 id="41-order属性"><a class="markdownIt-Anchor" href="#41-order属性"></a> 4.1 order属性</h3>
+<p><code>order</code>属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: &lt;integer&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C046.png" alt="" /></p>
+<h3 id="42-flex-grow属性"><a class="markdownIt-Anchor" href="#42-flex-grow属性"></a> 4.2 flex-grow属性</h3>
+<p><code>flex-grow</code>属性定义项目的放大比例，默认为<code>0</code>，即如果存在剩余空间，也不放大。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: &lt;number&gt;; <span class="comment">/* default 0 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C047.png" alt="" /></p>
+<p>如果所有项目的<code>flex-grow</code>属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的<code>flex-grow</code>属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+<h3 id="43-flex-shrink属性"><a class="markdownIt-Anchor" href="#43-flex-shrink属性"></a> 4.3 flex-shrink属性</h3>
+<p><code>flex-shrink</code>属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: &lt;number&gt;; <span class="comment">/* default 1 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C048.jpg" alt="" /></p>
+<p>如果所有项目的<code>flex-shrink</code>属性都为1，当空间不足时，都将等比例缩小。如果一个项目的<code>flex-shrink</code>属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
+<p>负值对该属性无效。</p>
+<h3 id="44-flex-basis属性"><a class="markdownIt-Anchor" href="#44-flex-basis属性"></a> 4.4 flex-basis属性</h3>
+<p><code>flex-basis</code>属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为<code>auto</code>，即项目的本来大小。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="comment">/* default auto */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>它可以设为跟<code>width</code>或<code>height</code>属性一样的值（比如350px），则项目将占据固定空间。</p>
+<h3 id="45-flex属性"><a class="markdownIt-Anchor" href="#45-flex属性"></a> 4.5 flex属性</h3>
+<p><code>flex</code>属性是<code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code>的简写，默认值为<code>0 1 auto</code>。后两个属性可选。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: none | [ &lt;<span class="string">&#x27;flex-grow&#x27;</span>&gt; &lt;<span class="string">&#x27;flex-shrink&#x27;</span>&gt;? || &lt;<span class="string">&#x27;flex-basis&#x27;</span>&gt; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>该属性有两个快捷值：<code>auto</code> (<code>1 1 auto</code>) 和 none (<code>0 0 auto</code>)。</p>
+<p>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+<h3 id="46-align-self属性"><a class="markdownIt-Anchor" href="#46-align-self属性"></a> 4.6 align-self属性</h3>
+<p><code>align-self</code>属性允许单个项目有与其他项目不一样的对齐方式，可覆盖<code>align-items</code>属性。默认值为<code>auto</code>，表示继承父元素的<code>align-items</code>属性，如果没有父元素，则等同于<code>stretch</code>。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: auto | flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C049.png" alt="" /></p>
+<h3 id="flex1即为1-1-0"><a class="markdownIt-Anchor" href="#flex1即为1-1-0"></a> <strong>flex：1即为1 1 0%</strong></h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 0%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者更简便的写法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="flexauto-即为1-1-auto"><a class="markdownIt-Anchor" href="#flexauto-即为1-1-auto"></a> <strong>flex：auto 即为1 1 auto</strong></h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    flex: auto;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* 等同于 *&#x2F;</span><br><span class="line">div&#123;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码" /></p>
+<h3 id=""><a class="markdownIt-Anchor" href="#"></a> </h3>
+<h3 id="flexnone-即为0-0-auto"><a class="markdownIt-Anchor" href="#flexnone-即为0-0-auto"></a> <strong>flex：none 即为0 0 auto</strong></h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    flex: none;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* 等同于 *&#x2F;</span><br><span class="line">div&#123;</span><br><span class="line">    flex-grow: 0;</span><br><span class="line">    flex-shrink: 0;</span><br><span class="line">    flex-basis: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="flex默认0-1-auto"><a class="markdownIt-Anchor" href="#flex默认0-1-auto"></a> <strong>flex默认：0 1 auto；</strong></h3>
+<p><strong>flex-grow：分配剩余空间</strong></p>
+<p><strong>flex-grow：分配溢出空间</strong></p>
+<p><strong>flex-basis：原始占用尺寸</strong></p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>Flex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS的动画</title>
     <url>/posts/c32a5f2c.html</url>
     <content><![CDATA[<h1 id="css3-动画"><a class="markdownIt-Anchor" href="#css3-动画"></a> CSS3 动画</h1>
@@ -1604,6 +1880,659 @@ sticky</p>
         <tag>anmiation</tag>
         <tag>keyframe</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>CSS的单位小结(持续更新中)</title>
+    <url>/posts/a3bb9c3c.html</url>
+    <content><![CDATA[<h2 id="css单位"><a class="markdownIt-Anchor" href="#css单位"></a> CSS单位</h2>
+<p>CSS 的单位对于 CSS 的值有是一个直接影响的。因为 CSS 的单位直接对 CSS 的值的计算是有直接影响的，在 CSS 中单位的之间有一个关系图，如下所示：</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C002.webp" alt="" /></p>
+<h2 id="相对单位"><a class="markdownIt-Anchor" href="#相对单位"></a> 相对单位</h2>
+<ul>
+<li>单位和数字之间 没有空格。 数字<code>0</code>后，长度单位是 可选的。</li>
+<li>相对长度
+<ul>
+<li>相对长度表示 以其他距离 表示的度量。</li>
+<li>根据 单位的不同，可以是 特定字符的大小、行高 或 视口的大小。</li>
+</ul>
+</li>
+</ul>
+<h3 id="字体的-相对长度"><a class="markdownIt-Anchor" href="#字体的-相对长度"></a> 字体的 相对长度</h3>
+<h4 id="em"><a class="markdownIt-Anchor" href="#em"></a> em</h4>
+<p><strong>⑴ em : (相对于 当前元素本身的 )字体大小 font-size 的倍数</strong></p>
+<p><strong>相对 长度单位</strong></p>
+<ul>
+<li>
+<p>em = 元素的字体大小 <code>font-size</code> 的计算值</p>
+<ul>
+<li>1.5em<code>=</code>1.5<code>x</code>font-size` 的计算值</li>
+</ul>
+</li>
+<li>
+<p>①用在 <code>font-size</code> 属性 本身</p>
+<ul>
+<li>❶ 元素本身没有设置font-size属性时
+<ul>
+<li>em是相对于 父元素继承font-size的值
+<ul>
+<li>因为此时 元素自身的字体大小 = 从父元素 继承的字体大小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>❷ 如果元素本身 设置了font-size
+<ul>
+<li>比如,再给此元素 设置<code>padding-left:1.5em</code>,这个就是相对于 元素本身的<code>font-size</code>了,而不是 父元素的.</li>
+<li>不是相对于 父元素:
+<ul>
+<li>所以记住, <code>em</code> 不是 一直相对于 父元素的字体大小的,只有本身没设置 <code>font-size</code>时,自身字体大小 ,才等于 从父亲那里继承来的字体大小</li>
+<li>本质上,一直是 相对于 当前元素本身的字体大小<code>font-size</code>的,千万不要误解.</li>
+</ul>
+</li>
+<li>★ <strong>真实相对于</strong>: <strong>使用 <code>em</code>单位的 当前元素自身的 字体大小 <code>font-size</code></strong>,并不是 相对于 父元素的字体大小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>②用在 非<code>font-size</code>的属性上</p>
+<ul>
+<li>将会受 元素 字体大小<code>font-size</code> 的影响</li>
+<li>可以运用于 (可以使用 长度值的) 其他属性上，比如 <code>width</code>、<code>margin</code>、<code>padding</code>、<code>border-width</code> 和 <code>text-shadow</code> 等。</li>
+</ul>
+</li>
+<li>
+<p>如果没有任何 CSS 规则 影响的前提之下，默认情况下：</p>
+<ul>
+<li><code>1em</code> 的长度是：<code>1em</code> = <code>16px</code> = <code>0.17in</code> = <code>12pt</code>= <code>1pc</code> = <code>4 mm</code> = <code>0.42cm</code></li>
+</ul>
+</li>
+</ul>
+<p><em><strong><code>em</code> 是相对于 元素自身的 字体大小<code>font-size</code>,不是父元素的 字体大小,只有本身没有设置 字体大小时,需要设置时,才从父元素 继承一个字体大小,然后乘以倍数.</strong></em></p>
+<h4 id="rem"><a class="markdownIt-Anchor" href="#rem"></a> rem</h4>
+<p>rem : (根元素 html 标签的) 字体大小 font-size 的倍数</p>
+<ul>
+<li>
+<p><strong>rem = 根元素<html>的字体大小。</strong></p>
+<ul>
+<li>当在根元素 <code>font-size</code> 中使用时
+<ul>
+<li>表示它的 初始值.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>相对于</strong> 根元素<html>的 字体大小:</p>
+<ul>
+<li>
+<p><code>rem</code> 仅仅是 相对于 根元素<code>&lt;html&gt;</code>的 字体大小 <code>font-size</code>计算</p>
+<p>① <code>1rem</code> = <code>16px</code>，当然</p>
+<ul>
+<li>前提是 浏览器默认的font-size没有被 用户重置
+<ul>
+<li>(浏览器默认值 是<code>16px</code>，但是 用户定义的首选项 可以修改它)。</li>
+</ul>
+</li>
+<li>或者未显式的给 <code>html</code> 元素设置 <code>font-size</code> 值</li>
+</ul>
+<p>② <strong>无关 父元素的字体大小</strong>: <code>rem</code> 不关心 父元素的 <code>font-size</code>大小 ,因为 仅相对于 根元素<code>html</code>标签</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>对网格布局的好处</strong></p>
+<p>rem不是只对定义字体大小有用.比如,你可以使用rem把整个网格系统或者UI样式库基于HTML根元素的字体大小上,然后在特定的地方使用em班里缩放.这将给你更加可预测的字体代销和比例缩放</p>
+<h3 id="视窗的相对长度"><a class="markdownIt-Anchor" href="#视窗的相对长度"></a> 视窗的相对长度</h3>
+<p><strong>视窗的 百分比长度</strong></p>
+<ul>
+<li>定义 相对于 视窗<code>viewport</code>的大小的 长度<code>&lt;length&gt;</code>值，即 文档的 可见部分(电脑端).</li>
+<li>视口长度在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@page">@page</a> 声明块 中无效。</li>
+</ul>
+<p><strong>视窗</strong></p>
+<ul>
+<li>
+<p><strong>在 PC 端</strong></p>
+<ul>
+<li>视窗指的是 <strong>浏览器的 可视区域</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>在移动端中</strong></p>
+<p>, 包括三个视窗：</p>
+<ul>
+<li>布局视窗（<code>Layout Viewport</code>）</li>
+<li>视觉视窗（<code>Visual Viewport</code>）</li>
+<li>理想视窗（<code>Ideal Viewport</code>）</li>
+</ul>
+</li>
+</ul>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C024.jpg" alt="" /></p>
+<hr />
+<p><strong>视窗单位中的 视窗 指的是</strong>：</p>
+<ul>
+<li>PC 端: 浏览器 <strong>可视区域</strong></li>
+<li>移动端: <strong>布局视窗</strong>（Layout Viewport）</li>
+</ul>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C025.jpg" alt="" /></p>
+<h4 id="1-vh-视窗高度-的-1-百分之一"><a class="markdownIt-Anchor" href="#1-vh-视窗高度-的-1-百分之一"></a> ⑴ vh : 视窗高度 的 1% (百分之一)</h4>
+<ul>
+<li>视窗高度 的 <code>1/100</code>。
+<ul>
+<li>等于 视窗 初始包含块的 高度的<code>1%</code>。</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/All_About_The_Containing_Block">延伸阅读: 布局和包含块</a></li>
+</ul>
+<hr />
+<h4 id="2-vw-视窗宽度-的-1百分之一"><a class="markdownIt-Anchor" href="#2-vw-视窗宽度-的-1百分之一"></a> ⑵ vw :视窗宽度 的 1%(百分之一)</h4>
+<ul>
+<li>视窗宽度 的1%
+<ul>
+<li>等于 视窗 初始包含块的 宽度的<code>1%</code>。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="3-vmin-vw-和-vh-中的-较小值-宽高较小值的-百分之一"><a class="markdownIt-Anchor" href="#3-vmin-vw-和-vh-中的-较小值-宽高较小值的-百分之一"></a> ⑶ vmin : vw 和 vh 中的 较小值 (宽/高较小值的 百分之一)</h4>
+<ul>
+<li>视窗高度和宽度 之间的最小值的 <code>1%</code>。</li>
+<li>等于 <code>vw</code>和<code>vh</code>中的 较小值。</li>
+</ul>
+<hr />
+<h4 id="3-vmax-vw-和-vh-中的-较大值-宽高较大值的-百分之一"><a class="markdownIt-Anchor" href="#3-vmax-vw-和-vh-中的-较大值-宽高较大值的-百分之一"></a> ⑶ vmax : vw 和 vh 中的 较大值 (宽/高较大值的 百分之一)</h4>
+<ul>
+<li>视窗高度和宽度 之间的最大值的1%
+<ul>
+<li>等于<code>vw</code>和<code>vh</code> 中的 较大值。</li>
+</ul>
+</li>
+</ul>
+<h4 id="视窗单位的-计算方法"><a class="markdownIt-Anchor" href="#视窗单位的-计算方法"></a> 视窗单位的 计算方法</h4>
+<ul>
+<li>
+<p><strong>视窗单位的 计算方法</strong></p>
+<ul>
+<li>浏览器的 高度=1000px
+<ul>
+<li><code>1vh</code> = <code>1000px</code> / <code>100</code> = <code>10px</code>。</li>
+</ul>
+</li>
+<li>浏览器的 宽度=800px
+<ul>
+<li><code>1vw</code> = <code>800px</code> / <code>100</code> = <code>8px</code></li>
+</ul>
+</li>
+<li>浏览器设置为1000px宽、800px高
+<ul>
+<li><code>1vmin</code> = <code>8px</code>,<code>1vmax</code> = <code>10px</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>vh</code>和 <code>vw</code></p>
+<ul>
+<li>与 视窗的 高度和宽度 有关</li>
+</ul>
+</li>
+<li>
+<p><code>vmin</code> 和 <code>vmax</code></p>
+<ul>
+<li>
+<p>与 视窗 宽度 / 高度 的 最大值或最小值 有关，取决于 哪个更大和更小。</p>
+<hr />
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="百分比-单位"><a class="markdownIt-Anchor" href="#百分比-单位"></a> 百分比 单位 (%)</h2>
+<ul>
+<li><strong>百分比 单位: <code>%</code></strong></li>
+<li><strong>百分比单位的 使用位置</strong>:
+<ul>
+<li>和<code>px</code>、<code>em</code> 类似，在CSS 中接受长度值的属性 都可以使用 <code>%</code> 单位。</li>
+</ul>
+</li>
+<li><strong>相对值 和 参照值</strong>:
+<ul>
+<li>①百分比是 相对值
+<ul>
+<li>百分比 要有 其对应的 参照值，即 百分比值是一种 相对值.</li>
+</ul>
+</li>
+<li>② <strong>参照值</strong>: 要分析它的 <strong>计算值</strong>，都需要正确的 找到它的 <strong>参照值</strong>。</li>
+<li>③ <strong>值 可变</strong>: CSS 中的 百分比单位值 最终计算出来的值 是可变的.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="1-定位-中的百分比"><a class="markdownIt-Anchor" href="#1-定位-中的百分比"></a> ⑴ 定位 中的百分比</h3>
+<ul>
+<li>定位中的 百分比
+<ul>
+<li>在CSS 中 用来控制 <code>position</code> 位置的 <code>top</code>、<code>right</code>、<code>bottom</code> 和 <code>left</code> 都能使用 百分比 作为单位。</li>
+</ul>
+</li>
+<li>值为 百分比时
+<ul>
+<li><strong>对应的参照物</strong>: 包含块（但 不一定是 其父容器）同方向的 <code>width</code>或 <code>height</code> 计算。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>包含块的 确定</p>
+<p>:</p>
+<ul>
+<li>在CSS 中 <code>position</code> 对应的属性值 不一样，其 对应的包含块 也将不同</li>
+<li>① 元素为静态（static）或相对定位（relative）
+<ul>
+<li>包含块: 一般是 <strong>其父容器</strong></li>
+</ul>
+</li>
+<li>② 元素为 绝对定位（absolute）
+<ul>
+<li>包含块 : (离它最近的 <code>position</code>为 <code>absolute</code>、<code>relative</code> 或 <code>fixed</code> 的) <strong>祖先元素</strong></li>
+</ul>
+</li>
+<li>③ 元素为 固定定位（fixed）
+<ul>
+<li>包含块: <strong>视窗</strong>（<code>viewport</code>）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="2-盒模型-中的百分比"><a class="markdownIt-Anchor" href="#2-盒模型-中的百分比"></a> ⑵ 盒模型 中的百分比</h3>
+<ul>
+<li>
+<p>盒模型中的 百分比</p>
+<ul>
+<li>
+<p>CSS 中 盒模型 对应的属性height、min/max-height、width、min/max-height、padding、margin、border等属性。</p>
+<ul>
+<li>
+<p>不同的属性 其 对应的参照物 也有所不同。</p>
+</li>
+<li>
+<p>①height、min/max-height属性的值 为百分比时</p>
+<ul>
+<li>其 相对于 <strong>包含块的 <code>height</code></strong> 进行计算</li>
+</ul>
+</li>
+<li>
+<p>②width、min/max-width属性的值 为百分比时</p>
+<ul>
+<li>其 相对于 <strong>包含块的 <code>width</code></strong> 进行计算</li>
+</ul>
+</li>
+<li>
+<p>③padding、margin</p>
+<ul>
+<li>书写模式是 水平的
+<ul>
+<li>则相对于 包含块的 <code>width</code> 进行计算</li>
+</ul>
+</li>
+<li>书写模式是 垂直的
+<ul>
+<li>则相对于 包含块的 <code>height</code> 进行计算</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="3-文本-中的百分比"><a class="markdownIt-Anchor" href="#3-文本-中的百分比"></a> ⑶ 文本 中的百分比</h3>
+<ul>
+<li>
+<p>文本中的百分比</p>
+<ul>
+<li>
+<p>CSS 中 控制文本的属性:</p>
+<p>font-size、line-height、vertical-align等。</p>
+<ul>
+<li>不同的属性 其参照物 也是有所不同：</li>
+<li>①font-size
+<ul>
+<li>是基于 父元素中 <code>font-size</code> 进行计算</li>
+</ul>
+</li>
+<li>②text-align
+<ul>
+<li>书写模式是水平的
+<ul>
+<li>相对于 <code>width</code> 进行计算</li>
+</ul>
+</li>
+<li>书写模式是垂直的
+<ul>
+<li>相对于 <code>height</code> 进行计算</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>③line-height
+<ul>
+<li>基于 <code>font-size</code> 进行计算</li>
+</ul>
+</li>
+<li>④vertical-algin
+<ul>
+<li>基于 <code>line-height</code> 计算</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="4-边框-和-圆角-中的百分比"><a class="markdownIt-Anchor" href="#4-边框-和-圆角-中的百分比"></a> ⑷ 边框 和 圆角 中的百分比</h3>
+<ul>
+<li>
+<p>边框和圆角中的 百分比</p>
+<ul>
+<li>
+<p>使用百分比的 属性</p>
+<p>:</p>
+<ul>
+<li><code>border-radius</code> 和 <code>border-image-width</code> 两个属性上 是可以使用百分比 为单位的。</li>
+<li><code>border-width</code> 属性是不支持<code>%</code>单位的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>在 <code>border-radius</code> 中 使用
+<ul>
+<li>圆角的半径: 是通过百分比 来进行计算的</li>
+<li>① 水平方向的 半径
+<ul>
+<li>相对于元素宽度 <code>width</code> 计算</li>
+</ul>
+</li>
+<li>② 垂直方向的 半径
+<ul>
+<li>相对于元素高度 <code>height</code> 进行计算。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-背景-属性中的百分比"><a class="markdownIt-Anchor" href="#5-背景-属性中的百分比"></a> ⑸ 背景 属性中的百分比</h4>
+<ul>
+<li>背景属性中的 百分比
+<ul>
+<li>可以使用百分比 为单位的 背景属性
+<ul>
+<li><code>background-size</code>、<code>background-origin</code> 和 <code>background-position</code> 属性 都可以使用百分比作为单位。</li>
+<li>①background-size的百分比
+<ul>
+<li>基于background-origin区域的大小 进行计算。
+<ul>
+<li>可以对 背景图像 进行 缩放处理。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>②background-position的百分比
+<ul>
+<li>需要通过 数学公式计算：
+<ul>
+<li>（容器尺寸- 背景图像尺寸）* 百分比值：(各自 乘以百分比 的差值)
+<ul>
+<li>x 偏移值 = (container width - image width) * (position x%)</li>
+<li>y 偏移值 = (container height - image height) * (position y%)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C026.jpg" alt="" /></p>
+<h4 id="6-变换-中的百分比"><a class="markdownIt-Anchor" href="#6-变换-中的百分比"></a> ⑹ 变换 中的百分比</h4>
+<ul>
+<li>变换中的 百分比
+<ul>
+<li>①translateX()的百分比
+<ul>
+<li>相对于容器的 <code>width</code> 计算</li>
+</ul>
+</li>
+<li>②translateY()的百分比
+<ul>
+<li>相对于容器的 <code>height</code> 计算</li>
+</ul>
+</li>
+<li>③transform-origin中
+<ul>
+<li>横坐标（x）
+<ul>
+<li>相对于容器的 <code>width</code> 计算；</li>
+</ul>
+</li>
+<li>纵坐标（y）
+<ul>
+<li>相对于容器的 <code>height</code> 计算</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>translateZ()</code>: 不接受 百分比为单位的值。</li>
+</ul>
+</li>
+</ul>
+<h4 id="百分比值的-继承"><a class="markdownIt-Anchor" href="#百分比值的-继承"></a> ♣ 百分比值的 继承</h4>
+<ul>
+<li>当百分比值 用于 可继承属性时
+<ul>
+<li>只有 结合参照值 <strong>计算后的绝对值</strong> 会被继承，而不是 百分比值本身。</li>
+</ul>
+</li>
+<li>一个元素的font-size:20px，并定义了line-height:150%;
+<ul>
+<li>该元素的 下一级子元素 继承到的 <code>line-height</code> = <code>20px</code> * <code>150%</code> = <code>30px</code></li>
+<li>不会 再和 子元素自己的 <code>font-size</code> 有关。</li>
+</ul>
+</li>
+</ul>
+<h2 id="绝对长度单位"><a class="markdownIt-Anchor" href="#绝对长度单位"></a> 绝对长度单位</h2>
+<ul>
+<li><strong>绝对 长度单位</strong>
+<ul>
+<li>绝对长度单位: 表示 在 已知输出媒体的 物理属性 (如打印布局)时的物理测量
+<ul>
+<li>这是通过 将一个单元锚 定到一个物理单元，然后定义 与之相关的其他单元 来实现的.</li>
+</ul>
+</li>
+<li>对于 低分辨率设备(如屏幕) 和 高分辨率设备(如打印机)，锚点的作用 是不同的。</li>
+</ul>
+</li>
+<li><strong>对于低 <code>dpi</code> 设备</strong>: 单位<code>px</code>表示 <strong>物理参考像素</strong>
+<ul>
+<li>其他单位是 相对于它 定义的。
+<ul>
+<li>因此，<code>1in</code>定义为 <code>96px</code>，等于 <code>72pt</code>。</li>
+</ul>
+</li>
+<li>这个定义的结果是，在这样的设备上，以英寸(<code>in</code>)、厘米(<code>cm</code>)或毫米(<code>mm</code>)表示的尺寸, 不一定与 相同名称的 物理单元的大小 匹配。</li>
+</ul>
+</li>
+<li><strong>对于高 <code>dpi</code> 设备</strong>: 英寸(<code>in</code>)、厘米(<code>cm</code>)和毫米(<code>mm</code>)与 物理设备相同。
+<ul>
+<li>因此，<code>px</code>单位 是相对于它们定义的(<code>1/96</code>英寸)。</li>
+<li>许多用户 增加他们的用户代理的 默认字体大小，使文本 更清晰。</li>
+</ul>
+</li>
+<li>绝对长度 会导致 可访问性问题，因为它们是 固定的，不根据 用户设置 伸缩。
+<ul>
+<li>因此，在设置 字体大小时，最好选择 相对长度(如 <code>em</code>或 <code>rem</code>)。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="1-px-像素"><a class="markdownIt-Anchor" href="#1-px-像素"></a> ⑴ px : 像素</h3>
+<ul>
+<li>一个像素。
+<ul>
+<li>对于 屏幕显示，它通常表示 一个设备像素(点)。</li>
+<li>然而，对于打印机和高分辨率屏幕，一个CSS像素 意味着 多个设备像素。</li>
+<li><code>1px</code> = 1英寸的<code>1/96</code> = <code>1in / 96</code>。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="不重要"><a class="markdownIt-Anchor" href="#不重要"></a> 不重要</h3>
+<h4 id="2-cm-厘米-1254-in-38px"><a class="markdownIt-Anchor" href="#2-cm-厘米-1254-in-38px"></a> ⑵ cm : 厘米 ( 1/2.54 in , 38px)</h4>
+<ul>
+<li>
+<p>1厘米。1cm=96 px / 2.54≈38px</p>
+<p>。</p>
+<ul>
+<li>One centimeter, 美 /'sɛntə,mitɚ/</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="3-mm-毫米-1254-in-38px"><a class="markdownIt-Anchor" href="#3-mm-毫米-1254-in-38px"></a> ⑶ mm : 毫米 (1/25.4 in, 3.8px)</h4>
+<ul>
+<li>一毫米.1mm=1cm / 10≈3.8px.(一厘米的 十分之一)
+<ul>
+<li>One millimeter , 美 /ˈmɪlimiːtər/</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="4-in-英寸-1in-96px-254cm"><a class="markdownIt-Anchor" href="#4-in-英寸-1in-96px-254cm"></a> ⑷ in : 英寸 ( 1in = 96px ,2.54cm)</h4>
+<ul>
+<li>一英寸
+<ul>
+<li>One inch , 美 /ɪntʃ/</li>
+</ul>
+</li>
+<li><code>1in</code> = <code>2.54cm</code> = <code>96px</code>.</li>
+</ul>
+<hr />
+<h4 id="5-pc-派卡-16-in-12pt-16px"><a class="markdownIt-Anchor" href="#5-pc-派卡-16-in-12pt-16px"></a> ⑸ pc : 派卡 ( 1/6 in ,12pt, 16px)</h4>
+<ul>
+<li>12 点 活字 (1 pc 等于 12 点)
+<ul>
+<li>One pica , 美 /ˈpaɪkə/</li>
+</ul>
+</li>
+<li><code>1pc</code> = <code>12pt</code> = <code>1in / 6</code> = <code>96px</code> / <code>6</code> = <code>16px</code>.</li>
+<li>派卡(Pica)，绝对长度单位。相当于 我国 新四号铅字的尺寸。
+<ul>
+<li>铅字: 用铅、锑、锡合金铸成的 印刷或打字 用的活字。</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-pt-点-显示器上-一个个的点172-in13px"><a class="markdownIt-Anchor" href="#6-pt-点-显示器上-一个个的点172-in13px"></a> ⑹ pt : 点 (显示器上 一个个的点,1/72 in,1.3px)</h4>
+<ul>
+<li>
+<p>磅（1/72 英寸）</p>
+<ul>
+<li>One point.</li>
+</ul>
+</li>
+<li>
+<p><code>1pt</code>= <code>1in / 72</code>.</p>
+</li>
+<li>
+<p>点(Point)，指设备 能控制显示的最小 物理单位</p>
+<p>，显示器上 一个个的点。</p>
+<ul>
+<li>从屏幕 在工厂生产出的那天起，它上面 <strong>设备像素点</strong> 就固定不变了，和 屏幕尺寸大小 有关。</li>
+</ul>
+</li>
+</ul>
+<h4 id="css-绝对单位的-换算关系"><a class="markdownIt-Anchor" href="#css-绝对单位的-换算关系"></a> CSS 绝对单位的 换算关系</h4>
+<ul>
+<li>1in = 96px</li>
+<li>1in = 2.54cm</li>
+<li>1in = 25.4mm</li>
+<li>1in = 72pt</li>
+<li>1in = 6pc
+<ul>
+<li>1pc = 12pt</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>[^主要引自 <a href="https://blog.csdn.net/VickyTsai/article/details/102960594">https://blog.csdn.net/VickyTsai/article/details/102960594</a> ,仅供学习参考]:</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS的小记(不断更新中)</title>
+    <url>/posts/3632cac.html</url>
+    <content><![CDATA[<h1 id="css小记"><a class="markdownIt-Anchor" href="#css小记"></a> CSS小记</h1>
+<h2 id="before-和-after"><a class="markdownIt-Anchor" href="#before-和-after"></a> :before 和 :after</h2>
+<p>伪类<code>:before</code>和<code>:after</code>默认是一个行内元素，所以这个元素设置<code>width/height</code>是无效的，就像给<code>a</code>元素设置<code>width/height</code>一样，但是可以通过设置<code>position:absolute;</code>，对这个元素的<code>display</code>属性计算为<code>inline-block</code>值，但是设置了<code>width/height</code>针对的是<code>:before/:after</code>生成的匿名替换元素，而不是其中的<code>content</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 无效</span><br><span class="line">span:before &#123;</span><br><span class="line">    content: url(xxx.png);</span><br><span class="line">    width: 800px;</span><br><span class="line">    height: 600px;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 可以</span><br><span class="line">span:before &#123;</span><br><span class="line">    content: &#39;&#39;;</span><br><span class="line">    background-image:url(xxx.png);</span><br><span class="line">    background-size:800px 600px;</span><br><span class="line">    width: 800px;</span><br><span class="line">    height: 600px;</span><br><span class="line">    position: absolute; &#x2F;&#x2F; 设置定位类型</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="inline-block"><a class="markdownIt-Anchor" href="#inline-block"></a> inline-block</h2>
+<h3 id="元素间隔"><a class="markdownIt-Anchor" href="#元素间隔"></a> 元素间隔</h3>
+<p><code>inline-block</code>使得元素水平排列，但如果两个<code>inline-block</code>元素之间存在<strong>空格</strong>或者<strong>换行</strong>就会出现奇怪的元素间隔，即使使用了<code>&#123;padding: 0; margin: 0&#125;</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#text p &#123; display: inline-block; padding: 10px; background-color: red; color: #fff;&#125;</span><br><span class="line"></span><br><span class="line">&lt;div id&#x3D;&quot;text&quot;&gt;</span><br><span class="line">    &lt;p&gt;1&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p&gt;2&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C032.png" alt="" /></p>
+<p>常见的解决方法：</p>
+<p>1、元素之间不要存在<strong>空格</strong>或者<strong>换行符</strong>；</p>
+<p>2、父容器的<code>font-size:0</code>。</p>
+<p>去除<code>inline-block</code>之间的间隔有很多种方法，可以参考张鑫旭老师的<a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/">去除inline-block元素间间距的N种方法</a></p>
+<h3 id="元素对齐问题"><a class="markdownIt-Anchor" href="#元素对齐问题"></a> 元素对齐问题</h3>
+<p>两<code>inline-block</code>元素，不存在文本的情况下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#test p &#123;display: inline-block;&#125;</span><br><span class="line">.c1, .c2 &#123;width: 100px; height: 100px;&#125;</span><br><span class="line">.c1 &#123;border: 1px solid #f00;&#125;</span><br><span class="line">.c2 &#123;border: 1px solid #000;&#125;</span><br><span class="line"></span><br><span class="line">&lt;div id&#x3D;&quot;test&quot;&gt;</span><br><span class="line">    &lt;p class&#x3D;&quot;c1&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p class&#x3D;&quot;c2&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C033.png" alt="" /></p>
+<p>两<code>inline-block</code>元素存在文本的情况下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#test p &#123;display: inline-block;&#125;</span><br><span class="line">.c1, .c2 &#123;width: 100px; height: 100px;&#125;</span><br><span class="line">.c1 &#123;border: 1px solid #f00;&#125;</span><br><span class="line">.c2 &#123;border: 1px solid #000;&#125;</span><br><span class="line"></span><br><span class="line">&lt;div id&#x3D;&quot;test&quot;&gt;</span><br><span class="line">    &lt;p class&#x3D;&quot;c1&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p class&#x3D;&quot;c2&quot;&gt;1&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C034.png" alt="" /></p>
+<p>常见的解决方法：</p>
+<p>给图片或者背景设置<code>vertical-align: top</code>即可，或者给有文本的元素设置<code>overflow:hidden</code></p>
+<p>出现这种的原因是因为<code>inline-block</code>的默认属性是<code>vertical-align: baseline</code>，即以父元素的基线对齐，但当出现文本的时候，则会影响了对齐的基线。</p>
+<p>来自官方的答案：<a href="https://link.zhihu.com/?target=http%3A//www.w3.org/TR/CSS21/visudet.html%23leading">“Visual formatting model details”</a></p>
+<blockquote>
+<p>The baseline of an ‘inline-block’ is the baseline of its last line box in the normal flow, unless it has either no in-flow line boxes or if its ‘overflow’ property has a computed value other than ‘visible’, in which case the baseline is the bottom margin edge.</p>
+</blockquote>
+<h2 id="盒模型"><a class="markdownIt-Anchor" href="#盒模型"></a> 盒模型</h2>
+<p>页面上的每一个元素都可以看成一个盒模型。</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C035.png" alt="" /></p>
+<p>可以知道盒模型由四部分组成<code>content + padding + border + margin</code>，因此一个元素的宽度应该是：<code>总宽度 = margin-left + border-left + padding-left + width + padding-right + border-right + margin-right</code>。</p>
+<p>但是以上有问题的是，在**IE(低于IE 9)**的宽度为：<code>总宽度 = width + margin-right + margin-left</code>。因此出现了<code>box-sizing: border-box</code>的属性，当设置<code>box-sizing: border-box</code>属性时，<code>border</code> 和 <code>padding</code> 就被包含在了宽高之内，和 IE 之前的标准是一样的。</p>
+<h2 id="chrome-小于12号字体"><a class="markdownIt-Anchor" href="#chrome-小于12号字体"></a> Chrome 小于12号字体</h2>
+<p>相对于其他的浏览器，chrome的默认最小字体只能是<code>12px</code>，无论你设置再小也是只能是<code>12px</code>，那假如有一个需求是要你兼容其他平台，包括chrome的字体表现小于<code>12px</code>的呢？可以使用css3的一个属性<code>transform: scale(n)</code>。</p>
+<h2 id="text-overflow-ellipsis"><a class="markdownIt-Anchor" href="#text-overflow-ellipsis"></a> text-overflow: ellipsis</h2>
+<p><strong>多行文本</strong>在当前标准是不支持<code>text-overflow: ellipsis</code>。在草案中有一个不规范的属性<code>-webkit-line-clamp: &lt;number&gt;</code> <a href="http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-UnsupportedProperties">(unsupported WebKit property)</a>倒是可以支持这一需求，但是目前也只是在草案中。<code>text-overflow: ellipsis</code>需要<code>overflow: hidden</code>跟<code>white-space: nowrap</code>的支持，在IE 6还需要给元素设置<strong>宽度</strong>，至于多行文本，可以用<em>Jquery插件</em>的<em>Jquery-dotdotdot</em>，或者通过伪元素<code>:after</code>也可以很巧妙的解决这个问题。</p>
+<p>在此帖一下张老师的分析以及他的方案：<a href="http://www.zhangxinxu.com/wordpress/2009/09/%E5%85%B3%E4%BA%8E%E6%96%87%E5%AD%97%E5%86%85%E5%AE%B9%E6%BA%A2%E5%87%BA%E7%94%A8%E7%82%B9%E7%82%B9%E7%82%B9-%E7%9C%81%E7%95%A5%E5%8F%B7%E8%A1%A8%E7%A4%BA/">关于文字内容溢出用点点点(…)省略号表示</a></p>
+<h2 id="letter-spacing-无法居中的问题"><a class="markdownIt-Anchor" href="#letter-spacing-无法居中的问题"></a> letter-spacing 无法居中的问题</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">letter-spacing: 20px;</span><br><span class="line">text-indent: 20px;</span><br><span class="line">text-align:center;</span><br></pre></td></tr></table></figure>
+<h2 id="blur"><a class="markdownIt-Anchor" href="#blur"></a> blur</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">filter: blur(10px);</span><br><span class="line">-webkit-filter: blur(10px);</span><br><span class="line">-moz-filter: blur(10px);</span><br><span class="line">-o-filter: blur(10px);</span><br><span class="line">-ms-filter: blur(10px);</span><br><span class="line">filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius&#x3D;&quot;4&quot;);</span><br></pre></td></tr></table></figure>
+<h2 id="work-wrap-work-break"><a class="markdownIt-Anchor" href="#work-wrap-work-break"></a> work-wrap &amp;&amp; work-break</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span&gt;</span><br><span class="line">    666 asdjkhaksdhksdhkjahskajhsdasdasdaaskashdkasdhkad 872934729347</span><br><span class="line">&lt;&#x2F;span&gt;</span><br><span class="line"></span><br><span class="line">span &#123;</span><br><span class="line">    word-wrap: break-word;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C036.png" alt="" /></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span&gt;</span><br><span class="line">    666 asdjkhaksdhksdhkjahskajhsdasdasdaaskashdkasdhkad 872934729347</span><br><span class="line">&lt;&#x2F;span&gt;</span><br><span class="line"></span><br><span class="line">span &#123;</span><br><span class="line">    word-break: break-all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C037.png" alt="" /></p>
+<p><code>word-wrap: break-word</code> 会把过长的字符串换行再折断溢出部分，而<code>word-break: break-all</code> 会把过长的字符串在该行就将溢出的折断。</p>
+<hr />
+<p>[^本文引自https://lucius0.github.io/2017/03/19/archivers/css-notes/ , 仅供学习参考]:</p>
+]]></content>
   </entry>
   <entry>
     <title>CSS渐变总结</title>
@@ -2043,6 +2972,198 @@ sticky</p>
         <tag>CSS</tag>
         <tag>过渡</tag>
         <tag>transition</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS的选择器总结</title>
+    <url>/posts/c399464a.html</url>
+    <content><![CDATA[<h1 id="css选择器"><a class="markdownIt-Anchor" href="#css选择器"></a> CSS选择器</h1>
+<h2 id="基本选择器"><a class="markdownIt-Anchor" href="#基本选择器"></a> 基本选择器</h2>
+<h3 id="通配符选择器"><a class="markdownIt-Anchor" href="#通配符选择器"></a> * 通配符选择器</h3>
+<p>通用元素选择器，匹配任何元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	 margin:0;</span><br><span class="line">     padding:0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="element元素选择器"><a class="markdownIt-Anchor" href="#element元素选择器"></a> Element元素选择器</h3>
+<p>标签选择器，匹配所有使用E标签的元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p&#123;</span><br><span class="line"> font-size:2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="class类选择器"><a class="markdownIt-Anchor" href="#class类选择器"></a> . class类选择器</h3>
+<p>class选择器，匹配所有class(类名)属性中包含info的元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.className&#123;</span><br><span class="line">background:#ff0;</span><br><span class="line">&#125;</span><br><span class="line">p.info &#123; background:#ff0; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="id选择器"><a class="markdownIt-Anchor" href="#id选择器"></a> # ID选择器</h3>
+<p>id选择器，匹配所有id属性等于footer的元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#idName&#123;</span><br><span class="line"> background:#ff0; </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="ele1~ele2-同级选择器"><a class="markdownIt-Anchor" href="#ele1~ele2-同级选择器"></a> Ele1~Ele2 同级选择器</h3>
+<p>匹配任何在E元素之后的同级F元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p ~ ul &#123; background:#ff0; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="多元素组合选择器"><a class="markdownIt-Anchor" href="#多元素组合选择器"></a> 多元素组合选择器</h2>
+<h3 id="多元素选择选择器"><a class="markdownIt-Anchor" href="#多元素选择选择器"></a> 多元素选择选择器</h3>
+<p>多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号分隔</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div,p,a&#123;</span><br><span class="line">color:#f00;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="后代选择器"><a class="markdownIt-Anchor" href="#后代选择器"></a> 后代选择器</h3>
+<p>后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔,部分第一代还是第几代</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div p&#123;</span><br><span class="line">color:#f00;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="子代选择器"><a class="markdownIt-Anchor" href="#子代选择器"></a> 子代选择器</h3>
+<p>子元素选择器，匹配所有E元素的子元素F,只选择直接的第一代选择器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div&gt;p&#123;</span><br><span class="line">color:#f00;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="相邻选择器"><a class="markdownIt-Anchor" href="#相邻选择器"></a> +相邻选择器</h3>
+<p>相邻元素选择器，匹配所有紧随E元素之后的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div+p+&#123;</span><br><span class="line">color:#cccc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="属性选择器"><a class="markdownIt-Anchor" href="#属性选择器"></a> 属性选择器</h2>
+<h3 id="elementattitude全部属性选择器"><a class="markdownIt-Anchor" href="#elementattitude全部属性选择器"></a> Element[attitude]全部属性选择器</h3>
+<p>匹配所有具有attitude属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如&quot;[cheacked]&quot;。以下同。）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div[title]&#123;</span><br><span class="line">	所有包含title的P元素</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementattr-val固定属性选择器"><a class="markdownIt-Anchor" href="#elementattr-val固定属性选择器"></a> Element[attr = val]固定属性选择器</h3>
+<p>匹配所有sttr属性等于&quot;val&quot;的元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div[class&#x3D; main]&#123;</span><br><span class="line">选择所有类名为main的div标签</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="eattr~val其中属性选择器"><a class="markdownIt-Anchor" href="#eattr~val其中属性选择器"></a> E[attr~=val]其中属性选择器</h3>
+<p>匹配所有att属性具有多个空格分隔的值、其中一个值等于&quot;val&quot;的E元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div[class ~&#x3D; main]&#123;</span><br><span class="line">选取所有div类名中含有main的div元素</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementattval开头选择器"><a class="markdownIt-Anchor" href="#elementattval开头选择器"></a> Element[att|=val]开头选择器</h3>
+<p>匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、其中一个值以&quot;val&quot;开头的E元素，主要用于lang属性，比如&quot;en&quot;、“en-us”、&quot;en-gb&quot;等等</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p[lang|&#x3D;en] &#123;</span><br><span class="line">color:#f00; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="伪类选择器"><a class="markdownIt-Anchor" href="#伪类选择器"></a> 伪类选择器</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>匹配所有未被点击的链接</td>
+</tr>
+<tr>
+<td></td>
+<td>匹配所有已被点击的链接</td>
+</tr>
+<tr>
+<td></td>
+<td>匹配鼠标已经其上按下、还没有释放的E元素</td>
+</tr>
+<tr>
+<td></td>
+<td>匹配鼠标悬停其上的E元素</td>
+</tr>
+<tr>
+<td></td>
+<td>匹配获得当前焦点的E元素</td>
+</tr>
+<tr>
+<td></td>
+<td>匹配lang属性等于c的E元素</td>
+</tr>
+</tbody>
+</table>
+<h3 id="elefirst-child第一子元素选择器"><a class="markdownIt-Anchor" href="#elefirst-child第一子元素选择器"></a> Ele:first-child第一子元素选择器</h3>
+<p>匹配父元素的第一个子元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:first-child &#123; font-style:italic; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="链接选择器"><a class="markdownIt-Anchor" href="#链接选择器"></a> 链接选择器</h3>
+<table>
+<thead>
+<tr>
+<th>E:link</th>
+<th>匹配所有未被点击的链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E:visited</td>
+<td>匹配所有已被点击的链接</td>
+</tr>
+<tr>
+<td>E:active</td>
+<td>匹配鼠标已经其上按下、还没有释放的元素</td>
+</tr>
+<tr>
+<td>E:hover</td>
+<td>匹配鼠标悬停其上的E元素</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a:link&#123;&#125;</span><br><span class="line">a:hover&#123;&#125;</span><br><span class="line">a:active&#123;&#125;</span><br><span class="line">a:hover&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementfocus焦点选择器"><a class="markdownIt-Anchor" href="#elementfocus焦点选择器"></a> Element:focus焦点选择器</h3>
+<p>匹配获得当前焦点的元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input[type&#x3D;text]:focus&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementlang"><a class="markdownIt-Anchor" href="#elementlang"></a> Element:lang©</h3>
+<p>q:lang(sv) { quotes: “\201D” “\201D” “\2019” “\2019”; }</p>
+<h3 id="elementenabled"><a class="markdownIt-Anchor" href="#elementenabled"></a> Element:enabled</h3>
+<p>匹配表单中激活的元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input[type&#x3D;text]:enabled&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementdisabled"><a class="markdownIt-Anchor" href="#elementdisabled"></a> Element:disabled</h3>
+<p>匹配表单中禁用的元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input[type&#x3D;text]:disabled&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementchecked"><a class="markdownIt-Anchor" href="#elementchecked"></a> Element:checked</h3>
+<p>匹配表单中被选中的单选框或者多选框</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input[type&#x3D;radio][name&#x3D; main]:checked&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementselection"><a class="markdownIt-Anchor" href="#elementselection"></a> Element::selection</h3>
+<p>匹配用户当前选中的元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">::selection&#123;</span><br><span class="line">	用鼠标选中的会进行修改</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结构性伪类元素"><a class="markdownIt-Anchor" href="#结构性伪类元素"></a> 结构性伪类元素</h2>
+<h3 id="elementroot"><a class="markdownIt-Anchor" href="#elementroot"></a> Element:root</h3>
+<p>匹配文档的根元素，对于HTML文档，就是HTML元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">设置HTML文档的背景色：</span><br><span class="line">:root</span><br><span class="line">&#123;</span><br><span class="line">    background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementempty"><a class="markdownIt-Anchor" href="#elementempty"></a> Element:empty</h3>
+<p>:empty选择器选择每个没有任何子级的元素（包括文本节点）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:empty</span><br><span class="line">&#123;</span><br><span class="line">    background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementlast-child"><a class="markdownIt-Anchor" href="#elementlast-child"></a> Element:last-child</h3>
+<p>:last-child选择器用来匹配父元素中最后一个子元素。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:last-child</span><br><span class="line">&#123;</span><br><span class="line">background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementnth-childn"><a class="markdownIt-Anchor" href="#elementnth-childn"></a> Element:nth-child(n)</h3>
+<p>匹配其父元素的第n个子元素，第一个编号为1</p>
+<p>:nth-child(n) 选择器匹配父元素中的第 n 个子元素，元素类型没有限制。</p>
+<p><em>n</em> 可以是一个数字，一个关键字，或者一个公式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:nth-child(2)</span><br><span class="line">&#123;</span><br><span class="line">    background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementnth-last-childn"><a class="markdownIt-Anchor" href="#elementnth-last-childn"></a> Element:nth-last-child(n)</h3>
+<p>匹配其父元素的倒数第n个子元素，第一个编号为1</p>
+<p>:nth-last-child(n) 选择器匹配属于其元素的第 N 个子元素的每个元素，不论元素的类型，从最后一个子元素开始计数。</p>
+<p><em>n</em>可以是一个数字，一个关键字，或者一个公式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:nth-last-child(2)</span><br><span class="line">&#123;</span><br><span class="line">    background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementnth-of-typen"><a class="markdownIt-Anchor" href="#elementnth-of-typen"></a> Element:nth-of-type(n)</h3>
+<p>与:nth-child()作用类似，但是仅匹配<strong>使用同种标签</strong>的元素</p>
+<p>：nth-of-type（n）选择器匹配同类型中的第n个同级兄弟元素。</p>
+<p>n可以是一个数字，一个关键字，或者一个公式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">指定每个p元素匹配同类型中的第2个同级兄弟元素的背景色：</span><br><span class="line">p:nth-of-type(2)</span><br><span class="line">&#123;</span><br><span class="line">background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementnth-last-of-typen"><a class="markdownIt-Anchor" href="#elementnth-last-of-typen"></a> Element:nth-last-of-type(n)</h3>
+<p>:nth-last-of-type(<em>n</em>)选择器匹配同类型中的倒数第n个同级兄弟元素。</p>
+<p><em>n</em> 可以是一个数字，一个关键字，或者一个公式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:nth-last-of-type(2)</span><br><span class="line">&#123;</span><br><span class="line">background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementfirst-of-type"><a class="markdownIt-Anchor" href="#elementfirst-of-type"></a> Element:first-of-type</h3>
+<p>:first-of-type 选择器匹配元素其父级是特定类型的第一个子元素。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">选择的 p 元素是其父元素的第一个 p 元素：</span><br><span class="line"></span><br><span class="line">p:first-of-type</span><br><span class="line">&#123;</span><br><span class="line">    background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementlast-of-type"><a class="markdownIt-Anchor" href="#elementlast-of-type"></a> Element:last-of-type</h3>
+<p>:last-of-type选择器匹配元素其父级是特定类型的最后一个子元素。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">指定其父级的最后一个p元素的背景色：</span><br><span class="line"></span><br><span class="line">p:last-of-type</span><br><span class="line">&#123;</span><br><span class="line">background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementonly-child"><a class="markdownIt-Anchor" href="#elementonly-child"></a> Element:only-child</h3>
+<p>:only-child 选择器匹配属于父元素中唯一子元素的元素。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:only-child</span><br><span class="line">&#123;</span><br><span class="line">    background:#ff0000;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="elementonly-of-type"><a class="markdownIt-Anchor" href="#elementonly-of-type"></a> Element:only-of-type</h3>
+<p>:only-of-type 代表了任意一个元素，这个元素没有其他相同类型的兄弟元素。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">指定属于父元素的特定类型的唯一子元素的每个 p 元素：：</span><br><span class="line"></span><br><span class="line">p:only-of-type</span><br><span class="line">&#123;</span><br><span class="line">    background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="css-3的反选伪类"><a class="markdownIt-Anchor" href="#css-3的反选伪类"></a> CSS 3的反选伪类</h2>
+<p>:not(selector) 选择器匹配每个元素是不是指定的元素/选择器。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">为每个并非&lt;p&gt;元素的元素设置背景颜色：</span><br><span class="line"></span><br><span class="line">:not(p)</span><br><span class="line">&#123;</span><br><span class="line">background:#ff0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="css-3中的-target-伪类"><a class="markdownIt-Anchor" href="#css-3中的-target-伪类"></a> CSS 3中的 :target 伪类</h2>
+<p>＃ 锚的名称是在一个文件中链接到某个元素的URL。元素被链接到目标元素。</p>
+<p>:target选择器可用于当前活动的target元素的样式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">突出显示活动的HTML锚点：</span><br><span class="line"></span><br><span class="line">:target</span><br><span class="line">&#123;</span><br><span class="line">border: 2px solid #D4D4D4;</span><br><span class="line">background-color: #e5eecc;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="伪元素"><a class="markdownIt-Anchor" href="#伪元素"></a> 伪元素</h2>
+<h3 id="elementfirst-lin首行选择器"><a class="markdownIt-Anchor" href="#elementfirst-lin首行选择器"></a> Element:first-lin首行选择器</h3>
+<p>匹配E元素的第一行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:first-line &#123; font-weight:bold; color;#600; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementfirst-letter"><a class="markdownIt-Anchor" href="#elementfirst-letter"></a> Element:first-letter</h3>
+<p>匹配E元素的第一个字母</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.preamble:first-letter &#123; </span><br><span class="line">			font-size:1.5em; font-weight:bold;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementbefore"><a class="markdownIt-Anchor" href="#elementbefore"></a> Element:before</h3>
+<p>在E元素之前插入生成的内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.cbb:before &#123; content:&quot;&quot;; </span><br><span class="line">			  display:block; </span><br><span class="line">			  height:17px; </span><br><span class="line">			  width:18px; </span><br><span class="line">			  background:url(top.png) no-repeat 0 0; </span><br><span class="line">			  margin:0 0 0 -18px; </span><br><span class="line">			  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="elementafter"><a class="markdownIt-Anchor" href="#elementafter"></a> Element:after</h3>
+<p>在E元素之后插入生成的内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a:link:after &#123; </span><br><span class="line">		content: &quot; (&quot; attr(href) &quot;) &quot;; </span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>选择器</tag>
       </tags>
   </entry>
   <entry>
@@ -4325,6 +5446,231 @@ This is my website, click the button <a class="btn-beautify button--animated lar
         <tag>border</tag>
         <tag>border的使用教程</tag>
         <tag>CSS3 边框</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS的前端布局</title>
+    <url>/posts/fefed28d.html</url>
+    <content><![CDATA[<h1 id="css的最全常见前端布局"><a class="markdownIt-Anchor" href="#css的最全常见前端布局"></a> CSS的最全常见前端布局</h1>
+<h2 id="bfc自适应布局"><a class="markdownIt-Anchor" href="#bfc自适应布局"></a> BFC自适应布局</h2>
+<h3 id="bfc含义"><a class="markdownIt-Anchor" href="#bfc含义"></a> BFC含义</h3>
+<p>BFC(Block formatting context)直译为&quot;块级格式化上下文&quot;。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p>
+<h3 id="bfc作用"><a class="markdownIt-Anchor" href="#bfc作用"></a> BFC作用</h3>
+<ol>
+<li>利用 BFC 避免外边距折叠</li>
+<li>清除内部浮动 （撑开高度）; 原理: 触发父 div 的 BFC 属性，使下面的子 div 都处在父 div 的同一个 BFC 区域之内</li>
+<li>避免文字环绕</li>
+<li>分属于不同的 BFC 时，可以阻止 margin 重叠</li>
+<li>多列布局中使用 BFC</li>
+</ol>
+<h3 id="如何生成-bfc脱离文档流满足下列的任意一个或多个条件即可"><a class="markdownIt-Anchor" href="#如何生成-bfc脱离文档流满足下列的任意一个或多个条件即可"></a> <strong>如何生成 BFC：（脱离文档流，满足下列的任意一个或多个条件即可）</strong></h3>
+<ol>
+<li>根元素，即 HTML 元素（最大的一个 BFC）</li>
+<li>float 的值不为 none</li>
+<li>position 的值为 absolute 或 fixed</li>
+<li>overflow 的值不为 visible（默认值。内容不会被修剪，会呈现在元素框之外）\</li>
+<li>.display 的值为 inline-block、table-cell、table-caption</li>
+</ol>
+<h3 id="bfc-布局规则"><a class="markdownIt-Anchor" href="#bfc-布局规则"></a> <strong>BFC 布局规则：</strong></h3>
+<ol>
+<li>内部的 Box 会在垂直方向，一个接一个地放置</li>
+<li>属于同一个 BFC 的两个相邻的 Box 的 margin 会发生重叠</li>
+<li>BFC 就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此, 文字环绕效果，设置 float</li>
+<li>BFC 的区域不会与 float box 重叠。</li>
+<li>计算 BFC 的高度，浮动元素也参与计算</li>
+</ol>
+<h3 id="利用bfc案例"><a class="markdownIt-Anchor" href="#利用bfc案例"></a> 利用BFC案例</h3>
+<h4 id="避免margin重叠"><a class="markdownIt-Anchor" href="#避免margin重叠"></a> 避免margin重叠</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;防止margin重叠&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    *&#123;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    div&#123;</span><br><span class="line">        color: #f55;</span><br><span class="line">        background: #eaf886;</span><br><span class="line">        width: 200px;</span><br><span class="line">        line-height: 100px;</span><br><span class="line">        text-align:center;</span><br><span class="line">        margin: 30px;</span><br><span class="line">    &#125;</span><br><span class="line">    div:nth-child(2)&#123;</span><br><span class="line">        position:absolute &#x2F;*激活成BFC*&#x2F;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;box1&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div&gt;box2&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="bfc两栏布局"><a class="markdownIt-Anchor" href="#bfc两栏布局"></a> BFC两栏布局</h4>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;BFC两栏布局&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    *&#123;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    body &#123;</span><br><span class="line">        width: 100%;</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    .left &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 250px;</span><br><span class="line">        float: left;</span><br><span class="line">        background: rgb(139, 214, 78);</span><br><span class="line">        text-align: center;</span><br><span class="line">        line-height: 300px;</span><br><span class="line">        font-size: 20px;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    .right &#123;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        height: 300px;</span><br><span class="line">        background: rgb(170, 54, 236);</span><br><span class="line">        text-align: center;</span><br><span class="line">        line-height: 300px;</span><br><span class="line">        font-size: 40px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;left&quot;&gt;left&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;right&quot;&gt;right&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>关键：让右侧块变为BFC，因为BFC元素不与Float元素相重叠，如果去掉右侧 overflow：hidden，</strong></p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C025.png" alt="" /></p>
+<h2 id="浮动布局"><a class="markdownIt-Anchor" href="#浮动布局"></a> 浮动布局</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      * &#123;</span><br><span class="line">        padding: 0;</span><br><span class="line">        margin: 0;</span><br><span class="line">      &#125;</span><br><span class="line">      .left,</span><br><span class="line">      .right,</span><br><span class="line">      .center &#123;</span><br><span class="line">        min-height: 100px;</span><br><span class="line">      &#125;</span><br><span class="line">      .left &#123;</span><br><span class="line">        background-color: red;</span><br><span class="line">        width: 200px;</span><br><span class="line">        float: left;</span><br><span class="line">      &#125;</span><br><span class="line">      .right &#123;</span><br><span class="line">        background-color: blue;</span><br><span class="line">        width: 200px;</span><br><span class="line">        float: right;</span><br><span class="line">      &#125;</span><br><span class="line">      .center &#123;</span><br><span class="line">        background-color: orange;</span><br><span class="line">        width: 100%;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;aside class&#x3D;&quot;left&quot;&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">    &lt;aside class&#x3D;&quot;right&quot;&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">    &lt;main class&#x3D;&quot;center&quot;&gt;</span><br><span class="line">      &lt;h1&gt;浮动解决方案&lt;&#x2F;h1&gt;</span><br><span class="line">      &lt;p&gt;方法：left和right写在center前面，并且分别左右浮动,中间的这个div因为是块级元素，所以在水平方向上按照他的包容块自动撑开&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;main&gt;</span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C024.png" alt="" /></p>
+<p><strong>这种布局方式，dom 结构必须是先写浮动部分，然后再中间块，否则右浮动块会掉到下一行。 浮动布局的优点就是比较简单，兼容性也比较好。但浮动布局是有局限性的，浮动元素脱离文档流，要做清除浮动，这个处理不好的话，会带来很多问题，比如父容器高度塌陷等</strong>。</p>
+<h2 id="绝对定位布局"><a class="markdownIt-Anchor" href="#绝对定位布局"></a> 绝对定位布局</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;绝对定位三栏布局&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      * &#123;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">      &#125;</span><br><span class="line">      aside &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        width: 300px;</span><br><span class="line">        min-height: 100px;</span><br><span class="line">      &#125;</span><br><span class="line">      aside.left &#123;</span><br><span class="line">        left: 0;</span><br><span class="line">        background-color: red;</span><br><span class="line">      &#125;</span><br><span class="line">      aside.right &#123;</span><br><span class="line">        right: 0;</span><br><span class="line">        background-color: blue;</span><br><span class="line">      &#125;</span><br><span class="line">      main.center &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        left: 300px;</span><br><span class="line">        right: 300px;</span><br><span class="line">        background-color: orange;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;aside class&#x3D;&quot;left&quot;&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">    &lt;aside class&#x3D;&quot;right&quot;&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">    &lt;main class&#x3D;&quot;center&quot;&gt;</span><br><span class="line">      &lt;h1&gt;绝对定位解决方案&lt;&#x2F;h1&gt;</span><br><span class="line">      &lt;p&gt;左右区域分别postion：absolute，固定到左右两边&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;p&gt;中间区域postion：absolute；left：300px; right: 300px&lt;&#x2F;p&gt;</span><br><span class="line">      </span><br><span class="line">    &lt;&#x2F;main&gt;</span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>绝对定位布局优点就是快捷，设置很方便，而且也不容易出问题。缺点就是，容器脱离了文档流，后代元素也脱离了文档流，高度未知的时候，会有问题，这就导致了这种方法的有效性和可使用性是比较差的。</strong></p>
+<h2 id="flexbox布局"><a class="markdownIt-Anchor" href="#flexbox布局"></a> flexbox布局</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot; &#x2F;&gt;</span><br><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;ie&#x3D;edge&quot; &#x2F;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      * &#123;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">      &#125;</span><br><span class="line">      .left,</span><br><span class="line">      .right,</span><br><span class="line">      .center &#123;</span><br><span class="line">        min-height: 100px;</span><br><span class="line">      &#125;</span><br><span class="line">      .wrapper &#123;</span><br><span class="line">        display: flex;</span><br><span class="line">      &#125;</span><br><span class="line">      .left &#123;</span><br><span class="line">        background-color: red;</span><br><span class="line">        width: 300px;</span><br><span class="line">      &#125;</span><br><span class="line">      .center &#123;</span><br><span class="line">        background-color: orange;</span><br><span class="line">        flex: 1;</span><br><span class="line">      &#125;</span><br><span class="line">      .right &#123;</span><br><span class="line">        background-color: blue;</span><br><span class="line">        width: 300px;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;wrapper&quot;&gt;</span><br><span class="line">      &lt;aside class&#x3D;&quot;left&quot;&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">      &lt;main class&#x3D;&quot;center&quot;&gt;</span><br><span class="line">        &lt;h1&gt;flex布局解决方案&lt;&#x2F;h1&gt;</span><br><span class="line">        &lt;p&gt;包裹这个3个块的父元素display: flex; 中间的元素flex: 1;&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;&#x2F;main&gt;</span><br><span class="line">      &lt;aside class&#x3D;&quot;right&quot;&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>flexbox 布局是 css3 里新出的一个，它就是为了解决上述两种方式的不足出现的，是比较完美的一个。目前移动端的布局也都是用 flexbox。 flexbox 的缺点就是 IE10 开始支持，但是 IE10 的是-ms 形式的</strong></p>
+<h2 id="表格布局"><a class="markdownIt-Anchor" href="#表格布局"></a> 表格布局</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot; &#x2F;&gt;</span><br><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;ie&#x3D;edge&quot; &#x2F;&gt;</span><br><span class="line">    &lt;title&gt;表格布局&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      * &#123;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">      &#125;</span><br><span class="line">      .wrapper &#123;</span><br><span class="line">        display: table;</span><br><span class="line">        width: 100%;</span><br><span class="line">      &#125;</span><br><span class="line">      .left,</span><br><span class="line">      .right,</span><br><span class="line">      .center &#123;</span><br><span class="line">        min-height: 100px;</span><br><span class="line">        display: table-cell;</span><br><span class="line">      &#125;</span><br><span class="line">      .left &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        background-color: red;</span><br><span class="line">      &#125;</span><br><span class="line">      .center &#123;</span><br><span class="line">        background-color: orange;</span><br><span class="line">      &#125;</span><br><span class="line">      .right &#123;</span><br><span class="line">        background-color: blue;</span><br><span class="line">        width: 300px;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;wrapper&quot;&gt;</span><br><span class="line">      &lt;aside class&#x3D;&quot;left&quot;&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">      &lt;main class&#x3D;&quot;center&quot;&gt;</span><br><span class="line">        &lt;h1&gt;表格布局&lt;&#x2F;h1&gt;</span><br><span class="line">        &lt;p&gt;父元素display: table;并且宽度为100%&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;每一个子元素display: table-cell;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;左右两侧添加宽度，中间不加宽度&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;&#x2F;main&gt;</span><br><span class="line">      &lt;aside class&#x3D;&quot;right&quot;&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C026.png" alt="" /></p>
+<p>表格布局的兼容性很好，在 flex 布局不兼容的时候，可以尝试表格布局。当内容溢出时会自动撑开父元素。</p>
+<p>表格布局也是有缺陷:① 无法设置栏边距；② 对 seo 不友好；③ 当其中一个单元格高度超出的时候，两侧的单元格也是会跟着一起变高的，然而有时候这并不是我们想要的效果。</p>
+<h2 id="网格布局"><a class="markdownIt-Anchor" href="#网格布局"></a> 网格布局</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot; &#x2F;&gt;</span><br><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;ie&#x3D;edge&quot; &#x2F;&gt;</span><br><span class="line">    &lt;title&gt;网格布局&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      * &#123;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">      &#125;</span><br><span class="line">      &#x2F;* 网格布局 *&#x2F;</span><br><span class="line">      .wrapper &#123;</span><br><span class="line">        display: grid;</span><br><span class="line">        width: 100%;</span><br><span class="line">        grid-template-columns: 300px 1fr 300px;</span><br><span class="line">      &#125;</span><br><span class="line"> </span><br><span class="line">      .left &#123;</span><br><span class="line">        background-color: red;</span><br><span class="line">      &#125;</span><br><span class="line">      .center &#123;</span><br><span class="line">        background-color: orange;</span><br><span class="line">      &#125;</span><br><span class="line">      .right &#123;</span><br><span class="line">        background-color: blue;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;wrapper&quot;&gt;</span><br><span class="line">      &lt;aside class&#x3D;&quot;left&quot;&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">      &lt;main class&#x3D;&quot;center&quot;&gt;</span><br><span class="line">        &lt;h1&gt;网格布局&lt;&#x2F;h1&gt;</span><br><span class="line">        &lt;p&gt;父元素display: grid;并且宽度为100%&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;grid-template-columns中指定每列的宽度&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;&#x2F;main&gt;</span><br><span class="line">      &lt;aside class&#x3D;&quot;right&quot;&gt;&lt;&#x2F;aside&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C027.png" alt="" /></p>
+<p>CSS Grid 是创建网格布局最强大和最简单的工具。就像表格一样，网格布局可以让 Web 设计师根据元素按列或行对齐排列，但他和表格不同，网格布局没有内容结构，从而使各种布局不可能与表格一样。例如，一个网格布局中的子元素都可以定位自己的位置，这样他们可以重叠和类似元素定位。</p>
+<p>但网格布局的兼容性不好。IE10+上支持，而且也仅支持部分属性。</p>
+<h2 id="圣杯布局"><a class="markdownIt-Anchor" href="#圣杯布局"></a> 圣杯布局</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot; &#x2F;&gt;</span><br><span class="line">    &lt;title&gt;实现三栏水平布局之圣杯布局&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">     .container &#123; </span><br><span class="line"> padding-left: 150px;</span><br><span class="line"> padding-right: 150px; </span><br><span class="line">&#125; </span><br><span class="line">.left &#123; </span><br><span class="line"> float: left; </span><br><span class="line"> width: 150px; </span><br><span class="line"> height: 100px; </span><br><span class="line"> background: red; </span><br><span class="line"> margin-left: -100%; </span><br><span class="line"> position: relative; </span><br><span class="line"> left: -150px; </span><br><span class="line">&#125; </span><br><span class="line">.center &#123; </span><br><span class="line"> float: left; </span><br><span class="line"> width: 100%; </span><br><span class="line"> height: 200px; </span><br><span class="line"> background: yellow; </span><br><span class="line"> position:relative</span><br><span class="line">&#125; </span><br><span class="line">.right &#123; </span><br><span class="line"> float: left; </span><br><span class="line"> width: 150px; </span><br><span class="line"> height: 100px; </span><br><span class="line"> background: blue; </span><br><span class="line"> margin-left: -150px; </span><br><span class="line"> position: relative; </span><br><span class="line"> right: -150px; </span><br><span class="line">&#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;article class&#x3D;&quot;container&quot;&gt; </span><br><span class="line">     &lt;div class&#x3D;&quot;center&quot;&gt; </span><br><span class="line">       &lt;h2&gt;圣杯布局&lt;&#x2F;h2&gt; </span><br><span class="line">     &lt;&#x2F;div&gt; </span><br><span class="line">     &lt;div class&#x3D;&quot;left&quot;&gt;&lt;&#x2F;div&gt; </span><br><span class="line">     &lt;div class&#x3D;&quot;right&quot;&gt;&lt;&#x2F;div&gt; </span><br><span class="line">    &lt;&#x2F;article&gt; </span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p>实现步骤：</p>
+<p>①三个部分都设定为左浮动，否则左右两边内容上不去，就不可能与中间列同一行。然后设置 center 的宽度为 100%(实现中间列内容自适应)，此时，left 和 right 部分会跳到下一行</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C028.png" alt="" /></p>
+<p>②通过设置 margin-left 为负值让 left 和 right 部分回到与 center 部分同一行</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C029.png" alt="" /></p>
+<p>③通过设置父容器的 padding-left 和 padding-right，让左右两边留出间隙。</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C030.png" alt="" /></p>
+<p>④通过设置相对定位，让 left 和 right 部分移动到两边</p>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C031.png" alt="" /></p>
+<p>特点：</p>
+<p>​    比较特殊的三栏布局，同样也是两边固定宽度，中间自适应，唯一区别是 dom 结构必须是先写中间列部分，这样实现中间列可以优先加载。</p>
+<p>​    缺点：</p>
+<p>​    center 部分的最小宽度不能小于 left 部分的宽度，否则会 left 部分掉到下一行</p>
+<p>​    如果其中一列内容高度拉长，其他两列的背景并不会自动填充。</p>
+<h2 id="双飞翼布局"><a class="markdownIt-Anchor" href="#双飞翼布局"></a> 双飞翼布局</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot; &#x2F;&gt;</span><br><span class="line">    &lt;title&gt;双飞翼布局&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line"> .container &#123; </span><br><span class="line"> min-width: 600px;</span><br><span class="line">&#125; </span><br><span class="line">.left &#123; </span><br><span class="line"> float: left; </span><br><span class="line"> width: 200px; </span><br><span class="line"> height: 200px; </span><br><span class="line"> background: red; </span><br><span class="line"> margin-left: -100%; </span><br><span class="line">&#125; </span><br><span class="line">.center &#123; </span><br><span class="line"> float: left; </span><br><span class="line"> width: 100%; </span><br><span class="line"> height: 300px; </span><br><span class="line"> background: yellow; </span><br><span class="line">&#125; </span><br><span class="line">.center .inner &#123; </span><br><span class="line"> margin: 0 200px; &#x2F;*新增部分*&#x2F; </span><br><span class="line">&#125; </span><br><span class="line">.right &#123; </span><br><span class="line"> float: left; </span><br><span class="line"> width: 200px; </span><br><span class="line"> height: 200px; </span><br><span class="line"> background: blue; </span><br><span class="line"> margin-left: -200px; </span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">   &lt;article class&#x3D;&quot;container&quot;&gt; </span><br><span class="line">    &lt;div class&#x3D;&quot;center&quot;&gt; </span><br><span class="line">    &lt;div class&#x3D;&quot;inner&quot;&gt;双飞翼布局&lt;&#x2F;div&gt; </span><br><span class="line">    &lt;&#x2F;div&gt; </span><br><span class="line">    &lt;div class&#x3D;&quot;left&quot;&gt;&lt;&#x2F;div&gt; </span><br><span class="line">    &lt;div class&#x3D;&quot;right&quot;&gt;&lt;&#x2F;div&gt; </span><br><span class="line">   &lt;&#x2F;article&gt; </span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p>实现步骤(前两步与圣杯布局一样)</p>
+<p>1  三个部分都设定为左浮动，然后设置 center 的宽度为 100%，此时，left 和 right 部分会跳到下一行；</p>
+<p>2  通过设置 margin-left 为负值让 left 和 right 部分回到与 center 部分同一行；</p>
+<p>3  center 部分增加一个内层 div，并设 margin: 0 200px；</p>
+<p>特点</p>
+<p>同样也是三栏布局，在圣杯布局基础上进一步优化，解决了圣杯布局错乱问题，实现了内容与布局的分离。而且任何一栏都可以是最高栏，不会出问题</p>
+<p>缺点</p>
+<p>多加一层 dom 树节点，增加渲染树生成的计算量</p>
+<h2 id="水平布局"><a class="markdownIt-Anchor" href="#水平布局"></a> 水平布局</h2>
+<h3 id="margin-定宽"><a class="markdownIt-Anchor" href="#margin-定宽"></a> margin + 定宽</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="table-margin"><a class="markdownIt-Anchor" href="#table-margin"></a> table + margin</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">  display: table;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>display: table</code> 表现类似<code>block</code>，但是宽度为<strong>内容宽</strong></li>
+<li>无需设置父元素样式（支持IE8及其以上版本，IE8以下则需要嵌入<code>&lt;table&gt;</code></li>
+</ul>
+<h3 id="inline-block-text-align"><a class="markdownIt-Anchor" href="#inline-block-text-align"></a> inline-block + text-align</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;</span><br><span class="line">    Demo</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.parent &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="absolute-margin-left"><a class="markdownIt-Anchor" href="#absolute-margin-left"></a> absolute + margin-left</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent  &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.child &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 50%;</span><br><span class="line">  width: 100px;</span><br><span class="line">  margin-left: -50px; &#x2F;* width&#x2F;2 *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>固定宽度</li>
+<li>相比<code>transform</code>，兼容性更好</li>
+</ul>
+<h3 id="absolute-transform"><a class="markdownIt-Anchor" href="#absolute-transform"></a> absolute + transform</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.child &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform: translateX(-50%);</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>绝对定位脱离文档流，不会对后续布局造成影响</li>
+<li><code>transform</code>为CSS3属性，存在兼容问题</li>
+</ul>
+<h3 id="flex-justify-content"><a class="markdownIt-Anchor" href="#flex-justify-content"></a> flex + justify-content</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent  &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只需要设置父节点</li>
+<li><code>flex</code>有兼容问题</li>
+</ul>
+<h2 id="垂直居中"><a class="markdownIt-Anchor" href="#垂直居中"></a> 垂直居中</h2>
+<h3 id="table-cell-vertical-align"><a class="markdownIt-Anchor" href="#table-cell-vertical-align"></a> table-cell + vertical-align</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="absolute-transform-2"><a class="markdownIt-Anchor" href="#absolute-transform-2"></a> absolute + transform</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .parent &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .child &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    transform: translateY(-50%);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>绝对定位脱离文档流，但<strong>绝对定位元素师唯一的元素则父元素会失去高度</strong></li>
+<li><code>transform</code>有兼容问题</li>
+<li>同水平居中也可以使用<code>margin-top实现</code></li>
+</ul>
+<h3 id="flex-align-items"><a class="markdownIt-Anchor" href="#flex-align-items"></a> flex + align-items</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .parent &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    align-items: center;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="top-margin-height-2"><a class="markdownIt-Anchor" href="#top-margin-height-2"></a> top + margin(-height / 2)</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;content&quot;&gt; Content goes here&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  height: 240px;</span><br><span class="line">  margin-top: -120px; &#x2F;* negative half of the height *&#x2F;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>绝对定位且固定高度</li>
+<li>若content太多则会出现溢出，<code>overflow:auto</code>则会出现滚动条</li>
+<li>虽然适用所有浏览器，但是假如没有足够的空间，content则会消失</li>
+</ul>
+<h3 id="height50-margin-bottom-contentheight"><a class="markdownIt-Anchor" href="#height50-margin-bottom-contentheight"></a> height:50% + margin-bottom: -contentheight</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;floater&quot;&gt;  </span><br><span class="line">  &lt;div id&#x3D;&quot;content&quot;&gt;Content here&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#floater &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  height: 50%;</span><br><span class="line">  margin-bottom: -120px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#content &#123;</span><br><span class="line">  clear: both;</span><br><span class="line">  height: 240px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>适用所有浏览器</li>
+<li>没有足够空间时(例如：窗口缩小) content 不会被截断，滚动条出现</li>
+</ul>
+<h3 id="marginauto-top-bottom"><a class="markdownIt-Anchor" href="#marginauto-top-bottom"></a> margin:auto + top &amp; bottom</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;content&quot;&gt; Content here&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#content &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  margin: auto;</span><br><span class="line">  height: 240px;</span><br><span class="line">  width: 70%;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>同样若空间小，则 content 会消失</li>
+<li>存在 IE 不兼容的问题</li>
+</ul>
+<h3 id="line-height"><a class="markdownIt-Anchor" href="#line-height"></a> line-height</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;content&quot;&gt; Content here&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#content &#123;</span><br><span class="line">  height: 100px;</span><br><span class="line">  line-height: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只对文本有效</li>
+<li>多行时，断词比较糟糕</li>
+</ul>
+<h2 id="水平垂直居中"><a class="markdownIt-Anchor" href="#水平垂直居中"></a> 水平垂直居中</h2>
+<h3 id="absolute-transform-3"><a class="markdownIt-Anchor" href="#absolute-transform-3"></a> absolute + transform</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .parent &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .child &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 50%;</span><br><span class="line">    top: 50%;</span><br><span class="line">    transform: translate(-50%, -50%);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>绝对定位脱离文档流</li>
+<li><code>transform</code>有兼容问题</li>
+</ul>
+<h3 id="inline-block-text-align-table-cell-vertical-align"><a class="markdownIt-Anchor" href="#inline-block-text-align-table-cell-vertical-align"></a> inline-block + text-align + table-cell + vertical-align</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .parent &#123;</span><br><span class="line">    text-align: center;</span><br><span class="line">    display: table-cell;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">  &#125;</span><br><span class="line">  .child &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>兼容好</li>
+</ul>
+<h3 id="flex-justify-content-align-items"><a class="markdownIt-Anchor" href="#flex-justify-content-align-items"></a> flex + justify-content + align-items</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;child&quot;&gt;Demo&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .parent &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center; &#x2F;* 水平居中 *&#x2F;</span><br><span class="line">    align-items: center; &#x2F;*垂直居中*&#x2F;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只需要设置父节点</li>
+<li><code>flex</code>有兼容问题</li>
+</ul>
+<h2 id="一列定宽一列自适应"><a class="markdownIt-Anchor" href="#一列定宽一列自适应"></a> 一列定宽，一列自适应</h2>
+<h3 id="float-margin"><a class="markdownIt-Anchor" href="#float-margin"></a> float + margin</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;left&quot;&gt;</span><br><span class="line">    &lt;p&gt;left&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;right&quot;&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.left &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right &#123;</span><br><span class="line">  margin-left: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>IE 6 有3像素的BUG，解决<strong>可以在<code>.left</code>加入<code>margin-left:-3px</code></strong>，当然也有其他的解决方法，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;left&quot;&gt;</span><br><span class="line">    &lt;p&gt;left&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;right-fix&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;right&quot;&gt;</span><br><span class="line">      &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.left &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right-fix &#123;</span><br><span class="line">  float: right;</span><br><span class="line">  width: 100%;</span><br><span class="line">  margin-left: -100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right &#123;</span><br><span class="line">  margin-left: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>**此方法不会存在IE 6中3像素的问题，但<code>.left</code>不可选择，需要设置<code>.left &#123;position: relation&#125;</code>**来提高层级。</li>
+</ul>
+<h3 id="float-overflow"><a class="markdownIt-Anchor" href="#float-overflow"></a> float + overflow</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;left&quot;&gt;</span><br><span class="line">    &lt;p&gt;left&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;right&quot;&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.left &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right &#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>设置<code>overflow: hidden</code>会触发BFC块级格式上下文，就是无论在BFC里面做什么操作，外面都不会受影响。但是此方法不被IE 6支持。</strong></li>
+</ul>
+<h3 id="table"><a class="markdownIt-Anchor" href="#table"></a> table</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;paren&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;left&quot;&gt;</span><br><span class="line">    &lt;p&gt;left&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;right&quot;&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">  display: table;</span><br><span class="line">  width: 100%;</span><br><span class="line">  table-layout: fixed;</span><br><span class="line">&#125;</span><br><span class="line">.left &#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  &#x2F;*宽度为剩余宽度*&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>table</code> 的显示特性为每列的单元格宽度和一定等与表格宽度。 <code>table-layout: fixed</code> 可加速渲染，也是设定布局优先。<code>table-cell</code> 中不可以设置 <code>margin</code> 但是可以通过 <code>padding</code> 来设置间距</strong></li>
+</ul>
+<h3 id="flex"><a class="markdownIt-Anchor" href="#flex"></a> flex</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;left&quot;&gt;</span><br><span class="line">    &lt;p&gt;left&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;right&quot;&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  margin-left: 20px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right &#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>兼容问题</li>
+</ul>
+<h2 id="等分布局"><a class="markdownIt-Anchor" href="#等分布局"></a> 等分布局</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">    &lt;p&gt;1&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">    &lt;p&gt;2&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">    &lt;p&gt;3&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">    &lt;p&gt;4&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">  margin-left: -20px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.column &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 25%;</span><br><span class="line">  padding-left: 20px;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>兼容IE 8 以上版本</li>
+</ul>
+<h3 id="flex-2"><a class="markdownIt-Anchor" href="#flex-2"></a> flex</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">    &lt;p&gt;1&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">    &lt;p&gt;2&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">    &lt;p&gt;3&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">    &lt;p&gt;4&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br><span class="line">.column &#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.column + .column &#123; &#x2F;* 相邻兄弟 *&#x2F;</span><br><span class="line">  margin-left: 20px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="table-2"><a class="markdownIt-Anchor" href="#table-2"></a> table</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent-fix&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">      &lt;p&gt;1&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">      &lt;p&gt;2&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  	&lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">			&lt;p&gt;3&lt;&#x2F;p&gt;</span><br><span class="line">		&lt;&#x2F;div&gt;</span><br><span class="line">		&lt;div class&#x3D;&quot;column&quot;&gt;</span><br><span class="line">			&lt;p&gt;4&lt;&#x2F;p&gt;</span><br><span class="line">		&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent-fix	&#123;</span><br><span class="line">	margin-left: -20px;</span><br><span class="line">&#125;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display: table;</span><br><span class="line">	width: 100%;</span><br><span class="line">    &#x2F;*可以布局优先，也可以单元格宽度平分在没有设置的情况下*&#x2F;</span><br><span class="line">	table-layout: fixed;</span><br><span class="line">&#125;</span><br><span class="line">.column &#123;</span><br><span class="line">	display: table-cell;</span><br><span class="line">	padding-left: 20px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="等高布局"><a class="markdownIt-Anchor" href="#等高布局"></a> 等高布局</h2>
+<h3 id="table-3"><a class="markdownIt-Anchor" href="#table-3"></a> table</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;left&quot;&gt;</span><br><span class="line">		&lt;p&gt;left&lt;&#x2F;p&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;right&quot;&gt;</span><br><span class="line">		&lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">		&lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display: table;</span><br><span class="line">	width: 100%;</span><br><span class="line">	table-layout: fixed;</span><br><span class="line">&#125;</span><br><span class="line">.left &#123;</span><br><span class="line">	display: table-cell;</span><br><span class="line">	width: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">	display: table-cell;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>table</code> 的特性为每列等宽，每行等高可以用于解决此需求</li>
+</ul>
+<h3 id="flex-3"><a class="markdownIt-Anchor" href="#flex-3"></a> flex</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;left&quot;&gt;</span><br><span class="line">    &lt;p&gt;left&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;right&quot;&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display: flex;</span><br><span class="line">&#125;</span><br><span class="line">.left &#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	margin-left: 20px;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>注意这里实际上使用了<code>align-items: stretch</code>，flex 默认的 <code>align-items</code>的值为 <code>stretch</code></strong></li>
+</ul>
+<h3 id="float"><a class="markdownIt-Anchor" href="#float"></a> float</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;left&quot;&gt;</span><br><span class="line">    &lt;p&gt;left&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;right&quot;&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p&gt;right&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.left,</span><br><span class="line">.right &#123;</span><br><span class="line">  padding-bottom: 9999px;</span><br><span class="line">  margin-bottom: -9999px;</span><br><span class="line">&#125;</span><br><span class="line">.left &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 100px;</span><br><span class="line">  margin-right: 20px;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>此方法只有背景显示高度相等，左右真实高度其实不想等，但兼容性较好。</li>
+</ul>
+<hr />
+<p>[^本文转自 : <a href="https://www.cnblogs.com/cuijinlin/p/13631689.html,%E4%BB%85%E4%BE%9B%E5%AD%A6%E4%B9%A0">https://www.cnblogs.com/cuijinlin/p/13631689.html,仅供学习</a>]:<br />
+[^本文转自 : <a href="https://lucius0.github.io/2017/05/01/archivers/css-layouts/,%E4%BB%85%E4%BE%9B%E5%AD%A6%E4%B9%A0">https://lucius0.github.io/2017/05/01/archivers/css-layouts/,仅供学习</a>]:</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>前端布局</tag>
       </tags>
   </entry>
   <entry>
