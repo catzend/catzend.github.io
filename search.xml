@@ -1,47 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CSS基础知识学习笔记(一)</title>
-    <url>/posts/cb25713c.html</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，用来描述 HTML 或 XML（包括如</span><br><span class="line">  SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="什么是-css"><a class="markdownIt-Anchor" href="#什么是-css"></a> 什么是 CSS?</h2>
-<ol>
-<li>CSS 指层叠样式表 (<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets)</li>
-<li>样式定义<strong>如何显示</strong> HTML 元素</li>
-<li>样式通常存储在<strong>样式表</strong>中</li>
-<li>把样式添加到 HTML 4.0 中，是为了<strong>解决内容与表现分离的问题</strong></li>
-<li><strong>外部样式表</strong>可以极大提高工作效率</li>
-<li>外部样式表通常存储在 <strong>CSS 文件</strong>中</li>
-<li>多个样式定义可<strong>层叠</strong>为一个</li>
-</ol>
-<h1 id="css-语法"><a class="markdownIt-Anchor" href="#css-语法"></a> CSS 语法</h1>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C010.jpg" alt="" /></p>
-<h2 id="css-创建"><a class="markdownIt-Anchor" href="#css-创建"></a> CSS 创建</h2>
-<h3 id="如何插入样式表"><a class="markdownIt-Anchor" href="#如何插入样式表"></a> 如何插入样式表</h3>
-<ol>
-<li>
-<p>外部样式表(External style sheet)</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>内部样式表(Internal style sheet)</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 &lt;<span class="selector-tag">style</span>&gt; 标签在文档头部定义内部样式表，就像这样:</span><br><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-tag">hr</span> &#123;<span class="attribute">color</span>:sienna;&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">margin-left</span>:<span class="number">20px</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">background-image</span>:<span class="built_in">url</span>(<span class="string">&quot;images/back40.gif&quot;</span>);&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>内联样式(Inline style</p>
-</li>
-</ol>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">由于要将表现和内容混杂在一起，内联样式会损失掉样式表的许多优势。</span><br><span class="line">&lt;p style=&quot;color:sienna;margin-left:20px&quot;&gt;这是一个段落。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>CSS基础知识</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS基础知识学习笔记(七)</title>
     <url>/posts/undefined.html</url>
     <content><![CDATA[<h2 id="标准流"><a class="markdownIt-Anchor" href="#标准流"></a> 标准流</h2>
@@ -216,6 +175,47 @@ sticky</p>
         <tag>CSS基础知识</tag>
         <tag>定位</tag>
         <tag>position</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS基础知识学习笔记(一)</title>
+    <url>/posts/cb25713c.html</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，用来描述 HTML 或 XML（包括如</span><br><span class="line">  SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="什么是-css"><a class="markdownIt-Anchor" href="#什么是-css"></a> 什么是 CSS?</h2>
+<ol>
+<li>CSS 指层叠样式表 (<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets)</li>
+<li>样式定义<strong>如何显示</strong> HTML 元素</li>
+<li>样式通常存储在<strong>样式表</strong>中</li>
+<li>把样式添加到 HTML 4.0 中，是为了<strong>解决内容与表现分离的问题</strong></li>
+<li><strong>外部样式表</strong>可以极大提高工作效率</li>
+<li>外部样式表通常存储在 <strong>CSS 文件</strong>中</li>
+<li>多个样式定义可<strong>层叠</strong>为一个</li>
+</ol>
+<h1 id="css-语法"><a class="markdownIt-Anchor" href="#css-语法"></a> CSS 语法</h1>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C010.jpg" alt="" /></p>
+<h2 id="css-创建"><a class="markdownIt-Anchor" href="#css-创建"></a> CSS 创建</h2>
+<h3 id="如何插入样式表"><a class="markdownIt-Anchor" href="#如何插入样式表"></a> 如何插入样式表</h3>
+<ol>
+<li>
+<p>外部样式表(External style sheet)</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>内部样式表(Internal style sheet)</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 &lt;<span class="selector-tag">style</span>&gt; 标签在文档头部定义内部样式表，就像这样:</span><br><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-tag">hr</span> &#123;<span class="attribute">color</span>:sienna;&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">margin-left</span>:<span class="number">20px</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">background-image</span>:<span class="built_in">url</span>(<span class="string">&quot;images/back40.gif&quot;</span>);&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>内联样式(Inline style</p>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">由于要将表现和内容混杂在一起，内联样式会损失掉样式表的许多优势。</span><br><span class="line">&lt;p style=&quot;color:sienna;margin-left:20px&quot;&gt;这是一个段落。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>CSS基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -3948,7 +3948,14 @@ sticky</p>
   <entry>
     <title>JavaScript高级程序设计(三)</title>
     <url>/posts/bce9bf30.html</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="变量-作用域和内存问题"><a class="markdownIt-Anchor" href="#变量-作用域和内存问题"></a> 变量、作用域和内存问题</h1>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
   </entry>
   <entry>
     <title>JavaScript高级程序设计(一)</title>
@@ -3969,6 +3976,448 @@ sticky</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;use strict&quot;</span><br><span class="line">	1.Js文件顶部写这个就是全文见都是严格模式</span><br><span class="line">	2.当一个函数内部顶写这个是整个函数内部遵守严格模式</span><br><span class="line">	function doSomething（）｛ </span><br><span class="line">	&quot;use strict&quot;； </span><br><span class="line">	&#x2F;&#x2F;函數体</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>在严格模式下，ECMAScript3中的一些不确定的行为将得到处理，而且对某些不安全 的操作也会抛出错误。</p>
 <h3 id="语句"><a class="markdownIt-Anchor" href="#语句"></a> 语句</h3>
+<ol>
+<li><strong>分号结尾</strong>！(一定养成习惯)</li>
+<li>对于控制语句，推荐用{ }代码块，让编码易读，且意图清晰！</li>
+</ol>
+<h3 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h3>
+<p>ECMAScript的变量是可以用来保存任何类型的数据。</p>
+<p>定义变量时要使用var操作符（注意var是一个关键字），后跟变量名（即一个标识符），如下所示：</p>
+<p>var message；</p>
+<ul>
+<li>
+<p>用var定义的变量会成为定义该变量作用域中的局部变量，比如说在函数中定义了一个变量，那么该变量将在退出函数时被销毁。(之前以为是全局使用的，跟let搞混了)<br />
+在声明和定义时var可以省略，用于定义全局变量，但不是推荐做法，避免造成不必要的混乱。</p>
+</li>
+<li>
+<p><strong>虽然省略var操作符可以定义全局变量，但这也不是我们推荐的做法。因为在局 部作用域中定义的全局变量很难维护，而且如果有意地忽略了 var操作符，也会由于 相应变量不会马上就有定义而导致不必要的混乱。给未经声明的变量賦值在严格模式 下会导致拋出ReferenceError错误。</strong></p>
+</li>
+<li>
+<p>可以使用一条语句定义多个变量，只要像下面这样把每个变量(初始化或不初始化均可)用逗号分 隔开即可：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var message &#x3D; &quot;hi&quot;, found &#x3D; false,age &#x3D; 29;</span><br></pre></td></tr></table></figure>
+<h3 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型"></a> 数据类型</h3>
+<ul>
+<li>ECMAScript中有5种简单数据类型(也称为基本数据类型):Undefined、Null、Boolean、Number. 和String。</li>
+<li>复杂数据类型object,Object本质上是由一组无序的名值对组成的。</li>
+</ul>
+<h4 id="typeof-操作符"><a class="markdownIt-Anchor" href="#typeof-操作符"></a> typeof 操作符</h4>
+<h5 id="typeof-它不是个函数是个操作符"><a class="markdownIt-Anchor" href="#typeof-它不是个函数是个操作符"></a> <strong>typeof 它不是个函数，是个操作符！</strong></h5>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typeof 1 &#x2F;&#x2F; &#39;number&#39;</span><br><span class="line">typeof &#39;1&#39; &#x2F;&#x2F; &#39;string&#39;</span><br><span class="line">typeof true &#x2F;&#x2F; &#39;boolean&#39;</span><br><span class="line">typeof null &#x2F;&#x2F; &#39;object&#39;</span><br><span class="line">typeof [] &#x2F;&#x2F; &#39;object&#39;</span><br><span class="line">typeof &#123;&#125; &#x2F;&#x2F; &#39;object&#39;</span><br><span class="line">typeof console.log &#x2F;&#x2F; &#39;function&#39;</span><br><span class="line">typeof undefined &#x2F;&#x2F; &#39;undefined&#39;</span><br><span class="line">typeof b &#x2F;&#x2F; b 没有声明，但是还会显示 undefined</span><br><span class="line">typeof Symbol() &#x2F;&#x2F; &#39;symbol&#39;</span><br><span class="line">&#x2F;&#x2F;Symbol是ES6的新类型，类似于一种标识唯一性的ID，第三版的书上没有</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="null是object类型"><a class="markdownIt-Anchor" href="#null是object类型"></a> <strong>null是object类型</strong></h5>
+<ol>
+<li>
+<p>null值表 示一个空对象指针</p>
+</li>
+<li>
+<p>检査null值就可以知道相应的变i是否已经保存了一个对象的引用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (car !&#x3D; null)&#123;</span><br><span class="line">&#x2F;&#x2F;对car对象执行某些操作</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是因为在 JS 的最初版本中，使用的是 32 位系统，为了性能考虑，使用低位存储了变量的类型信息，000 开头代表是对象，然而 null 表示为全零，所以将它错误的判断为 object 。虽然现在的内部类型判断代码已经改变了，但是对于这个 Bug 却是一直流传下来。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="undefined-类型"><a class="markdownIt-Anchor" href="#undefined-类型"></a> Undefined 类型</h5>
+<ol>
+<li>使用var声明变量但未对其加以初始化时， 这个变罱的值就是undefined,</li>
+<li>typeof会返回undefined而不会报错。\</li>
+<li>建议初始化变量的时候能够赋予明确的值，这样易于区分被检测的变量是未被声明，还是未被初始化（这样规范的话，undefined就代表变量未被声明）。</li>
+</ol>
+<h5 id="boolean类型"><a class="markdownIt-Anchor" href="#boolean类型"></a> <strong>boolean类型</strong></h5>
+<ol>
+<li>
+<p>Boolean()函数，需要注意0和NaN（Number类型）会被转换为false。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">转换为false的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">“”(空字符串)</td>
+</tr>
+<tr>
+<td style="text-align:center">0/NaN</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h5 id="number类型"><a class="markdownIt-Anchor" href="#number类型"></a> <strong>number类型</strong></h5>
+<p>编程代码有各种的进制的表示:二进制,八进制,十六进制的表示</p>
+<ul>
+<li>
+<p><strong>number类型的数值范围</strong></p>
+<p>​	小于Number.MIN_VALUE-&gt;-Infinity&lt;-Number.NEGATIVE_INFINITY<br />
+​	大于Number.MAX_VALUE-&gt;Infinity&lt;-Number.POSITIVE_INFINITY</p>
+</li>
+<li>
+<p><strong>NaN（Not a Number）的判断</strong></p>
+<p>​	<strong>isNaN()，判断是否“非数值”，如果不能转换为数值，返回true。</strong></p>
+</li>
+<li>
+<p><strong>数值转换三个函数</strong></p>
+<p>​	把非数值转换为数值可以用：<br />
+<strong>Number()、parseInt()、parseFloat()</strong><br />
+​	注意字符串会去掉前导零。</p>
+<ul>
+<li>如果是Boolean值，true和false将分别被转换为1和0。</li>
+<li>如果是数字值，只是简单的传人和返回。</li>
+<li>如果是null值，返回0。</li>
+<li>如果是undefined,返冋NaN。</li>
+<li>如果是字符串，遵循下列规则：
+<ul>
+<li>如果字符申中只包含数宇(包括前面带正号或负号的情况)，则将其转换为十进制数值，BP-1&quot; 会变成1, -123&quot;会变成123,而-011•会变成11 (注意：前导的零被忽略了)；</li>
+<li>如果字符串中包含有效的浮点格式，如则将其转换为对应的浮点数值(同样，也会忽 略前导零);</li>
+<li>如果字符串中包含有效的十六进制格式，例如&quot;Oxf&quot;,则将其转换为相同大小的十进制整 数值；</li>
+<li>如果字符串是空的(不包含任何字符)，则将其转换为0;</li>
+<li>如果字符串中包含除上述格式之外的字符，则将其转换为NaN。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>转换为字符串</strong></p>
+<p>​	toString()方法，在调用数值的toString()方法时，可以传入输出数值的基数，默认转换为十进制格式。</p>
+<blockquote>
+<p>注意以下的方式:</p>
+<p>​	Number(&quot;&quot;)====&gt;&gt; 0</p>
+<p>​	parseInt(&quot;&quot;)====&gt;&gt;NaN</p>
+<p>parseInt(“要转变的值”,进制)====&gt;&gt;parseInt(“0xAF”,16)=&gt;175</p>
+<p>默认是十进制的,parseInt(“0xAF”)=&gt;0</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="string-类型"><a class="markdownIt-Anchor" href="#string-类型"></a> String 类型</h5>
+<ol>
+<li>String类型用于表示由零或多个16位Unicode字符组成的字符序列,即字符串.</li>
+<li>字符串可以由单引号或者双引号表示,不能是一个单一个双.</li>
+<li>以双引号开头的字符串 也必须以双引号结尾，而以单引号开头的字符串必须以单引号结尾</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>字面量</th>
+<th>含	义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>制表</td>
+</tr>
+<tr>
+<td><strong>\b</strong></td>
+<td>空格</td>
+</tr>
+<tr>
+<td><strong>\r</strong></td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>进纸</td>
+</tr>
+<tr>
+<td>\</td>
+<td>斜杠</td>
+</tr>
+<tr>
+<td>V</td>
+<td>单引号（’）.在用单引号表示的字符串中使用。例如：said, Vhey.&quot;</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>双引号（■）,在用双引号表示的字符串中使用。例如：_He said，-hey.-&quot;</td>
+</tr>
+<tr>
+<td>\xnn</td>
+<td>以十六进制代码nn表示的一个字符（其中n^0~F）。例如，\x41表示W</td>
+</tr>
+<tr>
+<td>\unnnn</td>
+<td>以十六进制代码nnnn表示的一个Unicode字符（其中n为0~F）。例如，\u03a3表示希腊字符S</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>var text =・This is the letter sigma： \u03a3.・j</p>
+</blockquote>
+<ul>
+<li>
+<p>字符串的特点</p>
+<ul>
+<li>
+<p>ECMAScript中的字符串是不可变的,也就是字符串一旦建立,他们的值就不能改变</p>
+</li>
+<li>
+<p>如果想改变某个变量保存的字符串,首先要销毁原来的字符串,然后再用另一个包含数值的字符串填充该变量</p>
+<blockquote>
+<p>var lang = “Java”</p>
+<p>lang = lang + “Script”</p>
+<p>变量lang开始时包含字符申&quot;Java&quot;,而第二行代码把lang的值重新定义为&quot;Java” 与&quot;Script&quot;的组合，即&quot;JavaScript&quot;实现这个操作的过程如下：首先创建一个能容纳10个字符的新字符串.然后在这个字符串中填充&quot;Java&quot;和&quot;Script&quot;,最后一步是销毁原來的字符串&quot;Java&quot;和字符串&quot;Script&quot;,因为这两个字符串已经没用了。这个过程是在后台发生的，而这也是在某些旧版木的 浏览器(例如版本低于1.0的Firefbx、IE6等)中拼接字符串时速度很慢的原因所在。但这些浏览器后 来的版本已经解决了这个低效率问题。</p>
+</blockquote>
+</li>
+<li>
+<p>转换为字符串(tostring()方法和String()方法)</p>
+<ul>
+<li>
+<p>要把一个值转换为一个字符串</p>
+<blockquote>
+<p>要转换的值.toString(进制)</p>
+<p>var found = true;</p>
+<p>var foundString = found.toString()  =====&gt;&gt;&gt;&gt;“true”</p>
+<p>var num = 10;</p>
+<p>alert(num.toString()); ===== “10”</p>
+<p>alert(num.toString(2))； ==== “1010”</p>
+<p>alert(num.toString(8));  ==== “12”</p>
+<p>alert(num.toString(10)); ====“10”</p>
+<p>alert(num.toString(16))； ====“a”</p>
+</blockquote>
+</li>
+<li>
+<p>String(要改变的数值)</p>
+<ul>
+<li>
+<p>如果值有toString ()方法，则调用该方法(没有参数)并返回相应的结果；</p>
+</li>
+<li>
+<p>如果值是null,则返冋&quot;null&quot;</p>
+</li>
+<li>
+<p>如果值是 undefined,则返回&quot;undefined&quot;</p>
+</li>
+</ul>
+<blockquote>
+<p>var value4;</p>
+<p>alert(String(valuel));	//	“10”</p>
+<p>alert(String(value2))；	//	“true”</p>
+<p>alert(String(value3));	//	・null&quot;</p>
+<p>alert(String(value4)):	//	“undefined”</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="object-类型"><a class="markdownIt-Anchor" href="#object-类型"></a> Object 类型</h5>
+<ol>
+<li>
+<p>ECMAScript中的对象其实就是一组数据和功能的集合。</p>
+</li>
+<li>
+<p>对象可以通过执行new操作符后跟要创建的对象类型的名称来创建</p>
+</li>
+<li>
+<p>创建的Object类型的实例并为其添加属性和方法,就可以创建自定义对象</p>
+<blockquote>
+<p>var o = new Object();</p>
+<p>如果不给构造函数传递参数,则可以省略后面的那一对圆括号</p>
+<p>var o = new Object;   // 有效但是不推荐</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>Object的每个实例都具有下列属性和方法:
+<ul>
+<li>constructor:保存着用于创建当前对象的函数,对于前面的列子而言,构造函数(constructor)就是Object();</li>
+<li>hasOwnProperty <strong>(propertyName)</strong>:用于检查给定的属性在当前对象实例中(而不是在实例的原型中)是否存在。其中，作为参数的属性名**(propertyName**〉必须以字符串形式指定(例 如：o.hasOwnProperty (“name”) ).</li>
+<li>isProtocypeOf (object)：用于检査传入的对象是否是另一个对象的原型。</li>
+<li>propertylsEnumerable(<strong>propertyName</strong>):用于检查给定的属性是否能够使用for-in语句 (本章后面将会讨论)来枚举。与hasOwnProperty ()方法–样，作为参数的域性名必须以字符 串形式指定。</li>
+<li>toLocaleString()：返回对象的字符串表示，该字符串与执行环境的地区对应。</li>
+<li><strong>toString() :返回对象的字符串表示。</strong></li>
+<li><strong>valueOf():返回对象的字符串、数值或布尔值表示。通常与toStringO方法的返面值 相同。</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="操作符"><a class="markdownIt-Anchor" href="#操作符"></a> 操作符</h4>
+<h5 id="一元操作符"><a class="markdownIt-Anchor" href="#一元操作符"></a> 一元操作符</h5>
+<p>只能操作一个值的操作符叫做一元操作符。</p>
+<ol>
+<li>
+<p>递增递减操作符(++/–)</p>
+<blockquote>
+<p>1.var age = 10;</p>
+<p>sum = age++;</p>
+<p>console.log(sum) === 10</p>
+<p>console.log(age) === 11</p>
+<p>num++/-- =====&gt;&gt; 就是先使用num的值,然后进行num+1或者num-1</p>
+<p>++num/–num ====&gt;&gt; 先进行num+1/num-1,然后进行使用加减后的值</p>
+</blockquote>
+<p><strong>总结</strong><br />
+<strong>前置++：先加1，后参与运算</strong><br />
+<strong>后置++：先参与运算，后加1</strong><br />
+<strong>上面两个理解后，下面两个自通</strong><br />
+<strong>前置-- ：先减1，后参与运算</strong><br />
+<strong>后置-- ：先参与运算，后减</strong></p>
+</li>
+</ol>
+<h5 id="算术运算符"><a class="markdownIt-Anchor" href="#算术运算符"></a> 算术运算符</h5>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+ - * &#x2F; %  </span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="逻辑运算符布尔运算符"><a class="markdownIt-Anchor" href="#逻辑运算符布尔运算符"></a> 逻辑运算符(布尔运算符)</h5>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;&amp; 与 两个操作数同时为true，结果为true，否则都是false</span><br><span class="line">|| 或 两个操作数有一个为true，结果为true，否则为false</span><br><span class="line">!  非  取反</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="关系运算符比较运算符"><a class="markdownIt-Anchor" href="#关系运算符比较运算符"></a> 关系运算符(比较运算符)</h5>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;  &gt;  &gt;&#x3D;  &lt;&#x3D; &#x3D;&#x3D; !&#x3D; &#x3D;&#x3D;&#x3D; !&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;与&#x3D;&#x3D;&#x3D;的区别：&#x3D;&#x3D;只进行值得比较，&#x3D;&#x3D;&#x3D;类型和值同时相等，则相等</span><br><span class="line"></span><br><span class="line">var result &#x3D; &#39;55&#39; &#x3D;&#x3D; 55;  	&#x2F;&#x2F; true</span><br><span class="line">var result &#x3D; &#39;55&#39; &#x3D;&#x3D;&#x3D; 55; 	&#x2F;&#x2F; false 值相等，类型不相等</span><br><span class="line">var result &#x3D; 55 &#x3D;&#x3D;&#x3D; 55; 	&#x2F;&#x2F; true</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="赋值运算符"><a class="markdownIt-Anchor" href="#赋值运算符"></a> 赋值运算符</h5>
+<blockquote>
+<p>= += -= *= /= %=</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">例如：</span><br><span class="line">var num &#x3D; 0;</span><br><span class="line">num +&#x3D; 5;	&#x2F;&#x2F;相当于  num &#x3D; num + 5;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="运算符的优先级"><a class="markdownIt-Anchor" href="#运算符的优先级"></a> 运算符的优先级</h5>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">优先级从高到底</span><br><span class="line">	1. ()  优先级最高</span><br><span class="line">	2. 一元运算符  ++   --   !</span><br><span class="line">	3. 算数运算符  先*  &#x2F;  %   后 +   -</span><br><span class="line">	4. 关系运算符  &gt;   &gt;&#x3D;   &lt;   &lt;&#x3D;</span><br><span class="line">	5. 相等运算符   &#x3D;&#x3D;   !&#x3D;    &#x3D;&#x3D;&#x3D;    !&#x3D;&#x3D;</span><br><span class="line">	6. 逻辑运算符 先&amp;&amp;   后||</span><br><span class="line">	7. 赋值运算符</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>// 练习1：<br />
+4 &gt;= 6 || ‘人’ != ‘阿凡达’ &amp;&amp; !(12 * 2 == 144) &amp;&amp; true<br />
+// 练习2：<br />
+var num = 10;<br />
+5 == num / 2 &amp;&amp; (2 + 2 * num).toString() === ‘22’</p>
+</blockquote>
+<h4 id="语句-2"><a class="markdownIt-Anchor" href="#语句-2"></a> 语句</h4>
+<h5 id="if-语句"><a class="markdownIt-Anchor" href="#if-语句"></a> if 语句</h5>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">i£ (i &gt; 25) &#123;</span><br><span class="line">	alert (&quot;Greater than 25. &quot;) ；	&#x2F;&#x2F; 单行语句</span><br><span class="line">&#125;else &#123;</span><br><span class="line">	alert (&quot;Less than or equal to 25.”；	&#x2F;&#x2F; 代码块中的语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>if (i &gt; 25) {</p>
+<p>​	alert ( &quot;Greater than 25.”；</p>
+<p>} else if (i &lt; 0) {</p>
+<p>​	alert(“Less than 0.”);</p>
+<p>} else {</p>
+<p>​	alert(“etween 0 and 25, inclusive.”);</p>
+<p>}</p>
+</blockquote>
+<h5 id="do-while-语句"><a class="markdownIt-Anchor" href="#do-while-语句"></a> do-while 语句</h5>
+<blockquote>
+<p>do {</p>
+<p>statement</p>
+<p>} while (expression);</p>
+</blockquote>
+<blockquote>
+<p>下面是一个示例：</p>
+<p>var i = 0；</p>
+<p>do {</p>
+<p>​	i += 2;</p>
+<p>} while (i &lt; 10)；</p>
+<p>alert(i);</p>
+</blockquote>
+<h5 id="while-语句"><a class="markdownIt-Anchor" href="#while-语句"></a> while 语句</h5>
+<blockquote>
+<p>while(expression) statement</p>
+</blockquote>
+<blockquote></blockquote>
+<h5 id="for-语句"><a class="markdownIt-Anchor" href="#for-语句"></a> for 语句</h5>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (initialization； expression; post-loop-expression) statement</span><br><span class="line">下面是一个示例： var count &#x3D; 10; for (var i &#x3D; 0； i &lt; count； i++)&#123; alert(i)；</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="for-in-语句"><a class="markdownIt-Anchor" href="#for-in-语句"></a> for-in 语句</h5>
+<p>for-in语句是一种精准的迭代语句，可以用来枚举对象的属性。</p>
+<blockquote>
+<p>for (property in expression) statement</p>
+<p>下面是一个示例： for (var propName in window) { document.write(propName);</p>
+</blockquote>
+<h5 id="break-和-continue-语句"><a class="markdownIt-Anchor" href="#break-和-continue-语句"></a> break 和 continue 语句</h5>
+<p>break和continue语句用于在循环中精确地控制代码的执行。其中,break语句会立即退出循环， 强制继续执行循环后面的语句。而continue语句虽然也是立即退出循环，但退出循环后会从循环的顶 部继续执行。</p>
+<blockquote>
+<p>var num = 0;</p>
+<p>for (var i=l; i &lt; 10; i++} {</p>
+<p>​    if(i %5 == 0){</p>
+<p>​	break;</p>
+<p>​	}</p>
+<p>​	num++；</p>
+<p>}</p>
+<p>alert(num)；	//4</p>
+</blockquote>
+<blockquote>
+<p>var num = 0;</p>
+<p>for (var i=l; i &lt; 10； i++) {</p>
+<p>​	if (i % 5 == 0) {</p>
+<p>​			continue;</p>
+<p>​			num++;</p>
+<p>​	}</p>
+<p>alert(num);        //8</p>
+</blockquote>
+<h5 id="switch-语句"><a class="markdownIt-Anchor" href="#switch-语句"></a> switch 语句</h5>
+<blockquote>
+<p>switch (expression) {</p>
+<p>case value: statement break;</p>
+<p>case value: statement</p>
+<p>break;</p>
+<p>case value： statement</p>
+<p>break；</p>
+<p>case value： statement</p>
+<p>break；</p>
+<p>default: statement</p>
+<p>}</p>
+</blockquote>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">switch (i) &#123; </span><br><span class="line">case 25: </span><br><span class="line">	alert(-25&quot;)； </span><br><span class="line">	break；</span><br><span class="line">case 35: </span><br><span class="line">	alert(-35-); </span><br><span class="line">	break；</span><br><span class="line">case 45: </span><br><span class="line">	alert(-45&quot;):</span><br><span class="line">	break； </span><br><span class="line">default: </span><br><span class="line">	alert(・0ther・);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>var num = 25;</p>
+<p>switch (true) {</p>
+<p>​	case num &lt; 0:</p>
+<p>​		alert(.Less than 0.&quot;)；</p>
+<p>​		break；</p>
+<p>​	case num &gt;= 0 &amp;&amp; num &lt;= 10:</p>
+<p>​		alert(&quot;Between 0 and 10. •)；</p>
+<p>​		break；</p>
+<p>​	case num &gt; 10 &amp;&amp; num &lt;= 20:</p>
+<p>​		alert(・Between 10 and 20.)</p>
+<p>​		 break；</p>
+<p>​	default:</p>
+<p>​		alert(“More than 20”)；</p>
+<p>}</p>
+</blockquote>
+<h4 id="函数"><a class="markdownIt-Anchor" href="#函数"></a> 函数</h4>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function functionName(argO, argl,...,argN) &#123; </span><br><span class="line">	statements</span><br><span class="line">&#125;</span><br><span class="line">以下是一个函数示例：</span><br><span class="line">function sayHi(name, message) &#123;</span><br><span class="line">alert(&quot;Hello &quot; + name + ■&#39;• + message); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>arguments的理解：<strong>数组形式（并不是Array的实例）</strong>。<br />
+通过接受参数的个数不同，可以让函数分别实现不同的功能：</li>
+</ul>
+<blockquote>
+<p>function doSomething(){<br />
+if(arguments.length<mark>0){<br />
+do1();<br />
+}else if(arguments.length</mark>1){<br />
+do2();<br />
+}else if(arguments.length==2){<br />
+do3();<br />
+}else{<br />
+do4();<br />
+}<br />
+}</p>
+</blockquote>
+<ul>
+<li>函数会在执行完return语句之后停止并立即退出</li>
+</ul>
+<blockquote>
+<p>function sayHi(name, message) {</p>
+<p>​	 return;</p>
+<p>​	 alert(&quot;Hello &quot; + name + “,” + message) ;	//永远不会调用</p>
+<p>}</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>JavaScript</category>
