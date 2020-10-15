@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS基础知识学习笔记(一)</title>
+    <url>/posts/cb25713c.html</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，用来描述 HTML 或 XML（包括如</span><br><span class="line">  SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="什么是-css"><a class="markdownIt-Anchor" href="#什么是-css"></a> 什么是 CSS?</h2>
+<ol>
+<li>CSS 指层叠样式表 (<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets)</li>
+<li>样式定义<strong>如何显示</strong> HTML 元素</li>
+<li>样式通常存储在<strong>样式表</strong>中</li>
+<li>把样式添加到 HTML 4.0 中，是为了<strong>解决内容与表现分离的问题</strong></li>
+<li><strong>外部样式表</strong>可以极大提高工作效率</li>
+<li>外部样式表通常存储在 <strong>CSS 文件</strong>中</li>
+<li>多个样式定义可<strong>层叠</strong>为一个</li>
+</ol>
+<h1 id="css-语法"><a class="markdownIt-Anchor" href="#css-语法"></a> CSS 语法</h1>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5C010.jpg" alt="" /></p>
+<h2 id="css-创建"><a class="markdownIt-Anchor" href="#css-创建"></a> CSS 创建</h2>
+<h3 id="如何插入样式表"><a class="markdownIt-Anchor" href="#如何插入样式表"></a> 如何插入样式表</h3>
+<ol>
+<li>
+<p>外部样式表(External style sheet)</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>内部样式表(Internal style sheet)</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 &lt;<span class="selector-tag">style</span>&gt; 标签在文档头部定义内部样式表，就像这样:</span><br><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-tag">hr</span> &#123;<span class="attribute">color</span>:sienna;&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">margin-left</span>:<span class="number">20px</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">background-image</span>:<span class="built_in">url</span>(<span class="string">&quot;images/back40.gif&quot;</span>);&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>内联样式(Inline style</p>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">由于要将表现和内容混杂在一起，内联样式会损失掉样式表的许多优势。</span><br><span class="line">&lt;p style=&quot;color:sienna;margin-left:20px&quot;&gt;这是一个段落。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>CSS基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS基础知识学习笔记(七)</title>
     <url>/posts/undefined.html</url>
     <content><![CDATA[<h2 id="标准流"><a class="markdownIt-Anchor" href="#标准流"></a> 标准流</h2>
@@ -175,47 +216,6 @@ sticky</p>
         <tag>CSS基础知识</tag>
         <tag>定位</tag>
         <tag>position</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS基础知识学习笔记(一)</title>
-    <url>/posts/cb25713c.html</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，用来描述 HTML 或 XML（包括如</span><br><span class="line">  SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="什么是-css"><a class="markdownIt-Anchor" href="#什么是-css"></a> 什么是 CSS?</h2>
-<ol>
-<li>CSS 指层叠样式表 (<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets)</li>
-<li>样式定义<strong>如何显示</strong> HTML 元素</li>
-<li>样式通常存储在<strong>样式表</strong>中</li>
-<li>把样式添加到 HTML 4.0 中，是为了<strong>解决内容与表现分离的问题</strong></li>
-<li><strong>外部样式表</strong>可以极大提高工作效率</li>
-<li>外部样式表通常存储在 <strong>CSS 文件</strong>中</li>
-<li>多个样式定义可<strong>层叠</strong>为一个</li>
-</ol>
-<h1 id="css-语法"><a class="markdownIt-Anchor" href="#css-语法"></a> CSS 语法</h1>
-<p><img src="E:%5CCatzend%5Csource%5Cimage%5C010.jpg" alt="" /></p>
-<h2 id="css-创建"><a class="markdownIt-Anchor" href="#css-创建"></a> CSS 创建</h2>
-<h3 id="如何插入样式表"><a class="markdownIt-Anchor" href="#如何插入样式表"></a> 如何插入样式表</h3>
-<ol>
-<li>
-<p>外部样式表(External style sheet)</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>内部样式表(Internal style sheet)</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 &lt;<span class="selector-tag">style</span>&gt; 标签在文档头部定义内部样式表，就像这样:</span><br><span class="line">&lt;<span class="selector-tag">head</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-tag">hr</span> &#123;<span class="attribute">color</span>:sienna;&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">margin-left</span>:<span class="number">20px</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">background-image</span>:<span class="built_in">url</span>(<span class="string">&quot;images/back40.gif&quot;</span>);&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>内联样式(Inline style</p>
-</li>
-</ol>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">由于要将表现和内容混杂在一起，内联样式会损失掉样式表的许多优势。</span><br><span class="line">&lt;p style=&quot;color:sienna;margin-left:20px&quot;&gt;这是一个段落。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>CSS基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -3949,6 +3949,224 @@ sticky</p>
     <title>JavaScript高级程序设计(三)</title>
     <url>/posts/bce9bf30.html</url>
     <content><![CDATA[<h1 id="变量-作用域和内存问题"><a class="markdownIt-Anchor" href="#变量-作用域和内存问题"></a> 变量、作用域和内存问题</h1>
+<p><strong>JavaScript的变量与其他语言的变量有很大的区别,JavaScript变量松散类型的本质,决定了它只是在特定=时间用于保存特定值的一个名字而已.</strong></p>
+<h2 id="基本类型引用类型"><a class="markdownIt-Anchor" href="#基本类型引用类型"></a> 基本类型&amp;引用类型</h2>
+<ol>
+<li>基本数据类型:Undefined,Null,Boolean,Number和String.可以操作保存在变量中的实际的值</li>
+<li>引用类型的值是保存在内存中的对象,JavaScript不允许直接访问内存中的位置也就是说不能直接操作对象的内存空间.在操作对象的引用而不是实际的对象,引用类型的值是按引用访问的.</li>
+</ol>
+<h2 id="动态属性"><a class="markdownIt-Anchor" href="#动态属性"></a> 动态属性</h2>
+<ol>
+<li>
+<p>定义基本类型值和引用类型值得方式是雷士的:<strong>创建一个变量并为该变量赋值</strong></p>
+</li>
+<li>
+<p>对于引用类型的值,可以为其添加属性和方法,也可以改变和删除其属性和方法</p>
+<blockquote>
+<p>var person = new Object();</p>
+<p><a href="http://person.name">person.name</a> = “Nicholas”;</p>
+<p>alert(<a href="http://person.name">person.name</a>)</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>对象不被销毁或者这个属性不被删除,则这个属性将一直存在</li>
+<li><strong>不能给基本类型的值添加属性,虽然不会报错但是会报&quot;undefined&quot;</strong></li>
+</ul>
+<h2 id="赋值变量值"><a class="markdownIt-Anchor" href="#赋值变量值"></a> 赋值变量值</h2>
+<ul>
+<li>从一个变量向另一个变量赋值基本类型的值,会在变量对象上创建一个新值,然后把该值赋值到为新变量分配的位置上.</li>
+<li>一个变量对另一个变量赋值引用类型的值时,同样也会将存储在变量对象中的值赋值一份到为新变量分配的空间中.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var person &#x3D; new Object();</span><br><span class="line">var person2 &#x3D; person;</span><br><span class="line">person.name &#x3D; &quot;小明&quot;;</span><br><span class="line">console.log(person2)</span><br><span class="line">&#123;name: &quot;小明&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="E:%5CCatzend%5Csource%5Cimage%5Cjs%5C01.jpg" alt="" /></p>
+<h3 id="传递参数"><a class="markdownIt-Anchor" href="#传递参数"></a> 传递参数</h3>
+<ul>
+<li>ECMAScript中所有函数的参数都是按值传递的</li>
+<li>把函数外部的值赋值给函数内部的参数,就和把值从一个变量赋值到另一个变量一样</li>
+</ul>
+<blockquote>
+<p>function addTen(num) {</p>
+<p>​	num += 10;</p>
+<p>​	return num；</p>
+<p>}</p>
+<p>​	var count = 20;</p>
+<p>​	var result = addTen(count);</p>
+<p>​	alert (count) ;	//20，没有变化</p>
+<p>​	alert(result);	//30</p>
+</blockquote>
+<p>​				函数addTen ()有一个参数num,而参数实际上是函数的局部变量。在调用这个函数时，变 14 count作为参数被传递给函数，这个变量的值是20。于是,数值20被复制给参数num以便在addTen () 中使用。在函数内部，参数num的值被加上了 10,但这一变化不会影响函数外部的count变量。参数 num与变量count互不相识，它们仅仅是具有相同的值。假如num是按引用传递的话，那么变量count 的值也将变成30,从而反映函数内部的修改。</p>
+<blockquote>
+<p>​	function setName(obj) {</p>
+<p>​		<a href="http://obj.name">obj.name</a> =・Nicholas*;</p>
+<p>​	)</p>
+<p>​	var person = new Object{);</p>
+<p>​	setName(person);</p>
+<p>​	alert(<a href="http://person.name">person.name</a>);	//“Nicholas”</p>
+</blockquote>
+<p>​				创建–个对象，并将其保存在了变量person中。然后，这个对象被传递到setName () 函数中之后就被复制给了 obj。在这个函数内部，obj和person引用的是同一个对象。换句话说，即使这个对象是按值传递的，obj也会按引用来访问同一个对象。于是，当在函数内部为obj添加name 属性后，函数外部的person也将有所反映；因为person指向的对象在堆内存中只有一个，而且是全 局对象。</p>
+<p>​				有很多开发人员错误地认为：在局部作用域中修改的对象会在全局作用域中反映出来，就说明 参数是按引用传递的。为了证明对象是按值传递的，我们再看一看下面这个经过修改的例子：</p>
+<blockquote>
+<p>function setName(obj) {</p>
+<p>​	<a href="http://obj.name">obj.name</a> = “Nicholas”;</p>
+<p>​	obj = new Object();</p>
+<p>​	obj.name=“Greg”;</p>
+<p>}</p>
+<p>var person = new Object()；</p>
+<p>setName(person);</p>
+<p>alert(<a href="http://person.name">person.name</a>)； //“Nicholas”</p>
+</blockquote>
+<p>​			 即使在函数内部修改了参数的值，但原始的引用仍然保持未变。实际上，当在函数内部重写obj时，这 个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即被销毁。可以把ECMAScript函数的参数想象成局部变量。</p>
+<h3 id="检测类型"><a class="markdownIt-Anchor" href="#检测类型"></a> 检测类型</h3>
+<h4 id="typeof值"><a class="markdownIt-Anchor" href="#typeof值"></a> typeof值</h4>
+<p>var s =・Nicholas・;</p>
+<p>var b = true；</p>
+<p>var <strong>i = 22;</strong></p>
+<p><strong>var</strong> u;</p>
+<p>var n = null;</p>
+<p>var o = new Object();</p>
+<table>
+<thead>
+<tr>
+<th>alert(typeof s);</th>
+<th>//string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alert(typeof i);</td>
+<td>//number</td>
+</tr>
+<tr>
+<td>alert(typeof b);</td>
+<td>//boolean</td>
+</tr>
+<tr>
+<td>alert(typeof u);</td>
+<td>//undefined</td>
+</tr>
+<tr>
+<td>alert(typeof n);</td>
+<td>//object</td>
+</tr>
+<tr>
+<td>alert(typeof o);</td>
+<td>//object</td>
+</tr>
+</tbody>
+</table>
+<h4 id="instanceof"><a class="markdownIt-Anchor" href="#instanceof"></a> instanceof</h4>
+<p>判断是不是某个类型的</p>
+<blockquote>
+<p>语法:</p>
+<p>result = 值 instanceof constructor</p>
+<p>console.log( person instanceof Object);// 变量person是Object吗?</p>
+<p>console.log( colors instanceof Array);// 变量person是Array吗?</p>
+<p>alert (pattern instanceof RegExp)；	&quot; 变量 pattern 是 RegExp 吗？</p>
+</blockquote>
+<h4 id="执行环境及作用域"><a class="markdownIt-Anchor" href="#执行环境及作用域"></a> 执行环境及作用域</h4>
+<ul>
+<li>执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。</li>
+<li>在Web浏览器中，全局执行环境被认为是window对象（第7章将详细讨论）,« 此所有全局变量和函数都是作为window对象的属性和方法创建的。某个执行环境中的所有代码执行完 毕后，该环境被销毁，保存在其中的所有变量和函数定义也随之销毁（全局执行环境直到应用程序退 出一如关闭网页或浏览器一寸才会被销毁）。</li>
+<li>每个函数都有自己的执行环境,当执行流进入一个函数时,函数的环境就会被推入一个环境栈中,而在函数执行之后,栈将其环境弹出,吧控制权返回给之前的执行环境</li>
+<li>当代码在一个环境中执行时,会创建变量对象的一个作用域链</li>
+</ul>
+<blockquote>
+<p>作用域链的前端，始终都是当前执行的代码所 在环境的变徵对象。如果这个环境是函数，则将其活动对象（activation object）作为变量对象。活动对 象在最开始时只包含一个变量，即arguments对象（这个对象在全局环境中是不存在的）。作用域链中 的下一个变铽对象来自包含（外部）环境，而再下一个变量对象则来自下一个包含环境。这样，一直延 续到全局执行环境；全局执行环境的变量对象始终都是作用域链中的最后一个对象。</p>
+</blockquote>
+<blockquote>
+<p>var color = &quot;blue-；</p>
+<p>function changecolor(){</p>
+<p>​	if (color === “blue”){</p>
+<p>​			 color =“red”;</p>
+<p>​	} else {</p>
+<p>​		color = “blue”;</p>
+<p>​	}</p>
+<p>changeColor();</p>
+<p>alert(“Color is now” + color)；</p>
+</blockquote>
+<h4 id="声明变量"><a class="markdownIt-Anchor" href="#声明变量"></a> 声明变量</h4>
+<ol>
+<li>使用var声明的变量会自动被添加到最近的环境中</li>
+</ol>
+<blockquote>
+<p>function add(numl, num2) {</p>
+<p>​	var sum =  numl + num2；</p>
+<p>​	return sum；</p>
+<p>}</p>
+<p>var result = add(10, 20);	//30</p>
+<p>alert (sum);	//由于sum不是有效的变量,因此会导致错误</p>
+</blockquote>
+<h3 id="垃圾收集"><a class="markdownIt-Anchor" href="#垃圾收集"></a> 垃圾收集</h3>
+<p>JavaScript具有自动垃圾收集机制,也就是说,执行环境会负责管理代码执行过程中使用的内存.</p>
+<h4 id="标记清楚"><a class="markdownIt-Anchor" href="#标记清楚"></a> 标记清楚</h4>
+<p>​				JavaScript中最常用的垃圾收集方式是标记清除.当变量进入环境(例如,在函数中声明一个变量)时,就讲这个变量标记为&quot;进入环境&quot;.从逻辑上讲,永远不能释放进入环境的变量占用的内存,因为只要执行流进入相应的环境,就可能会用到它们,而当变量离开环境时,则将其标记为&quot;离开环境&quot;</p>
+<p>​				垃圾收集器在运行的时候会给存储在内存中的所有变量都加上标记(当然，可以使用任何标记方 式)。然后，它会去掉环境中的变量以及被环境中的变量引用的变姑的标记。而在此之后冉被加上标记 的变量将被视为准备删除的变垃，原因是环境中的变量已经无法访问到这些变量了。最后，垃圾收集器 完成内存清除t作，销毁那些带标记的值并凹收它们所占用的内存空间。</p>
+<h4 id="引用计数"><a class="markdownIt-Anchor" href="#引用计数"></a> 引用计数</h4>
+<h4 id="性能问题"><a class="markdownIt-Anchor" href="#性能问题"></a> 性能问题</h4>
+<blockquote>
+<p>事实上，在有的浏览器中可以触发垃圾收集过程，但我们不建议读者这样做。在 IE中，调用window.CollectGarbage （）方法会立即执行垃圾收集。在Opera7及更 高版本中，调用window.opera.collects）也会启动垃圾收集例程。</p>
+</blockquote>
+<h4 id="管理内存"><a class="markdownIt-Anchor" href="#管理内存"></a> 管理内存</h4>
+<ul>
+<li>JavaScript 就是分配给Web 浏览器的可用内存数量通常要比分配给桌面应用程序的少。目的主要是出于安全方面的考虑， 目的是防止运行JavaScript的网页耗尽全部系统内存而导致系统崩溃。</li>
+<li>确保占用最少的内存可以让页面获得更好的性能。而优化内存占用的最佳方式，就是为执行 中的代码只保存必要的数据。一且数据不再有用，最好通过将其值设置为null来释放其引用——这个 做法叫做解除引用(dereferencing)。</li>
+</ul>
+<blockquote>
+<p>function createPerson(name){</p>
+<p>​		var localPerson = new Object();</p>
+<p>​		<a href="http://1oca1Person.name">1oca1Person.name</a> = name；</p>
+<p>​		return localPerson；</p>
+<p>}</p>
+<p>var globalPerson = creacePerson(“Nicholas”);</p>
+<p>//手工解除globalPerson的引用</p>
+<p>globalPerson = null；</p>
+</blockquote>
+<h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h2>
+<ul>
+<li>
+<p>基本类型值在内存屮占据固定大小的空间，因此被保存在栈内存中；</p>
+</li>
+<li>
+<p>从一个变量向另一个变量复制基本类型的值，会创建这个值的一个副本；</p>
+</li>
+<li>
+<p>引用类型的值是对象，保存在堆内存中；</p>
+</li>
+<li>
+<p>包含引用类型值的变量实际上包含的并不是对象本身，而是一个指向该对象的指针；</p>
+</li>
+<li>
+<p>从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两个变量最终都指向同 一个对象；</p>
+</li>
+<li>
+<p>确定-个值是哪种基木类型可以使用typeof操作符，而确定一个值是哪种引用类型可以使用 instanceof 操作符。</p>
+<p>所有变量（包括基本类型和引用类型）都存在于-个执行环境（也称为作用域）当中，这个执 行环境决定了变量的生命周期.以及哪一部分代码可以访问其中的变量。以下是关于执行环境的几 点总结：</p>
+</li>
+<li>
+<p>执行环境有全局执行环境（也称为全局环境）和函数执行环境之分；</p>
+</li>
+<li>
+<p>每次进人一个新执行环境，都会创建一个用T搜索变量和函数的作用域链；</p>
+</li>
+<li>
+<p>函数的局部环境不仅有权访问函数作用域中的变量，而a有权访问其包含（父）环境，乃至全 局环境；</p>
+</li>
+<li>
+<p>全局环境只能访问在全w环境中定义的变量和函数，而不能直接访问局部环境中的任何数据；</p>
+</li>
+<li>
+<p>变的执行环境有助于确定应该何时释放内存。</p>
+</li>
+</ul>
+<p>JavaScript是一门具有自动垃圾收集机制的编程语言，开发人员不必关心内存分配和回收问题。可 以对JavaScript的垃圾收集例程作如下总结。</p>
+<ul>
+<li>离开作用域的值将被自动标记为可以回收，因此将在垃圾收集期间被删除。</li>
+<li>标记清除”是目前主流的垃圾收集算法，这种算法的思想是给当前不使用的值加上标记，然 后再回收其内存。</li>
+<li>另一种垃圾收集算法是“引用计数”,这种算法的思想是跟踪记录所有值被引用的次数oJavaScript 弓I擎H前都不再使用这种算法；但在IE中访问非原生JavaScript对象（如DOM元素）时，这种 算法仍然可能会导致问题。</li>
+<li>当代码中存在循环引用现象时，“引用计数”算法就会导致问题。</li>
+<li>解除变量的引用不仅有助于消除循环引用现象，而且对垃圾收集也有好处。为了确保有效地回 收内存，应该及时解除不再使用的全局对象、全舄对象属性以及循环引用变量的引用。</li>
+</ul>
 ]]></content>
       <categories>
         <category>JavaScript</category>
@@ -4429,17 +4647,431 @@ do4();<br />
   <entry>
     <title>JavaScript高级程序设计(五)</title>
     <url>/posts/40010742.html</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="array类型"><a class="markdownIt-Anchor" href="#array类型"></a> Array类型</h1>
+<h2 id="创建数组的基本方式"><a class="markdownIt-Anchor" href="#创建数组的基本方式"></a> 创建数组的基本方式</h2>
+<ul>
+<li><strong>使用Array构造函数</strong></li>
+</ul>
+<blockquote>
+<p>var colors = new Array();<br />
+var colors = new Array(20);//创建固定长度的数组<br />
+var colors = new Array(“red”,“blue”,“green”);</p>
+<p>var colors = new Array (3);	//创建一个包含3个的数组</p>
+<p>var names = new Array (・Greg・)；	//创建一个包含1项，即字符串&quot;Greg&quot;的数纽</p>
+</blockquote>
+<p>在使用Array构造函数时也可以省略new操作符。如下面的例子所示，省略new操作符的 结果相同：</p>
+<blockquote>
+<p>var colors = Array (3);	//创建一个包含3项的数组</p>
+<p>var names = Array (&quot;GregB) ;	//创建一个包含1项，即字符串&quot;Greg&quot;的数组</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>使用数组字面量表示法</strong></p>
+<blockquote>
+<p>var colors = [“red”,“blue”,“green”];//创建一个包含3个字符串的数组<br />
+var names = [];//创建一个空数组<br />
+var values = [1,2,];//不要这样，这样会创建一个包含2或3项的数组<br />
+var options = [,];//不要这样，这样会创建一个包含5或6项的数组</p>
+</blockquote>
+<p>使用数组字面量表示法时，也不会调用Array构造函数</p>
+</li>
+</ul>
+<h2 id="length"><a class="markdownIt-Anchor" href="#length"></a> length</h2>
+<p>数组的项数保存在length属性中，这个属性始终会返回0或更大的值。</p>
+<p><strong>如果将其length属性设置为大于数组项数的值，则新增的每一项都会取得undefined值。</strong></p>
+<p>注：数组最多可包含4294967295个项，如果想添加的项数超过这个上限值，就会发生异常。而创建一个初始大小与这个上限值接近的数组，则可能会导致运行时间超长的脚本错误。</p>
+<h2 id="检测数组"><a class="markdownIt-Anchor" href="#检测数组"></a> 检测数组</h2>
+<p>确定某个对象是不是数组的经典问题,使用instanceof操作符就可以实现</p>
+<blockquote>
+<p>if value instanceof Array{</p>
+<p>​	//对数组执行操作</p>
+<p>}</p>
+</blockquote>
+<h2 id="转换方法"><a class="markdownIt-Anchor" href="#转换方法"></a> 转换方法</h2>
+<ul>
+<li>
+<p>valueOf()方法：返回的还是数组本身。</p>
+</li>
+<li>
+<p>toString()方法：返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串。</p>
+</li>
+<li>
+<p>toLocaleString()方法：它也会创建一个数组值的以逗号分隔的字符串。而与前两种方法唯一的不同之处在于，这一次为了取得每一项的值，调用的是每一项的toLocaleString()方法，而不是toString()方法。</p>
+</li>
+</ul>
+<blockquote>
+<p>var person1 = {<br />
+toLocaleString: function(){<br />
+return “Nikolaos”;<br />
+},<br />
+toString: function(){<br />
+return “Nikolaos”;<br />
+}<br />
+};<br />
+var person2 = {<br />
+toLocaleString: function(){<br />
+return “Grigorios”;<br />
+},<br />
+toString: function(){<br />
+return “Greg”;<br />
+}<br />
+};</p>
+<p>var people = [person1, person2];<br />
+alert(people);<br />
+alert(people.toString());<br />
+alert(people.toLocalesString());</p>
+</blockquote>
+<ul>
+<li>join()方法</li>
+</ul>
+<p>join()方法，则可以使用不同的分隔符來构建这个字符串。join()方 法只接收一个参数，即用作分隔符的字符串,然后返回包含所有数组项的字符串.</p>
+<blockquote>
+<p>var colors=[“red”, “green”,“blue”]；</p>
+<p>alert(colors.joint&quot;,&quot;)};	//red,green,blue</p>
+<p>alert(colors.join(“II”));	//red I I green| |blue</p>
+</blockquote>
+<blockquote>
+<p><strong>注:默认是不传递的时候是以逗号间隔,如果传递是undefined参数则也是逗号间隔</strong></p>
+<p><strong>如果数组中的某一项的值是null或者undefined,那么该值在join()、 toLocale- String()、toString()和valueOf ()方法返回的结果中以空字符串表示。</strong></p>
+</blockquote>
+<h2 id="栈方法"><a class="markdownIt-Anchor" href="#栈方法"></a> 栈方法</h2>
+<p>数组可以表 现得就像栈一样，后者是一种可以限制插人和删除项的数据结构。</p>
+<p>栈是一种LIFO (Last-In-First-Out, 后进先出)的数据结构，也就是最新添加的项最早被移除。而栈中项的插人(叫做推入)和移除(叫做 弹出)，只发生在一个位置一栈的顶部。</p>
+<h3 id="push方法"><a class="markdownIt-Anchor" href="#push方法"></a> push方法</h3>
+<ul>
+<li>push ()方法可以接收任意数量的参数，把它们逐个添加到数组末尾，并返间修改后数组的长度。</li>
+</ul>
+<blockquote>
+<p>var colors  =new Array();</p>
+<p>var count = colors.push(“red”,“green”);</p>
+<p>console.log(count)             === &gt;&gt;&gt; 2</p>
+</blockquote>
+<ul>
+<li>pop ()方法则从数组末尾移除最后一项，减少数组的length值，然后返回移除的项</li>
+</ul>
+<blockquote>
+<p>var colors  =new Array();</p>
+<p>var count = colors.push(“red”,“green”);</p>
+<p>var t = colors.pop();</p>
+<p>console.log(t)             === &gt;&gt;&gt; green</p>
+</blockquote>
+<h2 id="队列方法"><a class="markdownIt-Anchor" href="#队列方法"></a> 队列方法</h2>
+<p>队列数据结构的访问规则是FIFO( First-In-First-Out, 先进先出)。</p>
+<h3 id="shift"><a class="markdownIt-Anchor" href="#shift"></a> shift()</h3>
+<p>shif(),能够移除数组中的第一项并返回该项,同时将数组长度减1.</p>
+<blockquote>
+<p>var colors = new Array () ;	//创建一个数组</p>
+<p>var count = colors .push (“red”,・green&quot;) ;	//推入两項</p>
+<p>alert(count)；	//2</p>
+<p>count = colors .push ( *black&quot;) ；	//推入另一项</p>
+<p>alert(count);	//3</p>
+<p>var item = colors.shift();	//取得第一項</p>
+<p>alert (item) ；	/&quot;red・</p>
+<p>alert(colors.length); //2</p>
+</blockquote>
+<h3 id="unshift"><a class="markdownIt-Anchor" href="#unshift"></a> unshift ()</h3>
+<p>unshift ()它能在数组前端添加任意个项并返冋新数组的长度。</p>
+<blockquote>
+<p>var count=colors.unshift (“red”, “green” ) ;	//推入两項</p>
+<p>alert(count)；	//2</p>
+<p>count = count.unshift(“black”);          //推入一项</p>
+<p>alert(count);	//3</p>
+<p>var item = colors.pop()        //去得最后一项</p>
+<p>alert(item); //“green”</p>
+<p>alert (colors. length.) ; //2</p>
+</blockquote>
+<h2 id="重排序方法"><a class="markdownIt-Anchor" href="#重排序方法"></a> 重排序方法：</h2>
+<h3 id="reversed"><a class="markdownIt-Anchor" href="#reversed"></a> reversed()</h3>
+<p>everse()方法会对反转数组项的顺序。</p>
+<blockquote>
+<p>var values = [1, <strong>2,</strong> 3 ,4 ,5 ];</p>
+<p>values.reverse();</p>
+<p>alert (values);	&quot;5,4,3,2,1</p>
+</blockquote>
+<h3 id="sort"><a class="markdownIt-Anchor" href="#sort"></a> sort()</h3>
+<ul>
+<li>
+<p>sort()方法会调用每个数组项的toStringO转型方法，然后比较得到的字符串，以 确定如何排序。</p>
+</li>
+<li>
+<p>可接收一个比较函数作为参数，指定排序方法。</p>
+</li>
+<li>
+<p>比较函数接收两个参数，如果第一个参数应该位于第二个参数之前则返回一个负数，如果两个参数相等，则返回0，如果第一个参数应该位于第二个之后则返回一个正数。</p>
+</li>
+</ul>
+<blockquote>
+<p>function compare(value1, value2) {<br />
+if(value1 &lt; value2){<br />
+return -1;<br />
+}else if(value1 &gt; value2){<br />
+return 1;<br />
+}else {<br />
+return 0;<br />
+}<br />
+}</p>
+<p>var values = [0,1,5,10,15];<br />
+values.sort(compare);<br />
+alert(values); //0,1,5.10,15</p>
+</blockquote>
+<p>对于数值类型或者其valueOf()方法会返回数值类型的对象类型，可以使用一个更简单的比较函数。这个函数只要用第二个值减第一个值即可。</p>
+<h2 id="操作方法"><a class="markdownIt-Anchor" href="#操作方法"></a> 操作方法</h2>
+<h3 id="concat"><a class="markdownIt-Anchor" href="#concat"></a> concat()</h3>
+<p>​			concat()方法可以基于当前数 组中的所有项创建一个新数组。具体来说，这个方法会先创建当前数组一个副本，然后将接收到的参数 添加到这个副本的末尾，最后返回新构建的数组。</p>
+<ul>
+<li>没有给concatl)方法传递参数的情况下，它只是 复制当前数组并返回副本。</li>
+<li>如果传递给concatO方法的是一或多个数组，则该方法会将这些数组中的 每一项都添加到结果数组中。</li>
+<li>如果传递的值不是数组，这些值就会被简单地添加到结果数组的末尾。</li>
+</ul>
+<blockquote>
+<p>var colors = [&quot;red-, “green”, “blue”];</p>
+<p>var colors2 = colors.concat('yellow&quot;, [“black”, &quot;brown&quot;I);</p>
+<p>alert (colors) ;	“red,green,blue”</p>
+<p>alert(colors2)；	//red,green,blue,yellow,black,brown</p>
+</blockquote>
+<h3 id="slice"><a class="markdownIt-Anchor" href="#slice"></a> slice()</h3>
+<p>sliced,它能够基于当前数组屮的一或多个项创建一个新数组。sliced方法可以 接受一或两个参数，即要返回项的起始和结束位置。</p>
+<ul>
+<li>只有一个参数的情况下，sliceO方法返回从该 参数指定位置开始到当前数组末尾的所有项。</li>
+<li>如果有两个参数，该方法返回起始和结束位置之间的项——但不包括结束位置的项。</li>
+</ul>
+<blockquote>
+<p>var colors = [“red”,“green”,“blue”,“yellow”,purple];<br />
+var colors2= colors.slice(1);<br />
+var colors3	= colors.slice(1,4);</p>
+<p>alert(colors2); //green,blue,yellow,purple<br />
+alert(colors3); //green,blue,yellow</p>
+</blockquote>
+<h3 id="splice-重要"><a class="markdownIt-Anchor" href="#splice-重要"></a> splice()-----<strong>重要</strong></h3>
+<h4 id="删除"><a class="markdownIt-Anchor" href="#删除"></a> 删除</h4>
+<p><strong>删除</strong>：可以删除任意数量的项，只需指定2个参数：要删除的第一项的位置和要删除的项数。</p>
+<p>如：splice(0,2)会删除数组中的前两项。</p>
+<h4 id="插入"><a class="markdownIt-Anchor" href="#插入"></a> 插入</h4>
+<p><strong>插入</strong>：可以向指定位置插入任意数量的项，只需提供3个参数：起始位置、0（要删除的项数）和要插入的项。</p>
+<p>如：splice(2,0,“red”,“green”)会从当前数组的位置2开始插入字符串&quot;red&quot;和&quot;green&quot;。</p>
+<h4 id="替换"><a class="markdownIt-Anchor" href="#替换"></a> 替换</h4>
+<p><strong>替换</strong>：可以向指定位置插入任意数量的项，同时删除任意数量的项，只需指定3个参数：起始位置、要删除的项数和要插入的任意数量的项。插入的数量不必与删除的项数相等。</p>
+<p>如：splice(2,1,“red”,“green”)会删除当前数组位置2的项，然后再从位置2开始插入字符串&quot;red&quot;和&quot;green&quot;。</p>
+<h2 id="位置方法"><a class="markdownIt-Anchor" href="#位置方法"></a> 位置方法</h2>
+<p>这两个方法都接收两个参数：要查找的项和（可选的）表示查找起点位置的索引。返回：要查找的项在数组中的位置，在没找到的情况下返回-1。</p>
+<h3 id="indexof"><a class="markdownIt-Anchor" href="#indexof"></a> <strong>indexOf()</strong></h3>
+<h4 id="lastindexof"><a class="markdownIt-Anchor" href="#lastindexof"></a> <strong>lastIndexOf()</strong></h4>
+<blockquote>
+<p>var numbers = [1,2,3,4,5,4,3,2,1];</p>
+<p>alert(numbers.indexOf(4))；  //3</p>
+<p>alert(numbers.lastIndexOf(4));	//5</p>
+<p>alert(numbers.indexOf(4, 4));	//5</p>
+<p>alert(numbers.lastlndexOf(4, 4)); //3</p>
+<p>var person = { name： “Nicholas” };</p>
+<p>var people = [{ name: “Nicholas” }); var morePeople = [person]; alert(people.indexOf(person));	//-l</p>
+<p>alert(morePeople.indexOf(person)); //0</p>
+</blockquote>
+<h2 id="迭代方法"><a class="markdownIt-Anchor" href="#迭代方法"></a> 迭代方法</h2>
+<p>每个方法都接收两个参数：要在每一项上运行的函数和（可选的）运行该函数的作用域对象——影响this的值。</p>
+<p>传入这些方法中的函数会接收三个参数：数组项的值、该项在数组中的位置和数组对象本身。</p>
+<h3 id="every"><a class="markdownIt-Anchor" href="#every"></a> every ()</h3>
+<ul>
+<li>
+<p>every ():对数组中的每一项运行给定函数，如果该函数对每一项都返间true,则返回true</p>
+<blockquote>
+<p>var numbers = [1,2,3,4,5,4,3,2,1];</p>
+<p>var everyResult = numbers.every(function(item,index,array){<br />
+return (item&gt;2);<br />
+});<br />
+alert(everyResult); //false;</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="filter"><a class="markdownIt-Anchor" href="#filter"></a> filter()</h3>
+<ul>
+<li>
+<p>filter()：对数组中的每一项运行给定的函数，返回该函数会返回true的项组成的数组。</p>
+<blockquote>
+<p>var numbers = [1,2,3,4,5,4,3,2,1];</p>
+<p>var filterResult = numbers.filter(function(item,index,array){<br />
+return (item&gt;2);<br />
+});<br />
+alert(filterResult); //[3,4,5,4,3]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="foreach"><a class="markdownIt-Anchor" href="#foreach"></a> forEach()</h3>
+<ul>
+<li>
+<p>这个方法没有返回值。可以自我去接收</p>
+<blockquote>
+<p>numbers.forEach(function(item,index,array){    //执行某些操作 });</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="map"><a class="markdownIt-Anchor" href="#map"></a> map()</h3>
+<ul>
+<li>
+<p>map()返回每次函数调用的结果组成的数组。</p>
+<blockquote>
+<p>var numbers = [1,2,3,4,5,4,3,2,1];</p>
+<p>var mapResult = numbers.map(function(item,index,array){<br />
+return item * 2;<br />
+});<br />
+alert(mapResult); //[2,4,6,8,10,8,6,4,2]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="some"><a class="markdownIt-Anchor" href="#some"></a> some()</h3>
+<ul>
+<li>
+<p>some()：如果该函数对任一项返回true，则返回true**。**</p>
+<blockquote>
+<p>var numbers = [1,2,3,4,5,4,3,2,1];</p>
+<p>var someResult = numbers.some(function(item,index,array){<br />
+return (item&gt;2);<br />
+});<br />
+alert(someResult); //true;</p>
+</blockquote>
+</li>
+</ul>
+<p>** 以上方法都不会修改数组中的包含的值。**</p>
+<ul>
+<li>every ()和someO,它们都用于查询数组中的项是否满足某个条件。 对every()来说，传入的函数必须对毎-项都返回true,这个方法才返间true;否则，它就返冋 false。而some 方法则是只要传人的函数对数组中的某一项返回true,就会返回true。</li>
+</ul>
+<blockquote>
+<p>var numbers = [1,2,3,4,5,4,3,2,1];</p>
+<p>var everyResult = numbers.every(function(item,index,array){<br />
+return (item&gt;2);<br />
+});<br />
+alert(everyResult); //false;</p>
+<p>var someResult = numbers.some(function(item,index,array){<br />
+return (item&gt;2);<br />
+});<br />
+alert(someResult); //true;</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Array</tag>
+      </tags>
   </entry>
   <entry>
     <title>JavaScript高级程序设计(六)</title>
     <url>/posts/d90e4f30.html</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="date类型"><a class="markdownIt-Anchor" href="#date类型"></a> Date类型</h1>
+<h2 id="创建日期对象的方法"><a class="markdownIt-Anchor" href="#创建日期对象的方法"></a> 创建日期对象的方法</h2>
+<p>要创建一个日期函数，使用new操作符和Date构造函数，例如</p>
+<blockquote>
+<p>var now = new Date();</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Date</tag>
+      </tags>
   </entry>
   <entry>
     <title>JavaScript高级程序设计(四)</title>
     <url>/posts/46aa503f.html</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="引用类型"><a class="markdownIt-Anchor" href="#引用类型"></a> 引用类型</h1>
+<blockquote>
+<p>引 用类型有时候也被称为对象定义，因为它们描述的是一类对象所具有的属性和方法。</p>
+<p>新对象是使用new操作符后跟一个构造函数来创建的。</p>
+<p>构造函数本身就是-个函数，只不过该函数是出F创建新对象的目的而定义的。</p>
+<p>var person = new Object();</p>
+<p>这行代码创建了 Object引用类型的一个新实例，然后把该实例保存在了变量person中。使用 的构造函数是Object,它只为新对象定义了默认的属性和方法。</p>
+</blockquote>
+<h2 id="51-object-类型"><a class="markdownIt-Anchor" href="#51-object-类型"></a> <strong>5.1</strong> <em><strong>*Object*</strong></em> 类型</h2>
+<p>大多数引用类型值都是Object类型的实例；而且，Object也是 ECMAScript中使用最多的一个类型。</p>
+<h3 id="创建object方式"><a class="markdownIt-Anchor" href="#创建object方式"></a> 创建Object方式</h3>
+<ul>
+<li>
+<p>new操作符跟Object构造函数</p>
+<blockquote>
+<p>var person = new Object();</p>
+<p><a href="http://person.name">person.name</a> = “xiaoming”;</p>
+<p>person.age = 29</p>
+</blockquote>
+</li>
+<li>
+<p>使用对象字面量表示法</p>
+<blockquote>
+<p>1.var person={</p>
+<p>​	name ：“xiaoming”，</p>
+<p>​	age ： 29</p>
+<p>}</p>
+<p>2.var person = {</p>
+<p>}</p>
+</blockquote>
+</li>
+<li>
+<p>在使用对象字面景语法时，属性名也可以使用字符申，如下面这个例子所示。</p>
+<blockquote>
+<p>var person = {</p>
+<p>​	“name&quot;：“xiaoming&quot;,</p>
+<p>​		“age” :  29，</p>
+<p>​		5:true</p>
+<p>}</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><strong>在通过对象字面量定义对象时，实际上不会调用Object构造函数（Firefcx2及 更早版本会调用Object构造函数；但Firefox 3之后就不会了）。</strong></p>
+</blockquote>
+<blockquote>
+<p>function displaylnfo（args） {</p>
+<p>​		var output =&quot;&quot;;</p>
+<p>​		if (typeof <a href="http://args.name">args.name</a> = “string”){</p>
+<p>​				output += &quot;Name： &quot; + <a href="http://args.name">args.name</a> * “\n”；</p>
+<p>​		}</p>
+<p>​		if (typeof args.age == “number”) {</p>
+<p>​				output += &quot;Age： ■ + args.age + “\n”;</p>
+<p>​		}</p>
+<p>​				alert(output);</p>
+<p>}</p>
+<p>​				displayinfo({ name: “Nicholas&quot;, age： 29</p>
+<p>​				displayinfo({</p>
+<p>​						name: “Greg”</p>
+<p>​				))；</p>
+</blockquote>
+<h3 id="访问对象"><a class="markdownIt-Anchor" href="#访问对象"></a> 访问对象</h3>
+<h4 id="点方法常用方法"><a class="markdownIt-Anchor" href="#点方法常用方法"></a> 点方法(常用方法)</h4>
+<blockquote>
+<p>console.log(<a href="http://person.name">person.name</a>)</p>
+</blockquote>
+<h4 id="方括号"><a class="markdownIt-Anchor" href="#方括号"></a> 方括号</h4>
+<blockquote>
+<p>console.log(person[“name”])</p>
+</blockquote>
+<h3 id="设置对象值"><a class="markdownIt-Anchor" href="#设置对象值"></a> 设置对象值</h3>
+<ul>
+<li>方法一</li>
+</ul>
+<blockquote>
+<p>var person =  new Object();</p>
+<p><a href="http://person.name">person.name</a> = “xiaoming”;</p>
+<p>person[“age”] = 29</p>
+</blockquote>
+<ul>
+<li>
+<p>方法二:字面量设置</p>
+<blockquote>
+<p>var person = {</p>
+<p>​	name:“xiaoming”,</p>
+<p>​	age:29</p>
+<p>}</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
   </entry>
   <entry>
     <title>标签外挂</title>
